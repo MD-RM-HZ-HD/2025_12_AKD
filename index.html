@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>index</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="min-h-screen" x-data="pageSettings" :class="{ 'dark': darkMode }"> 
+
+<div class="main-width-container pt-10"> 
+<div id="navbar-placeholder"></div>
+      
+    <div class="top-row">
+        <article class="content" 
+                 :style="{ 'fontSize': fontSize + 'px' }">
+<div x-data="accordionItem(true)" class="content-container" id="h1-دروس-في-العقيدة-الإسلامية">
+	<button @click="toggle()" class="accordion-button">
+		<div class="accordion-title-group">
+			<h2 class="section" :style="{ 'fontSize': fontSize + 'px' }">دروس في العقيدة الإسلامية</h2>
+			<span class="icon-toggle" x-text="iconText"></span>
+		</div>
+		<audio controls src="audio/Source.mp3" onclick="event.stopPropagation()">
+			<p class="muted">متصفحك لا يدعم الصوت.</p>
+		</audio>
+	</button>
+	<div x-show="open" x-transition class="accordion-panel">
+		<section>
+		</section>
+	</div>
+</div>
+
+<div x-data="accordionItem(true)" class="content-container" id="h1-الدرس-السابع-عشر-معاني-التوحيد">
+	<button @click="toggle()" class="accordion-button">
+		<div class="accordion-title-group">
+			<h2 class="section" :style="{ 'fontSize': fontSize + 'px' }">الدرس السابع عشر معاني التوحيد</h2>
+			<span class="icon-toggle" x-text="iconText"></span>
+		</div>
+		<audio controls src="audio/17.mp3" onclick="event.stopPropagation()">
+			<p class="muted">متصفحك لا يدعم الصوت.</p>
+		</audio>
+	</button>
+	<div x-show="open" x-transition class="accordion-panel">
+		<section>
+					<div class="qa" id="h2-المقدمة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">المقدمة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن لفظة <strong>التوحيد</strong> التي تعني لغوياً <strong>عدّ الشيء وجعله واحداً</strong> قد استعملت في مصطلح أهل الفلسفة والكلام والأخلاق والعرفان، في <strong>معان</strong> <strong>عديدة مختلفة</strong>، وقد لوحظت في كل هذه المعاني <strong>وحدة الله تعالى من جهة</strong> <strong>معينة</strong>، وربما عبر عنها أحياناً بـ«<strong>أقسام التوحيد»</strong> أو <strong>«مرات</strong><strong>ب</strong><strong> التوحيد»</strong> ودراسة هذه المعاني كلها لا تتناسب ومنهجية هذا الكتاب.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> لذلك نكتفي هنا بذكر أشهر المصطلحات والمعاني، وأكثرها تناسباً لموضوعنا:</p>
+						<div id="h3-١---نفي-التعدد" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">١ - نفي التعدد:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن أول مصطلح معروف للتوحيد، هو الاعتقاد <strong>بوحدانية الله، ونفي التعدد والكثرة في الخارج عن الذات</strong>، وهذا المعنى يقابل الشرك الصريح، والاعتقاد بإلهين أو آلهة متعددة، بصورة يكون لكل واحد منها وجود مستقل ومتميز عن الآخر.</p>
+							</div>
+						</div>
+						<div id="h3-٢---نفي-التركيب" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٢ - نفي التركيب:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وهو المصطلح الثاني للتوحيد: ويعني الإيمان <strong>بالأحدية والبساطة في داخل الذات، وعدم تركيب الذات الإلهية من أجزاء</strong> <strong>بالفعل أو بالقوة</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ويُذكر غالباً هذا المعنى بصورة صفة سلبية<strong> (</strong><strong>نفي التركيب</strong>) كما أشير إليه في الدرس العاشر، وذلك لأن أذهاننا أكثر ألفة وأنساً بمفهوم <strong>التركيب</strong> وما يقابله وهو <strong>نفي التركيب</strong>، من مفهوم <strong>البساطة</strong>.</p>
+							</div>
+						</div>
+						<div id="h3-٣---نفي-الصفات-الزائدة-على-الذ" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٣ - نفي الصفات الزائدة على الذات</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وهو المصطلح الثالث، ويعني الإيمان <strong>باتحاد الصفات الذاتية مع عين الذات الإلهية، ونفي الصفات الزائدة</strong> <strong>على الذات</strong>، ويعبر عنه بـ«<strong>التوحيد الصفاتي»</strong> ويذكر في الروايات بتعبير «نفي الصفات في مقابل البعض أمثال الأشاعرة الذين اعتقدوا بأن الصفات الإلهية أمور زائدة على الذات، وقالوا بـ«<strong>القدماء الثمانية»</strong>.</p>
+							<div class="qa" id="h4-والدليل-على-التوحيد-الصفاتي" x-data="accordionItem(true)">
+								<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									والدليل على التوحيد الصفاتي:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h4>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">هو أنه لو كان لكل واحدة من الصفات الإلهية مصداق<strong> (</strong>وما بإزاء) مستقل، فلا يخرج عن عدة حالات:</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="h3-إما-أن-نفترض-مصاديقها" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">إما أن نفترض مصاديقها:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h4-أولا-داخل-الذات-الإلهية" x-data="accordionItem(true)">
+								<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									أولا: داخل الذات الإلهية:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h4>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ويلزم من هذا الافتراض أن تكون الذات الإلهية <strong>مركبةً من أجزاء</strong>، وقد أثبتنا سابقاً <strong>استحالة</strong> <strong>التركيب</strong>.</p>
+								</div>
+							</div>
+							<div class="qa" id="h4-ثانيا-خارج-الذات-الإلهية" x-data="accordionItem(true)">
+								<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									ثانيا: خارج الذات الإلهية
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h4>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وفي هذه الحالة إما أن نتصورها <strong>واجبة الوجود</strong> غير محتاجة إلى خالق، وإما ان نتصورها <strong>ممكنة</strong> <strong>الوجود</strong> ومخلوقة لله.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">افتراض أنها <strong>واجبة الوجود</strong>: </p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">بمعنى تعدد الذات، فهو <strong>الشرك الصريح</strong>، ولا اظن ان هناك مسلماً يلتزم به.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">افتراض أن هذه الصفات <strong>ممكنة الوجود</strong><strong>:</strong></p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">يلزم من ذلك القول بأن الذات الإلهية مع افتراض فقدانها لهذه الصفات هي التي <strong>تخلق هذه الصفات وتوجدها</strong>، ثم بعد ذلك تتصف بها، فمثلاً، بما أنّ الذات فاقدة للحياة ذاتاً، فإنها تخلق موجوداً يسمى <strong>«الحيا</strong><strong>ة</strong>» وبعد ذلك تتصف بصفة الحياة، وكذلك الحال في العلم والقدرة وغيرها، مع أنه من المحال أن تكون العلة الموجدة فاقدة لكمالات مخلوقاتها، ومن المخجل حقاً أن نعتقد بأن الخالق <strong>يكتسب في ظل مخلوقاته</strong> الحياة والعلم والقدرة، ويتصف بسائر الصفات الكمالية.</p>
+								<div class="qa" id="h5-وببطلان-هذه-الفروض-والاحتمالات" x-data="accordionItem(true)">
+									<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+										وببطلان هذه الفروض والاحتمالات، يتضح لنا أن الصفات الإلهية ليست لها مصاديق مستقلة كل واحدة عن الأخرى، وعن الذات الإلهية، بل إن هذه الصفات كلها مفاهيم ينتزعها العقل من مصداق واحد بسيط هو الذات الإلهية.
+										<span class="icon-toggle" x-text="iconText"></span>
+									</h5>
+									<div class="a" x-show="open" x-transition>
+									</div>
+								</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="h3-٤---التوحيد-الأفعالي" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٤ - التوحيد الأفعالي:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> المصطلح الرابع للتوحيد هو الذي يعبر عنه في مصطلح الفلاسفة والمتكلمين بـ«<strong>التوحيد الأفعالي»</strong> ويعني: <strong>أن الله تعالى في</strong> <strong>أفعاله غير محتاج لأي أحد ولأي شيء</strong>، ولا يمكن لأي موجود أن يعينه وأن يقدم له المساعدة في فعله.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ويمكن أن تثبت هذه الحقيقة على ضوء الخاصة التي تتميز بها <strong>العلة</strong> <strong>الموجدة</strong>، وهي <strong>القيومية بالنسبة لكل معلولاتها</strong>، وذلك لأن معلول مثل هذه العلة، <strong>قائم بكل وجوده بالعلة</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وبالمصطلح الفلسفي: إن المعلول «<strong>عين</strong> <strong>الربط والتعلق بالعلة، وليست له أية استقلالية في نفسه»</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وبعبارة أخرى: إن ما يملكه ويتمتع به أي موجود، إنما حصل له من تلك العلة الموجدة، وهو خاضع <strong>لقدرة الله وسلطانه وملكيته الحقيقية</strong> <strong>والتكوينية</strong>، وأما ملكية الآخرين وقدرتهم، فهي <strong>مستمدة منها، ومن متفرعاتها</strong>، <strong>وفي طول القدرة الإلهية</strong>، لا أنها تزاحمها، كما هو الحال في الملكية الاعتبارية للعبد المملوك على الأموال التي يكتسبها، فإنها في طول الملكية الاعتبارية للمولى<strong> (</strong>العبد وما في يده لمولاه)، إذن فكيف يكون الله محتاجاً لأشياء تكون في كل وجودها وشؤونها قائمة ومرتبطة به؟ </p>
+							</div>
+						</div>
+						<div id="h3-٥---التأثير-الاستقلالي" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٥ - التأثير الاستقلالي:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">والمصطلح الخامس للتوحيد، هو <strong>الاستقلال في</strong> <strong>التأثير</strong>، أي أن المخلوقات الإلهية <strong>لا يمكنها الاستغناء في أفعالها عن الله</strong> <strong>تعالى</strong>، وإنما يتم تأثير كل مخلوق من المخلوقات في الآخر، <strong>بإذن الله، وفي</strong> <strong>ظل القدرة التي يمنحها الله تعالى له</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وفي الواقع إن <strong>الموجود الوحيد الذي</strong> <strong>يفيض تأثيره في كل مكان، وفي كل شيء، بدون احتياجه لغيره، هو الذات</strong> <strong>الإلهية المقدسة</strong>، وأما فاعلية الآخرين وتأثيرهم فهي <strong>في طول فاعليته وتأثيره</strong>، <strong>وفي ظله وسلطانه</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وعلى هذا الأساس نرى القرآن الكريم <strong>ينسب آثار الفواعل والعلل</strong> <strong>الطبيعية وغير الطبيعية</strong> أمثال الملك والجن والإنسان <strong>الى الله تعالى</strong>، فمثلاً يسند إلى الله تعالى هطول المطر، ونمو النبات، وإثمار الأشجار، ويؤكد كثيراً على أن يُدرك الإنسان ويتأمل في هذا الإسناد والنسبة الى الله تعالى، الذي <strong>هو في طول الإسناد للفواعل والعوامل الطبيعية القريبة</strong>، وان يؤمن به، ويتوجه إليه دائماً.</p>
+							<div class="qa" id="h4-ولتقريب-الفكرة-الى-الذهن-نضرب-" x-data="accordionItem(true)">
+								<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									ولتقريب الفكرة الى الذهن، نضرب مثالاً من الأمور الاعتبارية:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h4>
+								<div class="a" x-show="open" x-transition>
+								<p :style="{ 'fontSize': fontSize + 'px' }">فإذا أمر الرئيس موظفاً للقيام بعمل ما، فإنّ هذا العمل وإن صدر من الموظف والعامل نفسه، ولكنه في نفس الوقت مستند ومنسوب الى الرئيس والأمر في مرتبة أعلى، بل إن العقلاء يعتبرون استناد العمل للأمر أكثر تقبلاً، وأقوى استناداً.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> والفاعلية التكوينية لها سلسلة من المراتب أيضاً، وبما أن وجود كل فاعل قائم بالإرادة الإلهية - ويمكن أن يشبه هذا القيام من زاوية ما، بقيام الصور الذهنية بالشخص الذي يتصورها<strong> (</strong>ولله المثل الأعلى) - لذلك كانت الآثار الوجودية التي تصدر من كل فاعل ومؤثر، <strong>منوطة في مرتبتها العليا بالإذن</strong> <strong>والإرادة التكوينية الإلهية، ومستندة إلى الله تعالى</strong><strong> (</strong>ولا حول ولا قوة إلا بالله العلي العظيم<strong>).</strong></p>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-نتيجتان-مهمتان" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">نتيجتان مهمتان</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ونتيجة التوحيد الأفعالي أن <strong>لا يرى الإنسان، أي أحد، وأي شيء غير</strong> <strong>الله تعالى، مستحقاً للعبادة</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وكما أشرنا إليه سابقاً، إن كل أحد غير الخالق ورب العبد لا يستحق العبادة، أي ان <strong>الألوهية ملازمة </strong><strong>للخالقية</strong><strong> والربوبية</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> والنتيجة الثانية للتوحيد بمعناه الأخير<strong>؛</strong> هي أن <strong>يعتمد الإنسان في كل</strong> <strong>أحواله على الله تعالى، وأن يتوكل عليه، ويستعين به في كل أعماله</strong>، وأن لا يستمد المدد إلا منه، وأن <strong>لا يكون له خوف أو رجاء إلا منه وبه</strong>، وحتى لو لم تتوفر الأسباب العادية المتعارفة التي توفر متطلباته، وتستجيب لاحتياجاته، فعليه أن <strong>لا يصيبه اليأس والقنوط</strong>، لأن الله تعالى سوف يوصل إليه المدد، وينعم عليه بالرحمة من الطرق والأسباب غير العادية، ليستجيب لاحتياجاته ومتطلباته.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ومثل هذا الإنسان الذي يعيش هذه المشاعر التوحيدية، سوف يسكن في <strong>ظل الولاية الإلهية الخاصة، ليعيش اطمئناناً روحياً لا نظير له</strong><strong> (</strong>ألا إن أولياء الله لا خوف عليهم ولا هم يحزنون<strong>).</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وقد أودعت هاتان النتيجتان في هذه الآية الشريفة التي يكررها كلُّ مسلم عشر مرات على الأقل<strong> (</strong>إياك نعبد وإياك نستعين<strong>).</strong></p>
+						</div>
+					</div>
+					<div class="qa" id="h2-الجواب-عن-شبهة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الجواب عن شبهة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p :style="{ 'fontSize': fontSize + 'px' }">ويمكن أن تخطر في ذهن البعض هذه الشبهة: وهي أن التوحيد الكامل إذا كان يستلزم عدم استعانة الإنسان بغير الله، إذن فيلزم علينا أن لا نتوسل بأولياء الله، فالتوسل بهم غير صحيح.</p>
+						<div class="qa" id="h4-والجواب" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								والجواب:
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">أن التوسل بأولياء الله إذا كان بمعنى: أن يستجيب الأولياء أنفسهم لهذا المتوسل، وأن يحققوا ويوفروا له ما يطلبه بصورة مستقلة، وبدون أن يحتاج الأولياء في ذلك إلى إذن الله، فإن هذا التوسل <strong>لا يتلاءم مع</strong> <strong>التوحيد</strong>، وأما لو كان التوسل بمعنى: ان الله تعالى <strong>جعل الولي وسيلة للتوصل</strong> <strong>إلى رحمته تعالى</strong>، وقد أمر تعالى أن يتوسل المتوسل بهذا الولي، فهذا التوسل كما أنه <strong>لا ينافي التوحيد</strong>، فإنه يعتبر أيضاً من شؤون التوحيد في العبادة والطاعة، إذ انه يتم بأمره تعالى.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-وأما-أنه-لماذا-جعل-الله-تعالى-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								وأما أنه لماذا جعل الله تعالى أمثال هذه الوسائل إليه؟ ولماذا أمر الناس بالتوسل بأوليائه؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">فالجواب: أن لهذا الأمر الإلهي <strong>حكماً ومصالح</strong>، يمكن أن نعتبر منها الأمور التالية:</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>التعريف بالمستويات الرفيعة لعباده </strong><strong>الصالحين</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>ودفع الآخرين وحثهم على العبادة والطاعة</strong> التي تؤدي بالآخرين إلى الوصول لمثل هذه المستويات الرفيعة.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وأن <strong>يمنع من حصول الغرور والاعتداد للبعض بعبادته</strong>، حيث يعتقد في نفسه الوصول إلى أرفع الدرجات، وأنه يتمتع بأسمى الكمالات.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ومع الأسف - وقد ظهرت هذه الحالة - لأولئك الذين حرموا من نعمة ولاية أهل البيت<strong> (</strong>عليهم الصلاة والسلام) والتوسل بهم.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-الأسئلة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الأسئلة:</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div class="qa" id="h4-١---بين-المعنى-اللغوي-والمعنى-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١ - بين المعنى اللغوي والمعنى المصطلح للتوحيد.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong> </strong><strong>المعنى اللغوي للتوحيد</strong><strong>: </strong><strong>عدّ الشيء وجعله واحداً</strong><strong>.</strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>المعنى المصطلح للتوحيد</strong><strong>: </strong>استعملت لفظة التوحيد في مصطلح أهل الفلسفة والكلام والأخلاق والعرفان، في معان عديدة مختلفة، وقد لوحظت في كل هذه المعاني وحدة الله تعالى من جهة معينة.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>ومن أشهر هذه المصطلحات</strong><strong>: </strong>نفي التعدد، نفي التركيب، نفي الصفات الزائدة على الذات، التوحيد الأفعالي، والاستقلال في التأثير.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٢---ما-هو-الدليل-على-التوحيد-ا" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٢ - ما هو الدليل على التوحيد الصفاتي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">الدليل على التوحيد الصفاتي هو أنه لو كان لكل واحدة من الصفات الإلهية مصداق<strong> (</strong>وما بإزاء) مستقل، فلا يخرج عن عدة حالات:</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>الافتراض الأول</strong><strong> (</strong><strong>مصاديق داخل الذات)</strong><strong>: </strong>افتراض مصاديقها في داخل الذات الإلهية، ويلزم منه أن تكون الذات الإلهية مركبة من أجزاء، وهذا يستلزم استحالة التركيب.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>الافتراض الثاني</strong><strong> (</strong><strong>مصاديق خارج الذات)</strong><strong>: </strong>افتراض مصاديقها في خارج الذات الإلهية، وفي هذه الحالة إما أن نتصورها واجبة الوجود<strong> (</strong>مما يعني تعدد الذات وهو الشرك الصريح)، وإما أن نتصورها ممكنة الوجود ومخلوقة لله<strong> (</strong>مما يلزم منه أن تخلق الذات الفاقدة للصفات هذه الصفات ثم تتصف بها، وهو محال، إذ من المحال أن تكون العلة الموجدة فاقدة لكمالات مخلوقاتها<strong>).</strong></p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٣---كيف-يمكن-إثبات-التوحيد-الص" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٣ - كيف يمكن إثبات التوحيد الصفاتي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">يُثبت التوحيد الصفاتي ببطلان هذه الفروض والاحتمالات، ويتضح أن الصفات الإلهية ليست لها مصاديق مستقلة كل واحدة عن الأخرى، وعن الذات الإلهية، بل إن هذه الصفات كلها مفاهيم ينتزعها العقل من مصداق واحد بسيط هو الذات الإلهية.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٤---وضح-التوحيد-بمعنى-التوحيد-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٤ - وضّح التوحيد بمعنى التوحيد في التأثير الاستقلالي?
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">التوحيد بمعنى التأثير الاستقلالي هو المصطلح الخامس للتوحيد، ويعني أن المخلوقات الإلهية لا يمكنها الاستغناء في أفعالها عن الله تعالى، وإنما يتم تأثير كل مخلوق في الآخر بإذن الله، وفي ظل القدرة التي يمنحها الله تعالى له.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> فالموجود الوحيد الذي يفيض تأثيره في كل مكان، وفي كل شيء، بدون احتياجه لغيره، هو الذات الإلهية المقدسة، وأما فاعلية الآخرين وتأثيرهم فهي في طول فاعليته وتأثيره، وفي ظله وسلطانه.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٥---ما-هي-النتائج-المترتبة-على" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٥ - ما هي النتائج المترتبة على القسمين الأخيرين من التوحيد؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> القسمان الأخيران هما التوحيد الأفعالي والاستقلال في التأثير:</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>النتيجة الأولى</strong><strong> (</strong><strong>نتيجة التوحيد الأفعالي)</strong><strong>: </strong>أن لا يرى الإنسان، أي أحد، وأي شيء غير الله تعالى، مستحقاً للعبادة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> فالألوهية ملازمة للخالقية والربوبية.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>النتيجة الثانية</strong><strong> (</strong><strong>للتوحيد بمعناه الأخير / الاستقلال في التأثير)</strong><strong>: </strong>أن يعتمد الإنسان في كل أحواله على الله تعالى، وأن يتوكل عليه، ويستعين به في كل أعماله، وأن لا يستمد المدد إلا منه، وأن لا يكون له خوف أو رجاء إلا منه وبه، وأن لا يصيبه اليأس والقنوط حتى لو لم تتوفر الأسباب العادية.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٦---هل-إن-التوسل-بأولياء-الله-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٦ - هل إن التوسل بأولياء الله ينافي التوحيد؟ ولماذا؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">التوسل بأولياء الله <strong>لا ينافي التوحيد</strong> إذا كان بمعنى أن الله تعالى جعل الولي <strong>وسيلة للتوصل إلى رحمته تعالى</strong>، وقد أمر تعالى أن يتوسل المتوسل بهذا الولي، لأنه يعتبر من شؤون التوحيد في العبادة والطاعة، إذ أنه يتم بأمره تعالى.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> أما إذا كان التوسل بمعنى أن يستجيب الأولياء أنفسهم للمتوسل، وأن يحققوا ويوفروا له ما يطلبه <strong>بصورة مستقلة</strong>، وبدون أن يحتاج الأولياء في ذلك إلى إذن الله، فإن هذا التوسل <strong>لا يتلاءم مع التوحيد</strong>.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٧---ما-هي-الحكمة-في-أمر-الله-ت" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٧ - ما هي الحكمة في أمر الله تعالى بالتوسل؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">لهذا الأمر الإلهي حكماً ومصالح، منها:</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>التعريف بالمستويات الرفيعة</strong> لعباده الصالحين.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>دفع الآخرين وحثهم على العبادة والطاعة</strong> التي تؤدي بهم إلى الوصول لمثل هذه المستويات الرفيعة.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>منع حصول الغرور والاعتداد للبعض بعبادته</strong>، حيث يعتقد الوصول إلى أرفع الدرجات والتمتع بأسمى الكمالات.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+		</section>
+	</div>
+</div>
+
+<div x-data="accordionItem(true)" class="content-container" id="h1-الدرس-الثامن-عشر-الجبر-والاختي">
+	<button @click="toggle()" class="accordion-button">
+		<div class="accordion-title-group">
+			<h2 class="section" :style="{ 'fontSize': fontSize + 'px' }">الدرس الثامن عشر الجبر والاختيار</h2>
+			<span class="icon-toggle" x-text="iconText"></span>
+		</div>
+		<audio controls src="audio/18.mp3" onclick="event.stopPropagation()">
+			<p class="muted">متصفحك لا يدعم الصوت.</p>
+		</audio>
+	</button>
+	<div x-show="open" x-transition class="accordion-panel">
+		<section>
+					<div class="qa" id="h2-المقدمة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">المقدمة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن للتوحيد في التأثير الاستقلالي دوره الكبير في تربية الإنسان وبناء شخصيته، كما أشرنا لهذه الفكرة في الدرس السابق، ومن هنا أكد القرآن الكريم عليه كثيراً ووفر بتعابير وأساليب مختلفة الأرضية المناسبة لفهمه الصحيح والسليم، <strong>ومن جملة هذه التعابير إناطة كل الظواهر بإذن الله ومشيئته وإرادته وقضائه وقدره</strong><strong>.</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">والفهم الصحيح السليم لهذا الموضوع يحتاج إلى رشد عقلي وفكري، وكذلك يحتاج إلى التوضيح والتفسير الصحيحين له، وأولئك الذين حرموا الرشد العقلي اللازم، أو لم يحاولوا الاستفادة والاقتباس من تعاليم الأئمة المعصومين، والمفسرين الحقيقيين للقرآن الكريم، <strong>عرضت لهم الكثير من الانحرافات والشبهات</strong>، ففسروا ذلك بحصر كل تأثير وعلية بالله تعالى، وإنهم - خلافاً لصراحة الكثير من الآيات القرآنية المحكمة - نفوا أي تأثير وعلية للأسباب والوسائط، واعتقدوا بأن عادة الله جرت بأن يوجد الحرارة عقيب وجود النار، أو أنه يوجد الشبع والارتواء بعد أكل الطعام وشرب الماء، وإلا فليس للنار أو الطعام أو الماء أي تأثير في وجود الحرارة أو الشبع أو الارتواء.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>والنتائج الخطيرة والسيئة لمثل هذا الانحراف الفكري</strong> إنما تتضح فيما لو درسنا آثارها في مجال الأفعال الاختيارية للإنسان ومسؤوليته، فإن نتيجة هذا اللون من التفكير، تتمثل في اسناد الأفعال الإنسانية الله تعالى بصورة مباشرة، ونفي فاعلية الإنسان وتأثيره في افعاله، نفياً مطلقاً، وفي هذه الحالة لا يكون أي أحد مسؤولاً عن أفعاله.</p>
+						<div id="h3-وبعبارة-أخرى" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">وبعبارة أخرى:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>إن من النتائج الخطيرة والمضلة لهذا الانحراف الفكري، هو القول بجبرية الإنسان، ونفي المسؤولية عنه</strong>، وهو يعني نفي أهم خاصة وميزة للإنسان، وعبثية كل الأنظمة التربوية والأخلاقية والقانونية والحقوقية، ومنها النظام التشريعي الإسلامي.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">ذلك لأننا لو سلبنا الاختيار عن الإنسان على أي فعل من أفعاله، لما بقي موضع للمسؤولية والوظيفة والأمر والنهي والتكليف والجزاء والثواب والعقاب، بل لاستلزم عبثية النظام التكويني وعدم غائيته، ذلك ان الهدف من خلق عالم الطبيعة - كما تدلّ عليه الآيات الكريمة والأحاديث الشريفة والبراهين والأدلة العقلية - هو الإعداد وتوفير الأرضية الملائمة لخلق الإنسان، ليتوصل من خلال فعالياته وممارساته الاختيارية وعبادته وعبوديته الله تعالى، إلى أرفع الكمالات الإمكانية، وأسمى مقامات القرب الإلهي ومراتبه، ليكون مؤهلاً لإفاضة الألطاف والإمدادات الإلهية الخاصة عليه، أما لو رفضنا اختيار الإنسان، وأنكرنا مسؤوليته، فلا يكون مؤهلاً لاكتساب النعم الخالدة والرضوان الإلهي، وبذلك سينتقض الهدف من الخلق وينهار، ليتحول نظام الخلق إلى مسرح كبير يلعب فيه الناس دور الدمى التي تتحرك وتلعب أدوارها بدون إرادة واختيار بل هناك أصابع وراء الستار تحركها، وهناك من يوجد فيها حركاتها وتصرفاتها، ولكن بعد ذلك سوف ينال البعض العقاب والمذمة، وينال البعض الآخر الثواب والثناء!</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>إن أهم العوامل التي أدت إلى اتساع هذا الاتجاه الخطير والمنحرف، هو المطامع السياسية للحكومات الجائرة المجرمة، </strong>لتوجه وتبرر بمثل هذه المعتقدات تصرفاتها ومواقفها المنكرة، ولتفرض على الشعوب غير الواعية الإذعان لسلطانها، وتقبل حكوماتها، دون أن تتحرك الجماهير المسحوقة للثورة والانتفاضة بوجه هذه السلطات المجرمة، وحقاً يلزم علينا أن نعتبر الجبرية أهم عامل في تخدير الشعوب.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وهناك من تنبه لنقاط الضعف في هذا الاتجاه، ولكن بما أنهم لا يملكون القدرة الفكرية على التوفيق بين التوحيد الكامل ونفي الجبرية، ولم يحاولوا الاقتباس من تعاليم أهل بيت العصمة والطهارة<strong> (</strong>سلام الله عليهم أجمعين)، فقد اتجهوا إلى الاعتقاد <strong>بالتفويض</strong>، وقالوا بخروج الأفعال الاختيارية للإنسان عن نطاق الفاعلية والقدرة الإلهية، وابتلوا هم أنفسهم بنوع آخر من الأمراض والانحرافات الفكرية، وحرموا من المبادئ والتعاليم الإسلامية، ومعطياتها السامية.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">ولكن أولئك الذين كانوا يملكون الاستعداد الكافي الذي يؤهلهم لإدراك هذه المعارف وفهمها، وتعرفوا على المعلمين والمفسرين الحقيقيين للقرآن الكريم، وانتهلوا منهم، فإنهم حفظوا من الإصابة بمثل هذه الأمراض والانحرافات.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">فمن جهة: اعتقدوا بأنّ فاعليتهم الاختيارية مستمدة من القدرة التي منحها الله تعالى لهم، وبذلك تترتب عليهم المسؤولية، ومن جهة أخرى: أدركوا التأثير الاستقلالي الإلهي في مرتبة أعلى وأسمى فتوصلوا من خلال ذلك إلى معطيات هذه المعرفة المثمرة.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ونجد في الأحاديث التي وصلتنا من أهل بيت النبي<strong> (</strong>ص) أحاديث معبرة في هذا المجال، وقد ذكرت في كتب الحديث في الأبواب المعنونة بعنوان الاستطاعة ونفي الجبر والتفويض، وكذلك في أبواب الإذن والمشيئة والإرادة والقضاء والقدر الإلهي.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> وهناك بعض الأحاديث نهي فيها بعض الأفراد غير المؤهلين عن الخوض في مثل هذه المسائل الدقيقة، والبحوث الصعبة، حتى لا يصيبهم الانحراف والاشتباه.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">أجل إن الموضوع الجبر والاختيار أبعاداً وجوانب مختلفة، والبحث فيها جميعاً لا يتلاءم وهذا الكتاب، ولكن لأجل أهمية هذا الموضوع وخطورته، نحاول البحث في بعض هذه الجوانب، وعرضها بأسلوب مبسط، ونؤكد على أولئك الذين يرغبون أكثر في التحقيق والبحث، أن يتسموا بالصبر والتحمل في تعلم الأسس العقلية والفلسفية لهذا الموضوع.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-توضيح-الاختيار" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">توضيح الاختيار</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن القدرة على اتخاذ القرار والاختيار من الصفات النفسية التي يدركها الإنسان ويجزم بها، ولعلها أكثر الصفات جزماً ويقيناً، فإن كل واحد منا يدركها في ذاته وباطنه بعلمه الحضوري الذي لا يخطئ ولا يشتبه، كما يدرك بمثل هذا العلم سائر حالاته النفسية، وحتى لو شك في شيء فإنه لا يشك في شكه هذا، فإنّه يدرك <strong>«شك</strong><strong>ه</strong>» هذا بالعلم الحضوري، ولا يمكن أن يتردد في هذا الإدراك.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">وكذلك كل أحد يدرك بأدنى تأمل في باطنه وأعماق ذاته بأنه قادر على التكلم بكلام، وعدم التكلّم، أو أنه قادر على تحريك يده وعدم تحريكها، أو قادر على تناول الطعام وعدم تناوله.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">إن التصميم على القيام بعمل، إنما يتم لأجل إشباع الدوافع الغريزية والحيوانية تارة، أمثال الجوع الذي يدفع الإنسان الى العزم على أكل الطعام أو الظامئ الذي يدفعه العطش الى العزم على شرب الماء، ويتم ذلك لأجل إرضاء الدوافع والاحتياجات العقلية، وتحقيق الطموحات الإنسانية الرفيعة تارة أخرى، كالمريض الذي يستعمل الدواء المر، لأجل الحصول على السلامة والشفاء، ويمتنع لأجل ذلك عن تناول الأغذية الشهية، أو طالب العلم الذي يُعرض في سبيل تحصيل العلم واكتساب الحقائق، عن الملذات المادية، ويتحمل ألوان المتاعب والمصاعب والجندي الباسل الذي يضحي حتى بروحه في سبيل الوصول إلى تطلعاته السامية.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">وفي الواقع إنما تظهر قيمة الإنسان حينما تتعارض وتتزاحم الرغبات المختلفة، والإنسان من أجل الوصول إلى الفضائل الأخلاقية والكمالات الروحية والأبدية والقرب والرضوان الإلهي، يُعرض على الرغبات الحيوانية المنحطة الوضيعة، وكل عمل يمارسه الإنسان وفق اختيار ووعي أكثر، هو أكثر تأثيراً في تكامله الروحي والمعنوي، أو هبوطه وانحطاطه وأكثر استحقاقاً للثواب والعقاب.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ومن الواضح أن القدرة على مواجهة الرغبات النفسية، ليست بدرجة واحدة في جميع الأفراد، ولكن كل إنسان يملك هذه الموهبة الإلهية<strong> (</strong>الإرادة الحرة)، قليلاً أم كثيراً، ويمكن له - بالتدريب والتمرين - تقويتها وتنميتها أكثر فأكثر.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">إذن فلا نتردد أبداً في وجود الإرادة والاختيار، ويلزم أن لا تؤدي الشبهات المختلفة إلى تردد الأذهان في مثل هذا الأمر الوجداني والبديهي، وكما أشرنا إليه سابقاً، فإن وجود الاختيار كأصل بديهي، تتقبله وتؤمن به كل الأنظمة التربوية والأخلاقية والأديان والشرائع السماوية.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> أما لو لم نعتقد بوجوده، فلا يبقى مجال للوظيفة والتكليف والذم والمدح والعقاب والثواب.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">والذي أدى إلى الشك والترديد في هذه الحقيقة البينة، والاتجاه إلى الجبرية، هو وجود بعض الشبهات التي يتحتم الجواب عنها حتى لا يخطر مثل هذا الترديد في الأذهان، ومن هنا نتعرّض وبإيجاز لمناقشة أهم هذه الشبهات.</p>
+						</div>
+					</div>
+					<div class="qa" id="h2-مناقشة-شبهات-الجبريين" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">مناقشة شبهات الجبريين</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p :style="{ 'fontSize': fontSize + 'px' }">إن أهم شبهات الجبريين ما يلي:</p>
+						<div id="h3-١---ان-إرادة-الإنسان-إنما-يتحد" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">١ - ان إرادة الإنسان إنما يتحدد شكلها وصورتها بفعل إثارة الميول الداخلية وتنبيهها، لا أن وجود هذه الميول خاضع لاختيار الإنسان، ولا أن إثارتها إنما هي بفعل العوامل الخارجية، إذن فلا يبقى مكان للإرادة والاختيار.</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">والجواب: ان الميول مُعِدّة للإرادة، لا أن التصميم على القيام بعمل نتيجة حتمية لإثارة الميول، بحيث تسلب منه القدرة على المخالفة والمقاومة، والشاهد عليه، أنه تحدث في الكثير من المجالات حالة الترديد والشك في الإنسان، بحيث يحتاج في اتخاذ القرار إلى التأمل وموازنة النفع والضرر في العمل، وأحياناً لا يتم اتخاذ القرار إلا بصعوبة.</p>
+							</div>
+						</div>
+						<div id="h3-٢---لقد-ثبت-في-سائر-العلوم-أن-" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٢ - لقد ثبت في سائر العلوم أن هناك عوامل عديدة لها تأثيرها في تحديد شكل الإرادة وصورتها: أمثال الوراثة، وإفرازات الغدد التي تحدث نتيجة لتأثير المواد الغذائية أو الأدوية الخاصة، وكذلك العوامل المحيطية والاجتماعي، وان اختلاف الناس في مواقفهم وسلوكهم، خاضع لاختلاف هذه العوامل والملاحظ أيضاً أن النصوص الدينية تدعم من قريب أو بعيد أمثال هذه الآراء. إذن فلا يمكن القول بأن أفعال الإنسان منبثقة من الإرادة الحرة.</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">والجواب: أن الاعتقاد بالاختيار والإرادة الحرة، لا يعني رفض هذه العوامل وتأثيرها، بل إنما يعني أنه بالرغم من وجود كل هذه العوامل، فإن للإنسان الخيار والقدرة على المقاومة والمخالفة، وحين تتعارض وتتزاحم الدوافع المختلفة، نجد أن له القدرة على اختيار بعضها.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وبطبيعة الحال، هناك بعض العوامل القوية التي يصعب مقاومتها، فيصير اختيار عمل يخالف متطلباتها صعباً جداً ولكن مثل هذه المقاومة والاختيار الصعب أكثر تأثيراً في تكامل الإنسان، وفي استحقاقه للثواب، كما أنه أحياناً تكون بعض حالات الهيجان والانفعالات الحادة، أو بعض الظروف الصعبة سبباً في تخفيف العقاب، أو تضاؤل درجة الجريمة.</p>
+							</div>
+						</div>
+						<div id="h3-٣---ومن-شبهات-الجبريين-أن-الله" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٣ - ومن شبهات الجبريين أن الله تعالى عالم بكل ظواهر العالم والكون، ومنها أفعال الإنسان قبل وقوعها، والعلم الإلهي لا يقبل الخط والتخلف، إذن فلا بد أن تتحقق كل الظواهر وفق العلم الإلهي الأزلي، ولا يمكن تخلّفها عنه، إذن فلا يبقى مجال لاختيار الإنسان.</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">والجواب: أن العلم الإلهي متعلق بكل ظاهرة بما هي عليه في الواقع، والأفعال الاختيارية معلومة الله تعالى بما هي عليه في الواقع، وبوصف اختياريتها وإراديتها.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> فإذا حدثت هذه الأفعال على صفة الجبرية، تكون قد تحققت على خلاف العلم الإلهي وتخلفت عنه.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>فمثلاً</strong><strong>: </strong>ان الله تعالى يعلم بأن الشخص الفلاني وفي ظروف معينة سيقرر القيام بعمل ما، وانه سيحقق ذلك العمل والعلم الإلهي لم يتعلق هنا بمجرد وقوع العمل وبغض النظر عن صدوره بإرادة الفاعل واختياره، بل تعلق بالفعل بما أنه يصدر عن اختيار الإنسان إذن فالعلم الإلهي الأزلي لا ينافي اختيار الإنسان وإرادته الحرة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">ومن شبهات الجبريين الشبهة التي تتعلق بموضوع القضاء والقدر، حيث يعتقد هؤلاء بأنه لا يتلاءم واختيار الإنسان، وسنبحث هذا الموضوع في الدرس القادم.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-الأسئلة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الأسئلة:</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div class="qa" id="h4-١---اشرح-العوامل-التي-أدت-إلى-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١ - اشرح العوامل التي أدت إلى الاتجاه إلى الجبرية وانتشارها.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>العامل الأول</strong><strong> (</strong><strong>الانحراف الفكري)</strong><strong>: </strong>الفهم غير الصحيح للتوحيد في التأثير الاستقلالي، حيث فسر ذلك بحصر كل تأثير وعلية بالله تعالى، ونفي أي تأثير وعلية للأسباب والوسائط، واعتقدوا بأن عادة الله جرت بأن يوجد الحرارة عقيب وجود النار مثلاً، ونفوا فاعلية الإنسان وتأثيره في أفعاله نفياً مطلقاً، مما أدى إلى القول بجبرية الإنسان.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>العامل الثاني</strong><strong> (</strong><strong>المطامع السياسية)</strong><strong>: </strong>المطامع السياسية للحكومات الجائرة المجرمة، لتوجه وتبرر بمثل هذه المعتقدات تصرفاتها ومواقفها المنكرة، ولتفرض على الشعوب غير الواعية الإذعان لسلطانها، وتقبل حكوماتها، دون أن تتحرك الجماهير المسحوقة للثورة والانتفاضة، وقد اعتبرت الجبرية أهم عامل في تخدير الشعوب.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٢---ما-هي-النتائج-السيئة-لهذا-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٢ - ما هي النتائج السيئة لهذا الاتجاه؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>النتائج الخطيرة والسيئة لهذا الانحراف الفكري هي</strong><strong>:</strong></p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">إسناد الأفعال الإنسانية لله تعالى بصورة مباشرة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">نفي فاعلية الإنسان وتأثيره في أفعاله، نفياً مطلقاً، وفي هذه الحالة لا يكون أي أحد مسؤولاً عن أفعاله.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">القول بجبرية الإنسان، ونفي المسؤولية عنه، وهو يعني نفي أهم خاصة وميزة للإنسان.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">عبثية كل الأنظمة التربوية والأخلاقية والقانونية والحقوقية، ومنها النظام التشريعي الإسلامي.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">سلب الاختيار عن الإنسان، مما يُلغي موضع للمسؤولية والوظيفة والأمر والنهي والتكليف والجزاء والثواب والعقاب، بل يستلزم عبثية النظام التكويني وعدم غائيته.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">انتقاض الهدف من الخلق وانهياره، ليتحول نظام الخلق إلى مسرح كبير يلعب فيه الناس دور الدمى التي تتحرك وتلعب أدوارها بدون إرادة واختيار.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٣---وضح-وجود-الاختيار-والإرادة" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٣ - وضح وجود الاختيار والإرادة الحرة في الإنسان.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> القدرة على اتخاذ القرار والاختيار من الصفات النفسية التي يدركها الإنسان ويجزم بها، وهي أكثر الصفات جزماً ويقيناً، حيث يدركها كل واحد منا في ذاته وباطنه <strong>بعلمه الحضوري</strong> الذي لا يخطئ ولا يشتبه.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> ويدرك كل أحد بأدنى تأمل في باطنه أنه قادر على التكلم بكلام، وعدم التكلّم، أو تحريك يده وعدم تحريكها، أو تناول الطعام وعدم تناوله.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وكل إنسان يملك هذه الموهبة الإلهية<strong> (</strong><strong>الإرادة الحرة</strong>)، قليلاً أم كثيراً، ويمكن له بالتدريب والتمرين تقويتها وتنميتها.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> ووجود الاختيار كأصل بديهي تتقبله وتؤمن به كل الأنظمة التربوية والأخلاقية والأديان والشرائع السماوية، ولو لم نعتقد بوجوده، فلا يبقى مجال للوظيفة والتكليف والذم والمدح والعقاب والثواب.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٤---هل-إن-تأثير-الميول-الباطني" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٤ - هل إن تأثير الميول الباطنية والعوامل المثيرة لها منافية لاختيار الإنسان؟ ولماذا؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>لا،</strong> إن تأثير الميول الباطنية والعوامل المثيرة لها <strong>ليس منافياً لاختيار الإنسان</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>السبب</strong><strong>:</strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">لأن الميول <strong>مُعِدّة للإرادة</strong>، وليست التصميم على القيام بعمل نتيجة حتمية لإثارة الميول، بحيث تسلب منه القدرة على المخالفة والمقاومة.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">والشاهد على ذلك، أنه تحدث في الكثير من المجالات <strong>حالة الترديد والشك في الإنسان</strong>، بحيث يحتاج في اتخاذ القرار إلى التأمل وموازنة النفع والضرر في العمل، وأحياناً لا يتم اتخاذ القرار إلا بصعوبة، مما يدل على بقاء الإرادة الحرة.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٥---ما-هو-الفرق-بين-أولئك-الذي" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٥ - ما هو الفرق بين أولئك الذي يخضعون لتأثير بعض الحالات النفسية غير العادية والظروف الصعبة، والذين لا يخضعون؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>بالنسبة لمن يقاومون</strong><strong> (</strong><strong>والذين لا يخضعون)</strong><strong>: </strong>تكون المقاومة والاختيار الصعب أكثر تأثيراً في تكامل الإنسان، وفي استحقاقه للثواب.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>بالنسبة لمن يخضعون</strong><strong>: </strong>تكون حالات الهيجان والانفعالات الحادة، أو بعض الظروف الصعبة سبباً في تخفيف العقاب، أو تضاؤل درجة الجريمة.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٦---هل-إن-تأثير-الوراثة-والعوا" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٦ - هل إن تأثير الوراثة والعوامل المحيطية والاجتماعية مستلزم للجبر؟ ولماذا؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>لا،</strong> إن تأثير الوراثة والعوامل المحيطية والاجتماعية <strong>ليس مستلزماً للجبر</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>السبب</strong><strong>:</strong></p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">لأن الاعتقاد بالاختيار والإرادة الحرة لا يعني رفض هذه العوامل وتأثيرها.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وإنما يعني أنه بالرغم من وجود كل هذه العوامل، فإن <strong>للإنسان الخيار والقدرة على المقاومة والمخالفة</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وحين تتعارض وتتزاحم الدوافع المختلفة، نجد أن له <strong>القدرة على اختيار بعضها</strong>.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٧---هل-إن-العلم-الإلهي-الأزلي-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٧ - هل إن العلم الإلهي الأزلي ينفي اختيار الإنسان؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>لا،</strong> إن العلم الإلهي الأزلي <strong>لا ينافي اختيار الإنسان وإرادته الحرة</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>السبب</strong><strong>:</strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">لأن العلم الإلهي متعلق بكل ظاهرة <strong>بما هي عليه في الواقع</strong>، والأفعال الاختيارية معلومة لله تعالى <strong>بوصف اختياريتها وإراديتها</strong>.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">فالعلم الإلهي لم يتعلق بمجرد وقوع العمل، بل تعلق <strong>بالفعل بما أنه يصدر عن اختيار الإنسان</strong>.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وإذا حدثت هذه الأفعال على صفة الجبرية، تكون قد تحققت على خلاف العلم الإلهي وتخلفت عنه، وهذا محال.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+		</section>
+	</div>
+</div>
+
+<div x-data="accordionItem(true)" class="content-container" id="h1-الدرس-التاسع-عشر-القضاء-والقدر">
+	<button @click="toggle()" class="accordion-button">
+		<div class="accordion-title-group">
+			<h2 class="section" :style="{ 'fontSize': fontSize + 'px' }">الدرس التاسع عشر القضاء والقدر</h2>
+			<span class="icon-toggle" x-text="iconText"></span>
+		</div>
+		<audio controls src="audio/19.mp3" onclick="event.stopPropagation()">
+			<p class="muted">متصفحك لا يدعم الصوت.</p>
+		</audio>
+	</button>
+	<div x-show="open" x-transition class="accordion-panel">
+		<section>
+					<div class="qa" id="h2-مفهوم-القضاء-والقدر" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">مفهوم القضاء والقدر</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن لفظة <strong>«القد</strong><strong>ر</strong><strong>»</strong> بمعنى <strong>«المقدا</strong><strong>ر</strong><strong>»</strong> و«<strong>التقدير»</strong> يعني قياس الشيء وجعله على مقدار، وصنع كل شيء بحد معين،</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ولفظة <strong>«القضا</strong><strong>ء</strong><strong>» </strong>بمعنى الإتمام والفراغ من الشيء، أو الأداء، والحكم، وهو نوع من الإتمام الاعتباري. </p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وأحياناً تستعمل كلتا الكلمتين بمعنى مترادف حيث يستعملان في معنى <strong>«المصير</strong><strong> «</strong><strong>.</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>والمراد من التقدير الإلهي،</strong> أن الله تعالى جعل لكل حادث مقداراً وحدوداً كمية وكيفية وزمانية ومكانية معينة في تحققه بفعل العلل والعوامل التدريجية، والمراد من القضاء الإلهي، إيصال الشيء إلى مرحلته النهائية والحتمية بعد توفر المقدمات والأسباب والشروط لذلك الحادث.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">وعلى ضوء هذا التفسير، تكون مرحلة التقدير متقدمة على مرحلة القضاء، حيث تكون لمرحلة التقدير مراحل تدريجية مشتملة على مقدمات بعيدة ومتوسطة وقريبة، ويتعرض التقدير للتغير بتغير بعض الأسباب والشروط.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> فمثلاً مسيرة الجنين المتدرجة من النطفة إلى العلقة فالمضغة، إلى أن تكون جنيناً متكاملاً، إن هذه المراحل المختلفة تمثل تقديره، حيث يشمل المشخصات الزمانية والمكانية أيضاً، وسقوط هذا الجنين في مرحلة من هذه المراحل يعد تغيراً في التقدير.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وأما مرحلة القضاء فهي دفعية وليست تدريجية، ومرتبطة بتوفر كل الأسباب والشروط، وهي أيضاً حتمية لا تقبل التغير<strong> (</strong>إذا قضى أمراً فإنما يقول له كن فيكون<strong>).</strong></p>
+						</div>
+					</div>
+					<div class="qa" id="h2-القضاء-والقدر-العلمي-والعيني" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">القضاء والقدر العلمي والعيني</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">يستعمل التقدير والقضاء الإلهي أحياناً، بمعنى علم الله بتوفر المقدمات والأسباب والشروط المؤثرة في تحقق الظاهرة وكذلك علمه بالوقوع الحتمي لها، ويطلق على ذلك <strong>القضاء والقدر العلمي</strong>، وأحياناً يستعمل بمعنى انتساب المسيرة التدريجية للظواهر، وكذلك إسناد تحققها العيني الى الله تعالى، ويطلق عليه <strong>«القضا</strong><strong>ء</strong><strong> والقدر العيني</strong><strong>»</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ووفقاً لما يستفاد من الروايات، فإنّ العلم الإلهي بكل الظواهر بالصورة التي تتحقق بها في العالم الخارجي العيني تماماً، مودع في مخلوق شريف رفيع، يسمى <strong>«اللو</strong><strong>ح</strong><strong> المحفوظ</strong><strong>»</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وكل من يمكنه الاتصال بهذا اللوح، بإذن الله، سيكون عالماً بالظواهر الماضية والمستقبلية، وهناك ألواح أخر، أقل رتبة ومقاماً من اللوح المحفوظ، أودعت فيها الظواهر بصورة مشروطة وغير تامة، ومن يشرف ويتعرف عليها ستكون له معلومات محدودة وناقصة ومشروطة قابلة للتغير، وربما تكون هذه الآية الشريفة ناظرةً إلى هذين النوعين من المصير<strong> (</strong>يمحو الله ما يشاء ويثبت، وعنده أم الكتاب<strong>)</strong><strong>،</strong><strong> </strong>وتغير التقديرات المشروطة وغير الحتمية يعبر عنه في الروايات بـ«<strong>البداء</strong><strong>»</strong>.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">إذن فالإيمان بالقضاء والقدر العلمي، لا يمثل أمراً مشكلاً أكثر مما ذكر في موضوع العلم الإلهي الأزلي، وقد بحثنا في الدرس السابق شبهة الجبرية في موضوع العلم الإلهي، واتضح لنا ضعفها وخواؤها.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وهناك شبهة أكثر صعوبة وتعقيداً، في مجال الاعتقاد <strong>بالقضاء والقدر</strong> <strong>العيني</strong>، وخاصة في مجال الإيمان بالمصير الحتمي، علينا معالجتها والإجابة عنها، وإن عُلِم الجواب الإجمالي عنها في موضوع التوحيد بمعنى التأثير <strong>المستقل</strong>.</p>
+						</div>
+					</div>
+					<div class="qa" id="h2-العلاقة-بين-القضاء-والقدر-واخت" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">العلاقة بين القضاء والقدر، واختيار الإنسان.</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">علمنا فيما سبق، أن <strong>الاعتقاد بالقضاء والقدر العيني الإلهي، يستلزم الاعتقاد بأن </strong>وجود الظواهر من بداية وجودها حتى مراحل نموها وازدهارها إلى نهاية عمرها، بل من حين توفر المقدمات البعيدة لها، <strong>كلها خاضعة للتدبير الإلهي الحكيم</strong>، وعلينا أن نؤمن أيضاً بأن توفر الشروط لوجودها ووصولها إلى المرحلة النهائية، مستند الى الإرادة الإلهية<strong>).</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>وبعبارة أخرى</strong> </p>
+						<div class="qa" id="h5-فكما-أن-وجود-ظاهرة-منتسب-للإذن" x-data="accordionItem(true)">
+							<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								فكما أن وجود ظاهرة، منتسب للإذن والمشيئة التكوينية لله، وبدون إذنه لا يمكن لأي موجود أن يفتح عينيه على عالم الوجود،
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h5>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">كذلك فإن وجود كل شيء مستند إلى التقدير والقضاء الإلهيين وبدونهما لا يمكن لأي موجود الوصول إلى شكله وحدوده المعينة، ولا يصل إلى نهاية عمره.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وتوضيح هذه الارتباطات والعلاقات يمثل في واقعه التعليم التدريجي للتوحيد بمعنى الاستقلال في التأثير، الذي هو من أرفع مراتب التوحيد.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> فإن للتأكيد على مثل هذه العلاقات والتنبيه عليها دوره الكبير في بناء شخصية الإنسان كما أشرنا إليه سابقاً.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>وأما إسناد الظواهر الى الإذن بل حتى للمشيئة الإلهية، فهو أيسر فهماً وأقرب إلى الأذهان</strong>، خلافاً لإسناد مرحلتها النهائية وتعينها الحتمي للقضاء الإلهي.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ولأجل تعقيده وصعوبته، فقد بحث فيه أكثر، وذلك لأنه يعصب التوفيق بين هذا الإيمان والإيمان باختيار الإنسان في رسم مصيره وتحديده، لذلك رأينا بعض المتكلمين<strong> (</strong>الأشاعرة) الذين تقبلوا شمول القضاء الإلهي لأفعال الإنسان، قد اتجهوا الى القول بالجبر، بينما نرى المعتزلة الذين لم يمكنهم القول بالجبر وآثاره الخطيرة والسيئة، قد أنكروا شمول القضاء الإلهي لأفعال الإنسان الاختيارية، وكل جماعة أولت الآيات القرآنية بما يتلاءم واتجاهها ورأيها، كما ذكر ذلك كله في الكتب الكلامية الموسعة، وفي الرسائل المخصصة للبحث حول الجبر والتفويض.</p>
+							</div>
+						</div>
+						<div class="qa" id="h5-والمحور-الرئيسي-للاعتراض" x-data="accordionItem(true)">
+							<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								والمحور الرئيسي للاعتراض:
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h5>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> أن فعل الإنسان إذا كان اختيارياً حقاً، ومستنداً لإرادته، فكيف يمكن القول باستناده لإرادة الله وقضائه؟ وإذا كان مستنداً للقضاء الإلهي فكيف يمكن القول بأنه خاضع لإرادة الانسان واختياره؟</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">ولأجل الجواب عن هذا الاعتراض والتوفيق بين استناد الفعل الإنساني لإرادة الإنسان واختياره واستناده لإرادة الله وقضائه يلزم علينا أن نبحث حول استناد المعلول الواحد لعلل متعددة، حتى نعالج بذلك مشكلة استناد الفعل الاختياري للإنسان والله تعالى.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-أنواع-تأثير-العلل-المتعددة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">أنواع تأثير العلل المتعددة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div id="h3-يمكن-أن-يتصور-تأثير-العلل-المت" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">يمكن أن يتصور تأثير العلل المتعددة في وجود ظاهرة ما، بعدة صور:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">١ - أن تؤثر العلل المتعددة معاً، وكل منها مجاورة للأخرى، وتساهم جميعاً في وجود الظاهرة، كاجتماع البذر والماء والحرارة وغيرها، حيث تؤثر في انفلاق البذر ونمو النبات.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">٢ - أن تتناوب العلل في التأثير، بحيث يمكن تقسيم تلك الظاهرة على امتداد عمرها على عدد تلك العلل، وكل قسم منها معلول لواحدة من العلل والعوامل التي تؤثر أثرها خلال وقتها ونوبتها، كما لو كانت هناك عدة محركات للطائرة، تؤدي بالتناوب عملية استمرارية حركة الطائرة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">٣ - أن يكون تأثير كل واحد منها مترتباً على الآخر، كما في تصادم كرات رياضية متعددة، فكل واحدة هي السبب في حركة الأخرى، وكما في اصطدام حلقات السلسلة على التعاقب أو اصطدام عدة سيارات بعضها ببعض على طول الخط ومثال آخر له ما نلاحظه من تأثير إرادة الإنسان في حركة اليد، وتأثير اليد في حركة القلم، وتأثير القلم في وجود الكتابة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">٤ - التأثير المترتب على علل وعوامل متعددة، بحيث يكون وجود كل منها مرتبطاً بوجود الآخر، خلافاً للقسم الثالث حيث لم يكن وجود القلم مرتبطاً بوجود اليد، أو وجود اليد مرتبطاً بإرادة الإنسان.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وفي هذه الصور جميعاً يمكن أن تجتمع علل متعددة على معلول واحد، بل يجب اجتماعها وتأثير الإرادة الإلهية وإرادة الإنسان في الفعل الاختياري من القسم الأخير، إذ إن وجود الإنسان وإرادته مرتبطان بالإرادة الإلهية.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وأما الصورة التي لا يمكن فيها أن تجتمع علتان على معلول واحد، فهي الصورة التي تجتمع فيها <strong>علتان موجدتان</strong>، أو <strong>علتان يمتنع الجمع بينهما</strong> في التأثير <strong>في عرض ومستوى واحد</strong> أو <strong>علل على البدل</strong>، كما لو فرضنا صدور إرادة واحدة من فاعلين مريدين، أو استناد ظاهرة واحدة إلى علتين تامتين.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-مناقشة-شبهة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">مناقشة شبهة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">تبين مما ذكرناه من توضيحات أن استناد وجود الأفعال الاختيارية الإنسانية إلى الله تعالى، لا ينافي استنادها للإنسان نفسه، لأن <strong>أحدهما في</strong> <strong>طول الآخر، ولا تزاحم بينهما</strong>.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">وبعبارة أخرى: استناد الفعل للفاعل الإنساني في مستوى، بينما استناد وجوده لله تعالى فهو في مستوى آخر أسمى من ذلك المستوى.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> فإن وجود الإنسان نفسه، ووجود المادة التي يحقق فعله فيها، ووجود الآلات التي يستخدمها في القيام بفعله، كلها مستندة الى الله تعالى.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إذن فتأثير إرادة الإنسان التي هي من قبيل <strong>«الجز</strong><strong>ء</strong><strong> الأخير للعلة التامة</strong><strong>»</strong> في فعله، لا ينافي استناد جميع أجزاء العلة التامة إلى الله تعالى، فإنه تعالى هو الذي يملك بيد قدرته وجود العالم والإنسان وكل شؤونه وأحواله الوجودية، وهو الذي يفيض الوجود عليها باستمرار، ولا تستغني عنه تعالى في أي زمان وليست لها أية استقلالية والأفعال الاختيارية غير مستغنية عنه تعالى أيضاً، ولا يمكن لها أن تخرج عن حدود إرادته.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وكل صفاتها ومميزاتها وحدودها ومشخصاتها أيضاً مرتبطة بالتقدير والقضاء الإلهي، وليس كما ذكر، بأن هذه الأفعال إما أن تكون مستندةً لإرادة الإنسان أو مستندة لإرادة الله.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> فإن هاتين الإرادتين ليستا في عرض ومستوى واحد ولا يمتنع الجمع بينهما، ولا يؤثران في تحقق الأفعال على التناوب والبدلية، بل إن إرادة الإنسان كأصل وجوده نفسه، مرتبطة بالإرادة الإلهية، ووجود الإرادة الإلهية ضروري لتحققها،<strong> (</strong>وما تشاءون إلا أن يشاء الله رب العالمين<strong>).</strong></p>
+						</div>
+					</div>
+					<div class="qa" id="h2-معطيات-الاعتقاد-بالقضاء-والقدر" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">معطيات الاعتقاد بالقضاء والقدر</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p :style="{ 'fontSize': fontSize + 'px' }">إن الاعتقاد بالقضاء والقدر الإلهي، كما أنه يُعتبر مرحلة رفيعة من معرفة الله، ويؤدي إلى تكامل الانسان عقلياً، فكذلك له آثار ومعطيات عملية كثيرة، أشرنا إلى بعضها ونذكر هنا بعضاً آخر منها:</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن من يؤمن بأن حدوث الحوادث خاضع لإرادة الله الحكيمة، ومستند الى التقدير والقضاء الإلهي<strong>؛</strong> لا يخشى الأحداث المؤلمة، ولا ينهار أمامها، ولا يتملكه الجزع واليأس، فإنه حين يعتقد بأن هذه الأحداث تمثل جانباً من نظام العالم الحكيم، وتتحقق وفق مصالح وحكم<strong>؛</strong> يستقبلها بأحضان مفتوحة، ليتوصل من خلال هذا الموقف المؤمن إلى ملكات فاضلة، أمثال الصبر والتوكل والتسليم وغيرها.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }">وكذلك لا تشده ولا تخدعه ملذات الحياة وأفراحها، ولا يصيبه الغرور والخيلاء، بها، ولا يتخذ النعم الإلهية سلماً للتفاخر والاستعلاء.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> إن هذه المعطيات القيمة هي التي تشير إليها الآية الشريفة: <strong>(</strong>ما أصاب من مصيبة في الأرض ولا في أنفسكم إلا في كتاب من قبل أن نبرأها إن ذلك على الله يسير * لكيلا تأسوا على ما فاتكم ولا تفرحوا بما آتاكم والله لا يحب كل مختال فخور<strong>).</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وعلينا أن نؤكد على تجنب التفسير المنحرف لمسألة القضاء والقدر والتوحيد في التأثير المستقل، فإن التفسير الخاطئ لها ربما يؤدي إلى الكسل والبطالة والمذلة وقبول الظلم والجور، والتهرب من المسؤولية، ويلزم علينا أن نعلم أن السعادة أو الشقاء الأبدي للإنسان إنما هو نتيجة أفعاله الاختيارية<strong> (</strong>لها ما كسبت وعليها ما اكتسبت<strong>).</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وأن<strong> (</strong>ليس للإنسان إلا ما سعى<strong>).</strong></p>
+						</div>
+					</div>
+					<div class="qa" id="h2-الأسئلة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الأسئلة:</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div class="qa" id="h4-١---بين-المفهوم-اللغوي-للقضاء-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١ - بين المفهوم اللغوي للقضاء والقدر.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">لفظة <strong>«</strong><strong>القد</strong><strong>ر</strong>» بمعنى «<strong>المقدا</strong><strong>ر</strong>» و«<strong>التقدير</strong>» يعني قياس الشيء وجعله على مقدار، وصنع كل شيء بحد معين.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">ولفظة <strong>«</strong><strong>القضا</strong><strong>ء</strong>» بمعنى الإتمام والفراغ من الشيء، أو الأداء، والحكم، وهو نوع من الإتمام الاعتباري<strong>.</strong></p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وأحياناً تستعمل كلتا الكلمتين بمعنى مترادف حيث يستعملان في معنى «المصير».</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٢---ماذا-يعني-التقدير-والقضاء-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٢ - ماذا يعني التقدير والقضاء الإلهي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>التقدير الإلهي</strong><strong>: </strong>أن الله تعالى جعل لكل حادث مقداراً وحدوداً كمية وكيفية وزمانية ومكانية معينة في تحققه بفعل العلل والعوامل التدريجية.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>القضاء الإلهي</strong><strong>: </strong>إيصال الشيء إلى مرحلته النهائية والحتمية بعد توفر المقدمات والأسباب والشروط لذلك الحادث.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٣---على-أي-أساس-يقسم-القضاء-وا" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٣ - على أي أساس يقسم القضاء والقدر إلى حتمي وغير حتمي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">يُقسم القضاء والقدر على أساس مرحلة تحققهما.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>مرحلة </strong><strong>التقدير</strong> مراحل تدريجية يتعرض فيها التقدير للتغير بتغير بعض الأسباب والشروط، ولذلك يكون <strong>غير حتمي</strong><strong> (</strong>مشروط<strong>).</strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>مرحلة ال</strong><strong>قضاء</strong> فهي دفعية ومرتبطة بتوفر كل الأسباب والشروط، وهي أيضاً حتمية لا تقبل التغير، ولذلك تكون <strong>حتمية</strong>.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٤---ما-هو-البداء" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٤ - ما هو البداء؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">البداء هو التعبير الذي يستخدم في الروايات لتغير التقديرات المشروطة وغير الحتمية.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٥---بين-القضاء-والقدر-العلمي-و" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٥ - بين القضاء والقدر العلمي والعيني.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>القضاء والقدر العلمي</strong><strong>: </strong>يستعمل بمعنى علم الله بتوفر المقدمات والأسباب والشروط المؤثرة في تحقق الظاهرة وكذلك علمه بالوقوع الحتمي لها.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>القضاء والقدر العيني</strong><strong>: </strong>يستعمل بمعنى انتساب المسيرة التدريجية للظواهر، وكذلك إسناد تحققها العيني إلى الله تعالى.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٦---وضح-اللوح-المحفوظ-ولوح-الم" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٦ - وضح اللوح المحفوظ، ولوح المحو والإثبات، وعلاقتهما بالمصير الحتمي وغير الحتمي.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-اللوح-المحفوظ" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									اللوح المحفوظ:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">هو مخلوق شريف رفيع، أودع فيه العلم الإلهي بكل الظواهر بالصورة التي تتحقق بها في العالم الخارجي العيني تماماً، وكل من يمكنه الاتصال به سيكون عالماً بالظواهر الماضية والمستقبلية، وهذا اللوح يتعلق <strong>بالمصير الحتمي</strong>.</p>
+								</div>
+							</div>
+							<div class="qa" id="h5-لوح-المحو-والإثبات-ألواح-أخر" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									لوح المحو والإثبات (ألواح أخر):
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">هي ألواح أقل رتبة ومقاماً من اللوح المحفوظ، أودعت فيها الظواهر بصورة مشروطة وغير تامة، وتكون معلوماتها محدودة وناقصة ومشروطة <strong>قابلة للتغير</strong>.</p>
+								<p :style="{ 'fontSize': fontSize + 'px' }"> وتغير التقديرات المشروطة وغير الحتمية فيها يعبر عنه في الروايات بـ«البداء».</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="qa" id="h4-٧---وضح-صعوبة-التوفيق-بين-القض" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٧ - وضح صعوبة التوفيق بين القضاء والقدر واختيار الإنسان، واختلاف المتكلمين حول هذه الموضوع.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-صعوبة-التوفيق-تكمن-في-السؤال" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									صعوبة التوفيق، تكمن في السؤال:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p :style="{ 'fontSize': fontSize + 'px' }"> إذا كان فعل الإنسان اختيارياً ومستنداً لإرادته، فكيف يمكن القول باستناده لإرادة الله وقضائه؟</p>
+								<p :style="{ 'fontSize': fontSize + 'px' }"> وإذا كان مستنداً للقضاء الإلهي فكيف يمكن القول بأنه خاضع لإرادة الإنسان واختياره؟</p>
+								</div>
+							</div>
+							<div class="qa" id="h5-اختلاف-المتكلمين" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									اختلاف المتكلمين:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>الأشاعرة</strong><strong>: </strong>تقبلوا شمول القضاء الإلهي لأفعال الإنسان، ولذلك اتجهوا إلى القول <strong>بالجبر</strong>.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>المعتزلة</strong><strong>: </strong>أنكروا شمول القضاء الإلهي لأفعال الإنسان الاختيارية، لأنهم لم يمكنهم القول بالجبر وآثاره الخطيرة.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="qa" id="h4-٨---بين-أنواع-تأثير-العلل-المت" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٨ - بين أنواع تأثير العلل المتعددة في المعلول الواحد، ووضح النوع الذي يستحيل فيه اجتماع العلل المتعددة على المعلول الواحد.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-أنواع-تأثير-العلل-المتعددة-في-" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									أنواع تأثير العلل المتعددة في المعلول الواحد (الممكن الجمع بينها):
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>أن تؤثر العلل المتعددة معاً</strong><strong> (</strong>كل منها مجاورة للأخرى، وتساهم جميعاً في وجود الظاهرة<strong>).</strong></p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>أن تتناوب العلل في التأثير</strong><strong> (</strong>يمكن تقسيم الظاهرة على امتداد عمرها على عدد العلل<strong>).</strong></p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>أن يكون تأثير كل واحد منها مترتباً على الآخر</strong><strong> (</strong>كما في تأثير إرادة الإنسان في حركة اليد<strong>).</strong></p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>التأثير المترتب على علل وعوامل متعددة بحيث يكون وجود كل منها مرتبطاً بوجود الآخر</strong><strong> (</strong>مثل تأثير الإرادة الإلهية وإرادة الإنسان في الفعل الاختياري<strong>).</strong></p>
+								</div>
+							</div>
+							<div class="qa" id="h5-النوع-الذي-يستحيل-فيه-اجتماع-ا" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									النوع الذي يستحيل فيه اجتماع العلل المتعددة على معلول واحد:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">هي الصورة التي تجتمع فيها <strong>علتان موجدتان</strong>، أو <strong>علتان يمتنع الجمع بينهما في التأثير في عرض ومستوى واحد</strong> أو <strong>علل على البدل</strong>، كما لو فرضنا صدور إرادة واحدة من فاعلين مريدين، أو استناد ظاهرة واحدة إلى علتين تامتين.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="qa" id="h4-٩---بين-الجواب-عن-شبهة-الجبر-ف" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٩ - بين الجواب عن شبهة الجبر في موضوع القضاء والقدر.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">الجواب هو أن استناد وجود الأفعال الاختيارية الإنسانية إلى الله تعالى، <strong>لا ينافي استنادها للإنسان نفسه</strong>، لأن <strong>أحدهما في طول الآخر، ولا تزاحم بينهما</strong>.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">فاستناد الفعل للفاعل الإنساني يكون في مستوى، بينما استناد وجوده لله تعالى فهو في مستوى آخر أسمى من ذلك المستوى.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">إن إرادة الإنسان كأصل وجوده نفسه، مرتبطة بالإرادة الإلهية، ووجود الإرادة الإلهية ضروري لتحققها، وتأثير إرادة الإنسان في فعله هي من قبيل <strong>«الجز</strong><strong>ء</strong><strong> الأخير للعلة التامة</strong>»، ولا ينافي استناد جميع أجزاء العلة التامة إلى الله تعالى.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-١٠---اشرح-آثار-الاعتقاد-بالقضا" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١٠ - اشرح آثار الاعتقاد بالقضاء والقدر الإلهي.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-يعتبر-مرحلة-رفيعة-من-معرفة-الل" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									يُعتبر مرحلة رفيعة من معرفة الله، ويؤدي إلى تكامل الإنسان عقلياً.
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>في مواجهة الأحداث المؤلمة</strong><strong>: </strong>لا يخشى الأحداث المؤلمة، ولا ينهار أمامها، ولا يتملكه الجزع واليأس، بل يستقبلها بأحضان مفتوحة ليتوصل من خلال هذا الموقف إلى ملكات فاضلة، أمثال الصبر والتوكل والتسليم وغيرها.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>في مواجهة ملذات الحياة</strong><strong>: </strong>لا تشده ولا تخدعه ملذات الحياة وأفراحها، ولا يصيبه الغرور والخيلاء بها، ولا يتخذ النعم الإلهية سلماً للتفاخر والاستعلاء.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+					</div>
+		</section>
+	</div>
+</div>
+
+<div x-data="accordionItem(true)" class="content-container" id="h1-الدرس-العشرون-العدل-الإلهي">
+	<button @click="toggle()" class="accordion-button">
+		<div class="accordion-title-group">
+			<h2 class="section" :style="{ 'fontSize': fontSize + 'px' }">الدرس العشرون العدل الإلهي</h2>
+			<span class="icon-toggle" x-text="iconText"></span>
+		</div>
+		<audio controls src="audio/20.mp3" onclick="event.stopPropagation()">
+			<p class="muted">متصفحك لا يدعم الصوت.</p>
+		</audio>
+	</button>
+	<div x-show="open" x-transition class="accordion-panel">
+		<section>
+					<div class="qa" id="h2-المقدمة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">المقدمة</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">لاحظنا في الدروس السابقة وجود الخلاف بين هاتين الفرقتين من الفرق الكلامية<strong> (</strong><strong>الأشاعرة والمعتزلة</strong>) في مجالات ومواضيع مختلفة ومتعددة.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ومن هذه المواضيع، <strong>موضوع الكلام والإرادة الإلهية، والتوحيد الصفاتي والجبر والاختيار والقضاء والقدر</strong>، ولاحظنا بأن آراءهما على الغالب، تقع في طرفي <strong>الإفراط والتفريط</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ومن محاور الخلاف الأساسية بين هاتين الفرقتين؛ <strong>موضوع العدل الإلهي</strong>، وقد لوحظ <strong>توافق الشيعة مع المعتزلة</strong> في رأيهم حول هذا الموضوع، وأطلق عليهما مصطلح <strong>«العدلي</strong><strong>ة</strong><strong>»</strong> مقابل الأشاعرة.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ولأجل أهمية هذا الموضوع، <strong>اعتبر من المواضيع الرئيسية في علم الكلام،</strong> بل إنه اعتبر من أصول العقائد، <strong>ومن مميزات المذهب الكلامي للشيعة والمعتزلة</strong>.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ويلزم التأكيد على أن الأشاعرة أيضاً، لا يرفضون العدل الإلهي، فإنهم لا يعتبرون الله ظالماً<strong> (</strong>نستغفر الله) مع أن الآيات القرآنية الصريحة التي لا تقبل التأويل تثبت العدل الإلهي، وتنفي كل لون من ألوان الظلم عن حريم الله المقدس، </p>
+						<div id="h3-ولكن-البحث-في-هذا-الموضوع-يدور" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">ولكن البحث في هذا الموضوع يدور حول:</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ما إذا كان يمكن للعقل بنفسه وبدون الاعتماد على المصادر الشرعية<strong> (</strong>الكتاب والسنة) أن يدرك ويتوصل إلى ضوابط للأفعال، وخاصةً الأفعال الإلهية، يحكم على أساسها بلزوم القيام بهذا الفعل، وترك الفعل الآخر، فمثلاً يحكم العقل أنه يلزم على الله تعالى أن يدخل المؤمنين الجنة والكفار النار أو ان أمثال هذه الأحكام لا يمكن أن تتم إلا اعتماداً على الوحي، وأما لو غُض النظر عن الوحي، فلا تتمكن العقل من الحكم والقضاء.</p>
+							<div class="qa" id="h4-إذن-فالمحور-الأساسي-للخلاف-هو-" x-data="accordionItem(true)">
+								<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									إذن فالمحور الأساسي للخلاف، هو الموضوع الذي يعبر عنه بـ«الحسن والقبح العقليين»
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h4>
+								<div class="a" x-show="open" x-transition>
+								<p :style="{ 'fontSize': fontSize + 'px' }">وقد أنكره الأشاعرة واعتقدوا بأن الحسن في الأمور التكوينية هو ما يفعله الله، وأما في الأمور التشريعية فالحسن ما يأمر به الله، وليس الفعل في ذاته حسناً، ولأجل ذلك يفعله الله، أو يأمر به.</p>
+								<div class="qa" id="h5-وأما-العدلية-فيعتقدون-بأن-الأف" x-data="accordionItem(true)">
+									<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+										. وأما العدلية، فيعتقدون بأن الأفعال تتصف في ذاتها بالحسن والقبح بغض النظر عن انتسابها التكويني والتشريعي لله تعالى. ويمكن للعقل إلى حد ما أن يدرك جهات الحسن والقبح في الأفعال، وتنزيه الذات الإلهية عن الأفعال القبيحة.
+										<span class="icon-toggle" x-text="iconText"></span>
+									</h5>
+									<div class="a" x-show="open" x-transition>
+									<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ولكن هذا الإدراك العقلي لا يعني أن العقل<strong> (</strong>ونستغفر الله) يأمر الله أو ينهاه، بل يعني، أن العقل يكتشف تناسب فعل ما مع الصفات الكمالية الإلهية، وعدم تناسب فعل آخر معها، وعلى هذا الأساس يرى استحالة صدور الأفعال القبيحة من الله.</p>
+									<p :style="{ 'fontSize': fontSize + 'px' }"> ومن الواضح أن الدراسة التفصيلية لهذا الموضوع، والجواب عن كل الشبهات التي أثارها الأشاعرة، لدعم رأيهم في إنكار الحسن والقبح العقليين وليمثلوا الاتجاه المعارض والبحث في كل ذلك طويل، يعسر التعرض له في هذا الكتاب، وكذلك من الممكن أن تكون في أحاديث المعتزلة بعض النقاط الضعيفة، التي علينا التعرّض لها ومناقشتها.</p>
+									<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> ولكن أصل الاعتقاد بالحسن والقبح العقليين يتقبله الشيعة، ويؤمنون به، ويدعمه الكتاب والسنة وتأكيدات الأئمة المعصومين<strong> (</strong>ع<strong>).</strong></p>
+									<p :style="{ 'fontSize': fontSize + 'px' }"> ولذلك فنحن هنا نوضح مفهوم العدل، وبعد ذلك نشير إلى الدليل العقلي على هذه الصفة التي هي من الصفات الإلهية الفعلية، وأخيراً سوف نناقش بعض الشبهات في هذه المسألة ونجيب عنها:</p>
+									</div>
+								</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-مفهوم-العدل" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">مفهوم العدل</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>العدل في اللغة بمعنى السوية والتسوية</strong><strong>.</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وفي العرف العام استعمل بمعنى <strong>رعاية حقوق الآخرين في مقابل الظلم</strong><strong> (</strong>الاعتداء على حقوق الآخرين)، </p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }">وعلى ضوء ذلك عُرف العدل بأنه <strong>«إعطا</strong><strong>ء</strong><strong> كل ذي حق حقه</strong><strong>»</strong><strong>.</strong></p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> إذن فلا بد أن نتصوّر أولاً موجوداً له حق، لتكون رعاية حقه «عدلاً، والاعتداء عليه ظلماً»، ولكن أحياناً يوسع مفهوم العدل، ويستعمل بمعنى «<strong>وضع الشيء في موضعه</strong>» وعلى وفق هذا التعريف يكون <strong>العدل مرادفاً للحكمة</strong>، <strong>والفعل العادل مساوياً للفعل الحكيم</strong>، أما أنه كيف يعين «حق صاحب الحق» و«جهة المصلحة في الشيء» فالحديث عنه طويل، ويمثل القسم المهم، من فلسفة الأخلاق وفلسفة القانون، ولا يمكن لنا أن نبحث هنا في كل هذه المسائل.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وما يجب علينا التأكيد عليه هنا: هو أن كل عاقل يدرك بأن أي أحد لو اختطف قطعة خبز من طفل يتيم وبدون مبرر، أو أنه أراق دم إنسان بريء، فقد ارتكب ظلماً واقترف عملاً قبيحاً، وعلى العكس من ذلك، لو أخذ أحد قطعة الخبز المختطفة من يد الغاصب وأعادها إلى الطفل اليتيم، أو أنه عاقب القاتل الجاني، العقوبة التي يستحقها، فإنّه قد عمل عملاً حسناً وصائباً.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> ولا يعتمد هذا الحكم بالحسن والقبح وبالعدل والظلم، على الأمر والنهي الإلهي، فإنّ مثل هذا الحكم يحكم به حتى من لا يؤمن بوجود الله.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وأما ما هو السر في هذا الحكم، وما هي القوة المدركة التي أدركت هذا الحسن والقبح وأمثالها، فإنها مسائل يبحث عنها في أبواب وفروع مختلفة من الفلسفة.</p>
+						<div id="h3-إذن-فيمكن-أن-يتصور-للعدل-مفهوم" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">إذن فيمكن أن يتصوّر للعدل مفهومان؛ خاص وعام.</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong> </strong><strong>أحدهما</strong><strong>: </strong><strong>رعاية حقوق الآخرين، </strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>والثاني</strong><strong>: </strong><strong>إصدار الفعل على وجه الحكمة، بحيث تعتبر رعاية حقوق الآخرين من مصاديقه</strong><strong>.</strong></p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> وعلى ضوء ذلك، فلا يلازم العدل القول بالتسوية بين البشر جميعاً، أو بين الأشياء كلها، فليس المعلم العادل من يتخذ موقفاً واحداً من جميع طلابه، فيساوي بين الجميع في التأنيب أو التشجيع سواء المجد من طلابه والكسول، وليس القاضي العادل هو الذي يقسم المال المتنازع عليه بين المتخاصمين، بل إن المعلم العادل هو الذي يشجع كل طالب أو يؤنبه بمقدار ما يستحقه، والقاضي العادل هو الذي يوصل المال إلى صاحبه.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }">وكذلك، فإن مقتضى الحكمة والعدل الإلهي، لا يعني خلق المخلوقات بصورة متساوية، فيخلق - مثلاً - للإنسان القرون، أو الأجنحة أو غيرها، بل إن مقتضى حكمة الخالق أن يخلق العالم بصورة تترتب عليها أكثر ما يمكن تحققه من الخير والكمال، وأن يخلق المخلوقات التي تشكل أجزاءه المترابطة بصورة تتناسب وذلك الهدف النهائي.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وكذلك مقتضى الحكمة والعدل الإلهي، أن يكلف كل إنسان بمقدار استعداده وقابليته، وأن يقضي ويحكم فيه على حسب قدرته وجهده<strong> (</strong>الاختياري)، وأن يجازيه ثواباً أو عقاباً بما يتلاءم وأفعاله<strong>).</strong></p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-الدليل-على-العدل-الإلهي" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الدليل على العدل الإلهي</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> ذكرنا أن العدل الإلهي يُعتبر مصداقاً من مصاديق الحكمة الإلهية، وفقاً لأحد التفاسير، ووفقاً لتفسير آخر فإن العدل هو الحكمة الإلهية نفسها.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وبطبيعة الحال يكون الدليل لإثبات العدل هو الدليل نفسه الذي يثبت الحكمة الإلهية، والذي أشرنا إليه في الدرس الحادي عشر، ونعيده هنا مع توضيح أكثر: علمنا مما سبق أن الله تعالى يمتلك أسمى مراتب القدرة والاختيار، وأنه قادر على أن يفعل أي عمل ممكن الوجود أو لا يفعله، دون أن يخضع لتأثير أية قوة تجبره وتقهره على فعله، ولكن الله تعالى لا يفعل كل ما يقدر عليه من أفعال، بل إنما يفعل الذي يريده.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وعلمنا أيضاً أن إرادته تعالى ليست عابثة جزافية، بل إنه تعالى لا يريد إلا ما يتناسب وتقتضيه صفاته الكمالية، وإذا لم تقتض صفاته الكمالية فعلاً ما، فلا يصدر منه ذلك الفعل إطلاقاً.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وبما أن الله تعالى هو الكمال المحض، فإرادته بالأصالة إنما تتعلق بجهة كمال المخلوقات وخيرها، وإذاً<strong> </strong>لزم من وجود مخلوق حدوث بعض الشرور والنقائص في العالم، <strong>فإن جهة الشر هذه مقصودة بالتبع</strong>، بمعنى أن هذا الشر بما أنه لا ينفك عن الخير الغالب، لذلك تتعلق الإرادة بهذا الشر تبعاً لتعلق الإرادة بالخير الغالب أصالة.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> إذن <strong>فمتقضى الصفات الإلهية الكمالية أن يخلق العالم بصورة يتوفر في مجموعه الكمال الغالب والخير الممكن الحصول</strong>، ومن هنا تثبت صفة الحكمة الله تعالى، وعلى هذا الأساس فإنّ الإرادة الإلهية إنما تعلقت بخلق الإنسان، لأن الإنسان ممكن الوجود في ذاته، وأن وجوده منشأ للخير الغالب، ولأكثر الخيرات.</p>
+						<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>ومن المميزات الرئيسية للإنسان اختياره وإرادته الحرة،</strong> ولا شك بأن التوفر على قوة الإرادة والاختيار يُعدّ من الكمالات الوجودية، حيث يعد الواجد لها أكمل من الفاقد لها، ولكن ما يلازم صفة الاختيار، أن يكون قادراً على ممارسة الأفعال الحسنة الخيرة التي توصله إلى كماله النهائي والأبدي، وكذلك يكون قادراً على ارتكاب الأفعال القبيحة، لتتجه به إلى السقوط في حضيض الخسران والشقاء الأبدي، وبطبيعة الحال فما تتعلق به الإرادة الإلهية أصالة هو تكامله، ولكن بما أنه يلزم من التكامل الاختياري للإنسان، إمكان السقوط والانحطاط أيضاً، والذي يحصل نتيجة الانصياع للأهواء النفسية، والنزوات الشيطانية، لذلك تتعلق الإرادة الإلهية بالتبع بهذا السقوط الاختياري.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وبما أن الاختيار الواعي محتاج إلى المعرفة الصحيحة السليمة لطرق الخير والشر، لذلك أمر الله تعالى الإنسان بكل ما يؤدي إلى خيره، ونهاه عن كل ما يؤدي إلى الفساد والانحراف والانحطاط، وبذلك وفر تعالى مستلزمات الحركة التكاملية.</p>
+						<p :style="{ 'fontSize': fontSize + 'px' }"> وبما أن التكاليف الإلهية إنما وضعت وشرعت لهدف توصل الإنسان إلى نتائج العمل بهذه التكاليف الإلهية دون أن يصل منها أي نفع وفائدة الله تعالى ذاته، ومن هنا اقتضت الحكمة الإلهية أن تكون هذه التكاليف متلائمة ومتناسبة مع قدرات المكلفين، وذلك لأن التكليف الذي لا يقدر على امتثاله، لغو لا فائدة فيه.</p>
+						<div class="qa" id="h4-إذن-فالمرحلة-الأولى-للعدل-بالم" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								إذن فالمرحلة الأولى للعدل بالمعنى الخاص) أي العدالة في مجال التكليف، تثبت بهذا الدليل وهو:
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">أن الله تعالى لو كلف العبد بما لا يطيقه ولا يقدر عليه، فإن هذا التكليف لا يمكن امتثاله، ويكون عملاً لا فائدة فيه.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-وأما-العدالة-في-مجال-الحكم-وال" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								وأما العدالة في مجال الحكم والقضاء بين العباد، فإنها تثبت مع الالتفات لهذه الملاحظة:
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> بأن الحكم والقضاء إنما يتم لأجل تعيين استحقاق الأفراد لأنواع الثواب والعقاب، وإذا تم على خلاف القسط والعدل، فسوف يلزم منه نقض الغرض.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> وأخيراً العدالة في مجال تنفيذ المجازاة ثواباً وعقاباً، فإنها تثبت بملاحظة الهدف النهائي للخلق، لأن من خلق الإنسان بهدف التوصل لنتائج أفعاله الحسنة أو القبيحة لو أثابه أو عاقبه على خلاف ما تقتضيه هذه الأفعال، فإنه لن يصل إلى هدفه.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-إذن-فالدليل-على-العدل-بمعانيه-" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								إذن فالدليل على العدل بمعانيه الصحيحة، وفي جميع مظاهره هو:
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">أن صفات الله الذاتية تقتضي أن تكون أفعاله تعالى حكيمة وعادلة، ولا توجد في الله تعالى أيه صفة تقتضي الظلم والجور، أو اللغو والعبث.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-شبهات-وحلول" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">شبهات وحلول</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div id="h3-١---كيف-تتلاءم-الفروق-والاختلا" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">١ - كيف تتلاءم الفروق والاختلافات الموجودة في المخلوقات وخاصةً البشر، مع العدل والحكمة الإلهية؟ ولماذا لم يخلق الله الحكيم العادل المخلوقات جميعاً بصورة متساوية؟</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-والرد-لهذه-الشبهة" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									والرد لهذه الشبهة:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p :style="{ 'fontSize': fontSize + 'px' }">أن اختلاف المخلوقات في المعطيات الوجودية، ملازم لنظام الخلق، وخاضع لقوانين العلية والمعلولية الحاكمة على ذلك النظام، وافتراض تساويها هو افتراض ساذج ولو تأملنا جيداً في ذلك لأدركنا أن هذا الافتراض يعني ترك الخلق! ذلك لأنه لو كان كل أفراد البشر رجالاً، أو نساء لما تحقق التوالد والتناسل أبداً، ولا نقرض النوع الإنساني.</p>
+								<p :style="{ 'fontSize': fontSize + 'px' }"> ولو كانت المخلوقات جميعاً من نوع الإنسان لما وجدت شيئاً للغذاء، أو ما يوفر لها سائر متطلباتها وحاجاتها، وكذلك لو كانت جميع الحيوانات والنباتات نوعاً واحداً، وبلون واحد، ولها صفات وخصائص واحدة، لما وجدت كل هذه الفوائد والمعطيات التي لا تحصى، والمناظر الخلابة الجميلة.</p>
+								<p :style="{ 'fontSize': fontSize + 'px' }"> وظهور هذا النوع أو ذاك، من الظواهر، بهذا الشكل أو ذاك، وهذه الصفات أو تلك، خاضع للعوامل والظروف والشروط المتوفرة في مسيرة حركة المادة وتبدلها، وليس لأحد الحق - قبل الخلق - أن يفرض على الله تعالى طريقة الخلق، ويأمره بأن يخلق بهذه الصورة أو تلك وفي هذا المكان أو ذاك، أو في هذا الزمان أو ذاك، ليكون هناك مجال للعدل والظلم.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="h3-٢---إذا-كانت-الحكمة-الإلهية-مق" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٢ - إذا كانت الحكمة الإلهية مقتضية لحياة الإنسان في هذا العالم، إذن لماذا بعد ذلك يُميته وينهي حياته؟</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<div class="qa" id="h5-والرد-لهذه-الشبهة" x-data="accordionItem(true)">
+								<h5 class="h5-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+									والرد لهذه الشبهة:
+									<span class="icon-toggle" x-text="iconText"></span>
+								</h5>
+								<div class="a" x-show="open" x-transition>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>أولاً</strong><strong>: </strong>إن حياة الموجودات أو موتها في هذا العالم خاضع أيضاً للقوانين التكوينية، والعلاقات العلية والمعلولية، وهي لازمة لنظام الخلق.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong> </strong><strong>ثانياً</strong><strong>: </strong>إذا لم تمت الموجودات الحية، فسوف لن تتوفر الأرضية لوجود الموجودات اللاحقة وبذلك يُحرم الآتون من نعمة الوجود والحياة.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong>ثالثاً</strong><strong>: </strong>إذا افترضنا استمرارية الحياة للبشر جميعاً فحسب، فسوف لن يمضي زمان طويل إلا ونرى الأرض كلها قد امتلأت بالناس، وتضيق عليهم الأرض برحبها، ليتمنى كل واحد منهم الموت لما يشعر به من عذاب وألم وجوع.</p>
+								<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>رابعاً</strong><strong>: </strong>إن الهدف الأصلي من خلق الإنسان هو الوصول إلى السعادة الأبدية، وإذا لم ينتقل الناس من هذا العالم بالموت إلى الحياة الأخرى، فسوف لن يمكنهم الوصول لذلك الهدف النهائي.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="h3-٣---إن-وجود-كل-هذه-المصائب-وال" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٣ - إن وجود كل هذه المصائب والأمراض والكوارث الطبيعية (أمثال السيل والزلزلة والمتاعب الاجتماعية أمثال الحروب وألوان الظلم المختلفة كيف يتلاءم هذا كله مع العدل الإلهي؟</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>أولاً</strong><strong>: </strong>إن الحوادث الطبيعية المؤلمة ملازمة لأفعال العوامل المادية وانفعالاتها وتصادمها والتزاحم بينها وبما أن خيرات هذه العوامل أكثر من شرورها، لذلك لا تكون مخالفة للحكمة، وكذلك ظهور المتاعب والمفاسد الاجتماعية مما تقتضيها اختيارية الإنسان، هذه الاختيارية التي تقتضيها الحكمة الإلهية، ولكن الملاحظ أن فوائد الحياة الاجتماعية وإيجابياتها أكثر من مفاسدها، ولو كانت المفاسد هي الأكثر لما بقي الناس على وجه الأرض.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> <strong>ثانياً</strong><strong>: </strong>إن وجود هذه المتاعب والكوارث والمصائب، تدفع الإنسان - من جهة - إلى البحث عن افتضاض أسرار الطبيعة والكشف عنها، وبذلك تظهر الثقافات والكشوفات والصناعات المختلفة، ومن جهة أخرى؛ فإن خوض هذه المتاعب ومواجهتها وعلاجها، له دور كبير في تنمية الطاقات والاستعدادات ورشدها وتفجيرها، وفي تكامل الإنسان ورقيه وتقدمه، وأخيراً فإن تحمل أية مصيبة أو ألم والصبر عليه، إذا كان لتحمله ما يبرره من مبررات صحيحة ومشروعة، سوف يكون له الثواب الجزيل في العالم الأبدي، وسوف يُجبر بصورة أفضل.</p>
+							</div>
+						</div>
+						<div id="h3-٤---كيف-يتلاءم-العذاب-الأبدي-ل" x-data="accordionItem(true)">
+							<div class="h3-content-title flex justify-between items-center" @click="toggle()">
+								<span :style="{ 'fontSize': fontSize + 'px' }">٤ - كيف يتلاءم العذاب الأبدي للذنوب المحدودة والمؤقتة، التي يرتكبها المذنبون في هذا العالم، مع العدل الإلهي؟</span>
+								<span class="icon-toggle" x-text="iconText"></span>
+							</div>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">الجواب: هناك علاقة علية بين الأعمال الحسنة والقبيحة وبين الثواب والعقاب الأخرويين، قد كشف عنها الوحي الإلهي، ونبه الناس عليها، وكما أننا نلاحظ في عالم الدنيا، أن هناك بعض الجرائم التي تعقبها آثار سيئة تمتد إلى مدة طويلة، رغم قصر مدة الجريمة، فمثلاً لو فَقَا الإنسانُ عينَ أخيه، أو عيون الآخرين فأعماها، فإن هذا الفعل يتمّ في مدة قصيرة جداً، ولكن نتيجته وهي العمى - تمتد إلى نهاية العمر.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> وكذلك الذنوب الكبيرة لها آثارها الأخروية الأبدية، وإذا لم يوفر الإنسان في هذه الدنيا مستلزمات جبرانها، كالتوبة مثلاً فإنه سوف يعيش آثارها السيئة وإلى الأبد، فكما أن بقاء عمى الإنسان إلى نهاية العمر بجريمة لم تستغرق إلا لحظة واحدة لا ينافي العدل الإلهي، فكذلك الابتلاء بالعذاب الأبدي نتيجة لارتكاب الذنوب الكبيرة لا ينافي العدل الإلهي، وذلك لأنه نتيجة الذنب الذي ارتكب عن سابق وعي وإصرار.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="qa" id="h2-الأسئلة" x-data="accordionItem(true)">
+						<div class="q-title flex justify-between items-center" @click="toggle()">
+							<span :style="{ 'fontSize': fontSize + 'px' }">الأسئلة:</span>
+							<span class="icon-toggle" x-text="iconText"></span>
+						</div>
+						<div class="a" x-show="open" x-transition>
+						<div class="qa" id="h4-١---ما-هو-محور-الاختلاف-في-موض" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١ - ما هو محور الاختلاف في موضوع العدل الإلهي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> إذن فالمحور الأساسي للخلاف، هو الموضوع الذي يعبر عنه بـ«الحسن والقبح العقليين» وقد أنكره الأشاعرة.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٢---وضح-مفهوم-العدل" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٢ - وضح مفهوم العدل
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong> </strong><strong>العدل في اللغة بمعنى السوية والتسوية</strong><strong>.</strong></p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وفي العرف العام استعمل بمعنى رعاية حقوق الآخرين في مقابل الظلم<strong> (</strong>الاعتداء على حقوق الآخرين)، وعلى ضوء ذلك عُرف العدل بأنه «إعطاء كل ذي حق حقه».</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"><strong> </strong><strong>إذن فيمكن أن يتصوّر للعدل مفهومان</strong><strong>؛</strong><strong> خاص وعام</strong><strong>:</strong></p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> أحدهما: رعاية حقوق الآخرين، والثاني: إصدار الفعل على وجه الحكمة، بحيث تعتبر رعاية حقوق الآخرين من مصاديقه.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٣---هل-إن-مقتضى-العدل-تساوي-ال" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٣ - هل إن مقتضى العدل تساوي الموجودات جميعاً وأحادها؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> لا يلازم العدل القول بالتسوية بين البشر جميعاً، أو بين الأشياء كلها.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> وكذلك، فإن مقتضى الحكمة والعدل الإلهي، لا يعني خلق المخلوقات بصورة متساوية.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٤---بين-ما-تستلزمه-الحكمة-والع" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٤ - بين ما تستلزمه الحكمة والعدل الإلهي.
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> مقتضى حكمة الخالق أن يخلق العالم بصورة تترتب عليها أكثر ما يمكن تحققه من الخير والكمال، وأن يخلق المخلوقات التي تشكل أجزاءه المترابطة بصورة تتناسب وذلك الهدف النهائي.</p>
+							<p class="p-content" :style="{ 'fontSize': fontSize + 'px' }"> وكذلك مقتضى الحكمة والعدل الإلهي، أن يكلف كل إنسان بمقدار استعداده وقابليته، وأن يقضي ويحكم فيه على حسب قدرته وجهده<strong> (</strong>الاختياري)، وأن يجازيه ثواباً أو عقاباً بما يتلاءم وأفعاله.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٥---ما-هو-الدليل-على-العدل-الإ" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٥ - ما هو الدليل على العدل الإلهي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> الدليل على العدل بمعانيه الصحيحة، وفي جميع مظاهره هو: أن صفات الله الذاتية تقتضي أن تكون أفعاله تعالى حكيمة وعادلة، ولا توجد في الله تعالى أيه صفة تقتضي الظلم والجور، أو اللغو والعبث.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٦---ما-هو-الهدف-من-خلق-الإنسان" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٦ - ما هو الهدف من خلق الإنسان؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">الهدف الأصلي من خلق الإنسان هو الوصول إلى السعادة الأبدية.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٧---كيف-تتلاءم-الفروق-التكويني" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٧ - كيف تتلاءم الفروق التكوينية بين المخلوقات مع الحكمة والعدل الإلهي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> اختلاف المخلوقات في المعطيات الوجودية، ملازم لنظام الخلق، وخاضع لقوانين العلية والمعلولية الحاكمة على ذلك النظام، وافتراض تساويها هو افتراض ساذج ولو تأملنا جيداً في ذلك لأدركنا أن هذا الافتراض يعني ترك الخلق.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٨---لماذا-يميت-الله-الحكيم-مخل" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٨ - لماذا يُميت الله الحكيم مخلوقاته؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> إذا لم تمت الموجودات الحية، فسوف لن تتوفر الأرضية لوجود الموجودات اللاحقة وبذلك يُحرم الآتون من نعمة الوجود والحياة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> إذا افترضنا استمرارية الحياة للبشر جميعاً فحسب، فسوف لن يمضي زمان طويل إلا ونرى الأرض كلها قد امتلأت بالناس، وتضيق عليهم الأرض برحبها، ليتمنى كل واحد منهم الموت لما يشعر به من عذاب وألم وجوع.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> إن الهدف الأصلي من خلق الإنسان هو الوصول إلى السعادة الأبدية، وإذا لم ينتقل الناس من هذا العالم بالموت إلى الحياة الأخرى، فسوف لن يمكنهم الوصول لذلك الهدف النهائي.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-٩---كيف-تتلاءم-الابتلاءات-الطب" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								٩ - كيف تتلاءم الابتلاءات الطبيعية والاجتماعية مع العدل الإلهي؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> إن الحوادث الطبيعية المؤلمة ملازمة لأفعال العوامل المادية وانفعالاتها وتصادمها والتزاحم بينها وبما أن خيرات هذه العوامل أكثر من شرورها، لذلك لا تكون مخالفة للحكمة. وكذلك ظهور المتاعب والمفاسد الاجتماعية مما تقتضيها اختيارية الإنسان، هذه الاختيارية التي تقتضيها الحكمة الإلهية، وإن وجود هذه المتاعب والكوارث والمصائب، تدفع الإنسان - من جهة - إلى البحث عن افتضاض أسرار الطبيعة والكشف عنها، وبذلك تظهر الثقافات والكشوفات والصناعات المختلفة.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> ومن جهة أخرى؛ فإن خوض هذه المتاعب ومواجهتها وعلاجها، له دور كبير في تنمية الطاقات والاستعدادات ورشدها وتفجيرها، وفي تكامل الإنسان ورقيه وتقدمه. وأخيراً فإن تحمل آية مصيبة أو ألم والصبر عليه، إذا كان لتحمله ما يبرره من مبررات صحيحة ومشروعة، سوف يكون له الثواب الجزيل في العالم الأبدي، وسوف يُجبر بصورة أفضل.</p>
+							</div>
+						</div>
+						<div class="qa" id="h4-١٠---كيف-تستوجب-الذنوب-المؤقتة" x-data="accordionItem(true)">
+							<h4 class="h4-content-title flex justify-between items-center" @click="toggle()" :style="{ 'fontSize': fontSize + 'px' }">
+								١٠ - كيف تستوجب الذنوب المؤقتة المحدودة عذاباً غير مؤقت ولا محدود؟
+								<span class="icon-toggle" x-text="iconText"></span>
+							</h4>
+							<div class="a" x-show="open" x-transition>
+							<p :style="{ 'fontSize': fontSize + 'px' }">هناك علاقة علية بين الأعمال الحسنة والقبيحة وبين الثواب والعقاب الأخرويين، قد كشف عنها الوحي الإلهي، ونبه الناس عليها.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> الذنوب الكبيرة لها آثارها الأخروية الأبدية، وإذا لم يوفر الإنسان في هذه الدنيا مستلزمات جبرانها، كالتوبة مثلاً فإنه سوف يعيش آثارها السيئة وإلى الأبد.</p>
+							<p :style="{ 'fontSize': fontSize + 'px' }"> الابتلاء بالعذاب الأبدي نتيجة لارتكاب الذنوب الكبيرة لا ينافي العدل الإلهي، وذلك لأنه نتيجة الذنب الذي ارتكب عن سابق وعي وإصرار.</p>
+							</div>
+						</div>
+						</div>
+					</div>
+		</section>
+	</div>
+</div>
+      </article>
+    </div>
+ </div> 
+
+<script src="js/script_source-text.js"></script>
+<script src="js/nav-loader.js"></script>
+<script src="js/page-init.js"></script> 
+<script>
+    // Initialize the Navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        loadNavbar({ 
+            pageType: 'root', 
+            showTools: true 
+        });
+    });
+</script>
+  </body>
+</html>
