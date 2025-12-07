@@ -1,675 +1,512 @@
 @media (max-width: 767px) {
     
-    /* 1. Body Text & General Content */
-    /* Target: Body, Paragraphs, List Items, Content Articles */
-    body, 
-    p, 
-    li,
-    .p-content, 
-    .li-content,
-    .card-content,
-    article.content p, 
-    article.content li,
+    /* ========================================================================
+       SECTION 1: TYPOGRAPHY - Font Sizes for Mobile
+       ======================================================================== */
+    
+    body, p, li,
+    .p-content, .li-content, .card-content,
+    article.content p, article.content li,
     .accordion-button {
-        /* Use the variable so the JS font resizer works, default to 18px if unset */
-        font-size: var(--content-font-size, 18px) !important; 
+        font-size: var(--content-font-size, 18px) !important;
         line-height: 1.6 !important;
     }
 
-    /* 2. H1 / Page Titles */
-    /* Target: Main Headers, Page Title Cards */
-    h1, 
-    .page-title-card h1,
-    .bio-page h1 {
-        font-size: 2rem !important; /* 32px */
+    h1, .page-title-card h1, .bio-page h1 {
+        font-size: 2rem !important;
         line-height: 1.3 !important;
     }
 
-    /* 3. H2 / Section Titles */
-    /* Target: Sub-headers, Section dividers */
-    h2, 
-    .section, 
-    article.content h2.section,
-    .bio-page h2 {
-        font-size: 1.5rem !important; /* 24px */
+    h2, .section, article.content h2.section, .bio-page h2 {
+        font-size: 1.5rem !important;
         line-height: 1.4 !important;
     }
 
-    /* 4. H3 / Card Titles & Subsections */
-    /* Target: Content Headers, Card Titles, Bio Page Items */
-    h3, 
-    h4,
-    .h3-content-title, 
-    .h4-content-title,
-    .h5-content-title,
+    h3, h4,
+    .h3-content-title, .h4-content-title, .h5-content-title,
     article.content h3.sub,
-    .card-title,
-    .bio-page h3, 
-    .bio-page h4,
-    .item-title,
-    .q-title,
-    #front-header,
-    #back-header {
-        font-size: 1.25rem !important; /* 20px */
+    .card-title, .bio-page h3, .bio-page h4,
+    .item-title, .q-title,
+    #front-header, #back-header {
+        font-size: 1.25rem !important;
         line-height: 1.4 !important;
     }
 
-    /* 5. Secondary / Small Text */
-    /* Target: Badges, Meta info, Navigation links */
-    small, 
-    .text-muted, 
-    .text-sm,
-    .badge, 
-    .question-number, 
-    .nav-link-desktop,
-    .btn-custom,
-    .btn-answer,
-    footer {
-        font-size: 0.875rem !important; /* 14px */
+    small, .text-muted, .text-sm,
+    .badge, .question-number, .nav-link-desktop,
+    .btn-custom, .btn-answer, footer {
+        font-size: 0.875rem !important;
     }
 
-    /* 6. Form Inputs (Prevents iOS Zoom on focus) */
-    input, 
-    select, 
-    textarea,
+    input, select, textarea,
     .question-card.fill-blank input {
-        font-size: 1.125rem !important; /* 18px - Safe for mobile */
+        font-size: 1.125rem !important;
     }
 
-    /* ==========================================================================
-       MOBILE-FIRST LAYOUT PREPARATION
-       ========================================================================== */
-
-    /* 1. Full-Width Layout Override */
-    body,
-    .main-width-container {
+    /* ========================================================================
+       SECTION 2: LAYOUT - Width, Padding, Margins
+       ======================================================================== */
+    
+    body, .main-width-container {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding-bottom: 80px; /* Space for bottom nav */
+        padding-bottom: 80px;
     }
 
-/* === Mobile Bottom Nav Container (Green Gradient) === */
-#mobile-bottom-nav {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 70px;
-    /* The Green Gradient Background */
-    background: linear-gradient(to right, #16a34a, #047857) !important; 
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    z-index: 9999;
-    padding-bottom: 8px;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-}
+    body, .main-width-container, .container-main,
+    article.content, .content-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
 
-/* Nav Items (White Text/Icons) */
-.mobile-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    color: rgba(255, 255, 255, 0.85) !important; /* Semi-transparent white */
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 20%;
-    position: relative;
-    transition: all 0.3s ease;
-}
+    .main-width-container {
+        padding-top: 10px !important;
+    }
 
-.mobile-nav-item .label-text {
-    font-size: 10px;
-    margin-top: 4px;
-    font-weight: 700;
-    font-family: 'Tajawal', sans-serif;
-}
+    /* ========================================================================
+       SECTION 3: MOBILE BOTTOM NAVIGATION
+       ======================================================================== */
+    
+    #mobile-bottom-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 70px;
+        background: linear-gradient(to right, #16a34a, #047857) !important;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        z-index: 9999;
+        padding-bottom: 8px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
 
-.mobile-nav-item svg {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    transition: all 0.3s ease;
-}
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        color: rgba(255, 255, 255, 0.85) !important;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 20%;
+        position: relative;
+        transition: all 0.3s ease;
+    }
 
-/* === FLOATING ACTIVE EFFECT (Cutout Look) === */
-.mobile-nav-item.active-tab .icon-container {
-    background-color: #ffffff; /* White Circle */
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 25px; /* Float UP */
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
-    border: 4px solid #f3f4f6; /* Match page BG color for cutout effect */
-    transform: translateY(0);
-    z-index: 10;
-}
+    .mobile-nav-item .label-text {
+        font-size: 10px;
+        margin-top: 4px;
+        font-weight: 700;
+        font-family: 'Tajawal', sans-serif;
+    }
 
-/* Active Icon Color (Green inside White Circle) */
-.mobile-nav-item.active-tab {
-    color: #ffffff !important; /* Label remains white */
-    opacity: 1;
-}
-.mobile-nav-item.active-tab svg {
-    stroke: #16a34a !important; /* Green Icon */
-    stroke-width: 2.5px;
-}
-/* Ensure the active label is visible on the green bar */
-.mobile-nav-item.active-tab .label-text {
-    color: #ffffff;
-    font-weight: 900;
-}
+    .mobile-nav-item svg {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        transition: all 0.3s ease;
+    }
 
-/* === POPUP SHEETS (Green Gradient & Better Spacing) === */
-.mobile-popup-sheet {
-    position: fixed !important;
-    bottom: 85px !important;
-    /* Gradient Background for Popups too */
-    background: linear-gradient(to right, #16a34a, #047857) !important;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-    z-index: 10000;
-    padding: 8px 0;
-    display: flex;
-    flex-direction: column;
-    min-width: 180px;
-}
+    .mobile-nav-item.active-tab .icon-container {
+        background-color: #ffffff;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 25px;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+        border: 4px solid #f3f4f6;
+        transform: translateY(0);
+        z-index: 10;
+    }
 
-/* Positioning Fixes */
-.popup-pos-left { 
-    right: 10px !important; 
-    left: auto !important; 
-}
+    .mobile-nav-item.active-tab {
+        color: #ffffff !important;
+        opacity: 1;
+    }
 
-.popup-pos-right { 
-    left: 10px !important; 
-    right: auto !important; 
-}
+    .mobile-nav-item.active-tab svg {
+        stroke: #16a34a !important;
+        stroke-width: 2.5px;
+    }
 
-.popup-pos-center { 
-    left: 50% !important; 
-    transform: translateX(-50%); 
-    width: 260px; 
-}
+    .mobile-nav-item.active-tab .label-text {
+        color: #ffffff;
+        font-weight: 900;
+    }
 
-/* Links inside Popups (White Text) */
-.mobile-popup-link {
-    display: block;
-    padding: 12px 16px;
-    color: #ffffff !important;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Subtle separator */
-    text-align: right;
-    transition: background 0.2s;
-}
-.mobile-popup-link:last-child { border-bottom: none; }
-.mobile-popup-link:active { background: rgba(255,255,255,0.1); }
+    /* ========================================================================
+       SECTION 4: POPUP SHEETS & MENUS
+       ======================================================================== */
+    
+    .mobile-popup-sheet {
+        position: fixed !important;
+        bottom: 85px !important;
+        background: linear-gradient(to right, #16a34a, #047857) !important;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 16px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+        z-index: 10000;
+        padding: 8px 0;
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+    }
 
-/* === TOOLS / SETTINGS STYLES (White Buttons) === */
-.tools-row {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 8px 0;
-    padding: 0 10px;
-}
-.tool-circle-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.6) !important;
-    background: transparent !important;
-    color: #ffffff !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 13px;
-    cursor: pointer;
-}
-.divider-line {
-    height: 1px;
-    background: rgba(255,255,255,0.15);
-    margin: 6px 0;
-    width: 100%;
-}
-/* Full width buttons in settings */
-.tool-full-btn {
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 8px;
-    padding: 8px;
-    border: 1.5px solid rgba(255,255,255,0.6) !important;
-    background: transparent !important;
-    color: #ffffff !important;
-}
+    .popup-pos-left { right: 10px !important; left: auto !important; }
+    .popup-pos-right { left: 10px !important; right: auto !important; }
+    .popup-pos-center { left: 50% !important; transform: translateX(-50%); width: 260px; }
 
-/* === ULTRA-COMPACT TEXT LAYOUT === */
+    .mobile-popup-link {
+        display: block;
+        padding: 12px 16px;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: 'Tajawal', sans-serif;
+        font-weight: 700;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: right;
+        transition: background 0.2s;
+    }
 
-/* 1. Global Container Reset */
-body, 
-.main-width-container, 
-.container-main, 
-article.content, 
-.content-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    /* Minimize padding to bare minimum safety (4px) */
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-}
+    .mobile-popup-link:last-child { border-bottom: none; }
+    .mobile-popup-link:active { background: rgba(255,255,255,0.1); }
 
-/* 2. Text Alignment & Justification (Fill the line) */
-p, 
-li, 
-.p-content, 
-.li-content, 
-.a, 
-.q-title span, 
-.h3-content-title {
-    text-align: justify !important; /* Forces text to fill width */
-    text-justify: inter-word !important; /* Better for Arabic */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-}
+    /* ========================================================================
+       SECTION 5: TOOLS & BUTTONS
+       ======================================================================== */
+    
+    .tools-row {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 8px 0;
+        padding: 0 10px;
+    }
 
-/* 3. Lists Optimization (Remove deep indentation) */
-ul, ol {
-    padding-right: 15px !important; /* Minimal space for the bullet point only */
-    padding-left: 0 !important;
-    margin: 0 !important;
-}
+    .tool-circle-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255,255,255,0.6) !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+    }
 
-/* 4. Accordion/Cards Internals */
-.accordion-panel {
-    padding: 8px 2px !important; /* Vertical spacing ok, Horizontal tight */
-}
+    .divider-line {
+        height: 1px;
+        background: rgba(255,255,255,0.15);
+        margin: 6px 0;
+        width: 100%;
+    }
 
-.qa {
-    margin: 5px 0 !important;
-    padding: 5px !important;
-    border-radius: 4px !important;
-}
+    .tool-full-btn {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 8px;
+        padding: 8px;
+        border: 1.5px solid rgba(255,255,255,0.6) !important;
+        background: transparent !important;
+        color: #ffffff !important;
+    }
 
-/* 5. Headings */
-h1, h2, h3, h4, h5, h6 {
-    text-align: right !important; /* Headings stay right-aligned */
-    padding: 4px 0 !important;
-}
+    /* ========================================================================
+       SECTION 6: CARDS & CONTAINERS
+       ======================================================================== */
+    
+    .card-title { font-size: 1rem !important; margin: 0 !important; }
+    .card-body { padding: 8px !important; }
+    .card-content { margin: 0 !important; padding: 0 !important; }
+    
+    .question-card {
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+    }
 
-/* === MOBILE QUIZ OPTIMIZATION === */
+    .answers-grid {
+        gap: 12px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-/* 1. Maximize Quiz Container (Reduce Margins) */
-#quiz-container, 
-.container-main,
-.question-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 10px 5px !important; /* Very minimal padding */
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
+    .question-number-badge, .badge {
+        font-size: 1rem !important;
+        padding: 6px 12px !important;
+    }
 
-/* 2. Large Question Text */
-#question-text, 
-.question-text {
-    font-size: 1.4rem !important; /* Significantly larger (approx 22px) */
-    line-height: 1.3 !important;
-    font-weight: 800 !important;
-    margin-bottom: 20px !important;
-    padding: 0 5px !important;
-    text-align: center !important;
-}
+    /* ========================================================================
+       SECTION 7: COMPARISON CARDS
+       ======================================================================== */
+    
+    .comparison-container, #quiz-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
 
-/* 3. Big Answer Buttons */
-.btn-answer, 
-.answer-option {
-    font-size: 1.25rem !important; /* Large readable text (20px) */
-    padding: 15px 10px !important; /* Taller click area */
-    min-height: 65px !important;   /* Easy to tap */
-    margin-bottom: 12px !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    line-height: 1.2 !important;
-    width: 100% !important; /* Ensure they fill the column */
-}
+    .comparison-options-wrapper {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2px !important;
+        width: 100% !important;
+        padding: 0 2px !important;
+    }
 
-/* 4. Tighter Grid (If using CSS Grid) */
-.answers-grid {
-    gap: 12px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
+    .comparison-card, .option-card {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 6px 3px !important;
+        min-height: 100px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        border-radius: 4px !important;
+    }
 
-/* 5. Fix "Question Number" Badge */
-.question-number-badge, 
-.badge {
-    font-size: 1rem !important;
-    padding: 6px 12px !important;
-}
+    .comparison-card h3, .option-card h3 {
+        font-size: 13px !important;
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
 
-/* === 1. FIX PROGRESS BAR (Force Single Row) === */
-/* These rules are now consolidated later in the media query for better organization */
+    .comparison-card p, .option-card p, .comparison-card .text-sm {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: normal !important;
+    }
 
-/* === 2. FIX COMPARISON QUIZ LAYOUT (Compact Side-by-Side) === */
+    /* ========================================================================
+       SECTION 8: FLASHCARD STYLING
+       ======================================================================== */
+    
+    .flip-card-container, .card-flip-wrapper, .perspective-container {
+        width: 90% !important;
+        max-width: 340px !important;
+        margin: 20px auto !important;
+        height: 400px !important;
+    }
 
-/* === ULTRA-COMPACT COMPARISON CARDS === */
+    .flip-card-inner, .card-scene {
+        width: 100% !important;
+        height: 100% !important;
+    }
 
-/* Remove main container margins */
-.comparison-container, 
-#quiz-container {
-    width: 100% !important;
-    padding: 0 2px !important; /* Almost edge to edge */
-    margin: 0 !important;
-}
+    .page-title-card h1 {
+        font-size: 1.5rem !important;
+        margin-bottom: 5px !important;
+    }
 
-/* 4. Ensure container is edge-to-edge */
-.comparison-options-wrapper,
-.options-grid {
-    display: flex !important;
-    gap: 2px !important; /* Minimal gap between the two cards */
-    padding: 0 !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-}
+    /* ========================================================================
+       SECTION 9: QUESTION LAYOUT
+       ======================================================================== */
+    
+    .question-text {
+        font-size: 18px !important;
+        padding: 5px !important;
+        margin-bottom: 10px !important;
+    }
 
-/* 1. The Card Container */
-.comparison-card, 
-.option-card,
-.answer-card {
-    flex: 1 !important; /* Split width 50/50 */
-    width: 48% !important; /* Ensure they fit */
-    padding: 4px 2px !important; /* Almost zero padding */
-    margin: 0 !important;
-    border-radius: 4px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    min-height: auto !important; /* Let content dictate height */
+    /* ========================================================================
+       ⭐ SECTION 10: STATUS BAR FIX - CRITICAL SECTION ⭐
+       FIXES: Progress bar and score display on mobile for all quizzes
+       Applies to: Fill-blank, Comparison, Flashcard quizzes
+       ======================================================================== */
+    
+    #status-bar-placeholder {
+        display: block !important;
+        width: 100% !important;
+        margin: 4px 0 !important;
+        padding: 0 !important;
+    }
 
-    /* PREVENT OVERFLOW */
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
-    hyphens: auto !important;
-    white-space: normal !important;
-}
+    /* CORE FIX: Force flex-row layout (side-by-side, NOT stacked) */
+    #status-bar-placeholder .container-main {
+        display: flex !important;
+        flex-direction: row !important;              /* KEY: Force row (overrides flex-col) */
+        flex-wrap: nowrap !important;                /* Never wrap to new line */
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;                 /* Override inline 85px */
+        padding: 2px 4px !important;                 /* Compact padding */
+        margin: 0 !important;
+        gap: 4px !important;
+        background: transparent !important;
+    }
 
-/* 2. Text Content Inside Cards */
-.comparison-card h3, 
-.comparison-card p,
-.option-card h3,
-.option-card p,
-.card-content {
-    margin: 2px 0 !important; /* Remove paragraph spacing */
-    padding: 0 !important;
-    line-height: 1.2 !important; /* Tighter lines */
-    text-align: center !important;
-    width: 100% !important;
-}
+    /* Progress section: grows to fill available space (2/3 width) */
+    #status-bar-placeholder .flex-grow {
+        flex: 1 1 auto !important;                   /* Grow to fill space */
+        min-width: 0 !important;                     /* Allow flex to control width */
+        max-width: none !important;
+        width: auto !important;
+        padding: 3px 6px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 1px !important;
+        overflow: hidden !important;
+    }
 
-/* 3. Reduce Font Size Slightly if needed to fit side-by-side */
-.comparison-card h3,
-.option-card h3 {
-    font-size: 0.95rem !important; /* slightly smaller header */
-    margin-bottom: 6px !important;
-}
-.comparison-card p,
-.option-card p {
-    font-size: 0.9rem !important;
-}
+    /* Score section: stays compact and visible (1/3 width) */
+    #status-bar-placeholder .flex-none {
+        flex: 0 0 auto !important;                   /* Fixed size, don't grow */
+        min-width: 100px !important;                 /* Always at least 100px */
+        max-width: none !important;
+        width: auto !important;
+        padding: 2px 3px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        gap: 2px !important;
+        background: transparent !important;
+        overflow: hidden !important;
+    }
 
-/* === 1. REMOVE GHOST SPACE AT TOP === */
-/* The HTML has 'pt-10' (40px padding) for the desktop nav. We must remove it on mobile. */
-.main-width-container {
-    padding-top: 10px !important; /* Minimal spacing from top edge */
-}
+    /* Progress bar visual element */
+    #status-bar-placeholder .progress-bar {
+        display: block !important;
+        height: 5px !important;
+        width: 100% !important;
+        background-color: #e5e7eb !important;
+        border-radius: 3px !important;
+        overflow: hidden !important;
+        margin: 1px 0 0 0 !important;
+    }
 
-/* === 2. FIX FLIP CARD DIMENSIONS === */
-/* Restore the "Card" look for Flip Cards (prevent edge-to-edge stretching) */
-.flip-card-container, 
-.card-flip-wrapper,
-.perspective-container {
-    width: 90% !important; /* Don't touch edges */
-    max-width: 340px !important; /* Limit width */
-    margin: 20px auto !important; /* Center it with spacing */
-    height: 400px !important; /* Ensure generic height if collapsed */
-}
+    /* Progress fill animation */
+    #status-bar-placeholder .progress-fill,
+    #status-bar-placeholder #progress-fill {
+        display: block !important;
+        height: 100% !important;
+        width: 0% !important;
+        background: #16a34a !important;
+        border-radius: 3px !important;
+        transition: width 0.3s ease !important;
+    }
 
-/* Ensure the scene/inner card respects the container */
-.flip-card-inner, 
-.card-scene {
-    width: 100% !important;
-    height: 100% !important;
-}
+    /* All text in status bar - MUST be visible */
+    #status-bar-placeholder span {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        font-size: 9px !important;
+        line-height: 1.1 !important;
+        margin: 0 1px !important;
+        padding: 0 !important;
+    }
 
-/* Ensure comparison quiz header doesn't get squashed */
-.page-title-card h1 {
-    font-size: 1.5rem !important;
-    margin-bottom: 5px !important;
-}
+    /* Labels like "التقدم" and "النتيجة" */
+    #status-bar-placeholder .opacity-80 {
+        display: inline-block !important;
+        font-size: 8px !important;
+        opacity: 1 !important;
+        font-weight: 600 !important;
+        line-height: 1 !important;
+    }
 
-/* === 1. FORCE COMPACT STATUS BAR (SINGLE ROW) === */
-/* These rules are now consolidated at the end of the media query */
+    #status-bar-placeholder .text-xs {
+        display: inline-block !important;
+        font-size: 8px !important;
+        line-height: 1 !important;
+        font-weight: 600 !important;
+    }
 
-/* === 2. FIX COMPARISON CARDS (STRICT GRID) === */
-/* Remove ALL outer spacing */
-.comparison-container, #quiz-container {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100vw !important; /* Force full viewport width */
-    max-width: 100vw !important;
-}
+    /* Status bar numbers (progress %, score, question counter) */
+    #progress-text, #score-display, #question-counter {
+        display: inline-block !important;
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        margin: 0 1px !important;
+        padding: 0 !important;
+        line-height: 1.2 !important;
+    }
 
-/* Grid Layout: Exactly 2 Columns */
-.comparison-options-wrapper {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Equal split */
-    gap: 2px !important; /* Tiny gap */
-    width: 100% !important;
-    padding: 0 2px !important;
-}
+    /* Hide all dividers/separators between sections */
+    #status-bar-placeholder [class*="w-[1px]"],
+    #status-bar-placeholder [class*="h-[1px]"],
+    #status-bar-placeholder .w-\[1px\],
+    #status-bar-placeholder .h-\[1px\],
+    #status-bar-placeholder .hidden {
+        display: none !important;
+    }
 
-/* The Cards Themselves */
-.comparison-card, .option-card {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 6px 3px !important;
-    min-height: 100px !important; /* Minimum height */
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    border-radius: 4px !important;
-}
+    /* Override conflicting Tailwind size classes */
+    #status-bar-placeholder .text-sm,
+    #status-bar-placeholder .text-base,
+    #status-bar-placeholder .text-lg {
+        font-size: inherit !important;
+    }
 
-/* Shrink Text to Fit Mobile */
-.comparison-card h3, .option-card h3 {
-    font-size: 13px !important; /* Smaller header */
-    margin-bottom: 4px !important;
-    line-height: 1.2 !important;
-    white-space: normal !important;
-}
+    /* Override conflicting Tailwind spacing classes */
+    #status-bar-placeholder [class*="p-"],
+    #status-bar-placeholder [class*="m-"],
+    #status-bar-placeholder [class*="px-"],
+    #status-bar-placeholder [class*="py-"],
+    #status-bar-placeholder [class*="mx-"],
+    #status-bar-placeholder [class*="my-"] {
+        padding: inherit !important;
+        margin: inherit !important;
+    }
 
-.comparison-card p, .option-card p, .comparison-card .text-sm {
-    font-size: 12px !important; /* Smaller body text */
-    line-height: 1.3 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: normal !important;
-}
+    /* Override conflicting Tailwind flex/justify classes */
+    #status-bar-placeholder [class*="gap-"],
+    #status-bar-placeholder [class*="justify-"] {
+        gap: inherit !important;
+        justify-content: inherit !important;
+    }
 
-/* Fix "Question Text" Size for Comparison Page */
-.question-text {
-    font-size: 18px !important; /* slightly smaller than MCQ to fit more context */
-    padding: 5px !important;
-    margin-bottom: 10px !important;
-}
+    /* ========================================================================
+       SECTION 11: PAGE-SPECIFIC FIXES
+       ======================================================================== */
+    
+    #navigation-buttons {
+        gap: 1.5rem !important;
+    }
 
-/* === UNIFIED STATUS BAR FOR ALL QUIZ TYPES === */
-/* DIAGNOSTIC FIX: Force status bar visibility and correct layout */
+    #navigation-buttons > * {
+        margin-inline-start: 0 !important;
+        margin-inline-end: 0 !important;
+    }
 
-#status-bar-placeholder {
-    display: block !important;
-    width: 100% !important;
-    margin: 4px 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    position: relative !important;
-    z-index: 40 !important;
-}
+    #card-and-buttons-container {
+        padding-top: 2.25rem !important;
+        padding-bottom: 1rem !important;
+    }
 
-/* Main container - ensure it displays as row on mobile */
-#status-bar-placeholder .container-main {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    padding: 2px 4px !important;
-    margin: 0 !important;
-    background: white !important;
-    border-radius: 4px !important;
-    gap: 4px !important;
-}
-
-/* Progress section - flex-grow */
-#status-bar-placeholder .flex-grow {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-    padding: 4px 6px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    gap: 2px !important;
-}
-
-/* Score section - flex-none */
-#status-bar-placeholder .flex-none {
-    flex: 0 0 auto !important;
-    min-width: 110px !important;
-    padding: 2px 4px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 2px !important;
-    background: transparent !important;
-}
-
-/* Labels and text visibility */
-#status-bar-placeholder span {
-    display: inline-block !important;
-    white-space: nowrap !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#status-bar-placeholder .opacity-80 {
-    display: inline !important;
-    font-size: 9px !important;
-    opacity: 1 !important;
-    line-height: 1 !important;
-}
-
-#status-bar-placeholder .text-xs {
-    display: inline !important;
-    font-size: 9px !important;
-    line-height: 1 !important;
-}
-
-/* Progress bar container */
-#status-bar-placeholder .progress-bar {
-    display: block !important;
-    height: 6px !important;
-    width: 100% !important;
-    background-color: #ddd !important;
-    border-radius: 3px !important;
-    overflow: hidden !important;
-    margin: 1px 0 !important;
-}
-
-/* Progress fill */
-#status-bar-placeholder .progress-fill,
-#status-bar-placeholder #progress-fill {
-    display: block !important;
-    height: 100% !important;
-    width: 0% !important;
-    background: #16a34a !important;
-    border-radius: 3px !important;
-    transition: width 0.3s ease !important;
-}
-
-/* Text content */
-#progress-text,
-#score-display,
-#question-counter {
-    display: inline !important;
-    font-size: 10px !important;
-    font-weight: 600 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.2 !important;
-}
-
-/* Hide dividers */
-#status-bar-placeholder .hidden,
-#status-bar-placeholder [class*="w-[1px]"],
-#status-bar-placeholder [class*="h-[1px]"],
-#status-bar-placeholder .w-\[1px\],
-#status-bar-placeholder .h-\[1px\] {
-    display: none !important;
-}
-
-/* Ensure score section divider is hidden */
-#status-bar-placeholder .w-\[1px\].h-8,
-#status-bar-placeholder [style*="width: 1px"],
-#status-bar-placeholder [style*="height: 1px"] {
-    display: none !important;
-}
-}
-/* ==========================================================================
-   15. SPECIFIC PAGE FIXES (إصلاحات خاصة بالصفحات)
-   ========================================================================== */
-
-/* 1. حل مشكلة تلاصق الأزرار في الأسفل */
-#navigation-buttons {
-    gap: 1.5rem !important; /* يضيف مسافة 24px واضحة بين الزرين */
-}
-
-/* في حال كانت كلاسات Tailwind تسبب تداخل في الهوامش مع اتجاه RTL */
-#navigation-buttons > * {
-    margin-inline-start: 0 !important;
-    margin-inline-end: 0 !important;
-}
-
-/* 2. تقليل الفراغ (Padding) في حاوية البطاقة للنصف */
-/* الـ Padding الأصلي كان p-8 يعني 32px، قمنا بتقليله هنا */
-#card-and-buttons-container {
-    padding-top: 2.25rem !important;    /* أصبح 16px بدلاً من 32px */
-    padding-bottom: 1rem !important; /* للحفاظ على التناسق */
 }
