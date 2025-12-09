@@ -510,3 +510,146 @@
     }
 
 }
+
+/* ==========================================================================
+   مشغل الصوت المخصص (Custom Audio Player)
+   ========================================================================== */
+
+/* إخفاء المشغل الافتراضي */
+audio {
+    display: none !important;
+}
+
+/* حاوية المشغل المخصص */
+.custom-audio-player {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    direction: ltr; /* للأزرار */
+}
+
+/* صف الأزرار والمعلومات */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+/* زر التشغيل/الإيقاف */
+.play-pause-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+
+.play-pause-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #667eea;
+}
+
+/* معلومات الوقت */
+.audio-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.audio-times {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* شريط التقدم */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* أزرار السرعة */
+.speed-controls {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.speed-btn {
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.speed-btn.active {
+    background: #ffffff;
+    color: #667eea;
+    border-color: #ffffff;
+}
+
+.speed-btn:active {
+    transform: scale(0.95);
+}
+
+/* للموبايل */
+@media (max-width: 767px) {
+    .custom-audio-player {
+        padding: 10px 12px;
+        margin: 8px 0;
+    }
+    
+    .play-pause-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .audio-times {
+        font-size: 13px;
+    }
+    
+    .speed-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+}
