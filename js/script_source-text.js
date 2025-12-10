@@ -219,7 +219,7 @@
         
         modal.innerHTML = `
             <div class="time-jump-content">
-                <h3>القفز إلى وقت</h3>
+                <h3>انتقال إلى</h3>
                 <div class="time-inputs-simple">
                     <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="00">
                     <span>:</span>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="time-buttons">
                     <button class="btn-jump-cancel">إلغاء</button>
-                    <button class="btn-jump-go">انتقال</button>
+                    <button class="btn-jump-go">✓</button>
                 </div>
             </div>
         `;
