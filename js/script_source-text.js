@@ -62,20 +62,20 @@
             <div class="player-row">
                 <button class="btn-play" data-id="${index}">▶</button>
                 <button class="btn-skip" data-id="${index}">-10</button>
-                <button class="btn-loop" data-id="${index}">↻</button>
                 <span class="time-current">00:00</span>
                 <div class="progress-bar" data-id="${index}">
                     <div class="progress-fill"></div>
                 </div>
                 <span class="time-total">00:00</span>
-                <button class="btn-mute" data-id="${index}">🔊</button>
-                <button class="btn-speed" data-id="${index}">1.00x</button>
-                <div class="speed-menu">
-                    <button data-speed="2.00">2.00x</button>
-                    <button data-speed="1.50">1.50x</button>
-                    <button data-speed="1.25">1.25x</button>
-                    <button data-speed="1.00" class="active">1.00x</button>
-                    <button data-speed="0.75">0.75x</button>
+                <div class="speed-wrapper">
+                    <button class="btn-speed" data-id="${index}">1.00x</button>
+                    <div class="speed-menu">
+                        <button data-speed="2.00">2.00x</button>
+                        <button data-speed="1.50">1.50x</button>
+                        <button data-speed="1.25">1.25x</button>
+                        <button data-speed="1.00" class="active">1.00x</button>
+                        <button data-speed="0.75">0.75x</button>
+                    </div>
                 </div>
             </div>
         `;
@@ -88,12 +88,10 @@
         
         const playBtn = wrapper.querySelector('.btn-play');
         const skipBtn = wrapper.querySelector('.btn-skip');
-        const loopBtn = wrapper.querySelector('.btn-loop');
         const timeCurrent = wrapper.querySelector('.time-current');
         const timeTotal = wrapper.querySelector('.time-total');
         const progressBar = wrapper.querySelector('.progress-bar');
         const progressFill = wrapper.querySelector('.progress-fill');
-        const muteBtn = wrapper.querySelector('.btn-mute');
         const speedBtn = wrapper.querySelector('.btn-speed');
         const speedMenu = wrapper.querySelector('.speed-menu');
         const speedOptions = wrapper.querySelectorAll('.speed-menu button');
@@ -114,12 +112,6 @@
         // Skip -10
         skipBtn.addEventListener('click', () => {
             audio.currentTime = Math.max(0, audio.currentTime - 10);
-        });
-        
-        // Loop
-        loopBtn.addEventListener('click', () => {
-            audio.loop = !audio.loop;
-            loopBtn.classList.toggle('active');
         });
         
         // Update progress
@@ -143,11 +135,9 @@
         
         // Ended
         audio.addEventListener('ended', () => {
-            if (!audio.loop) {
-                playBtn.textContent = '▶';
-                playBtn.classList.remove('playing');
-                progressFill.style.width = '0%';
-            }
+            playBtn.textContent = '▶';
+            playBtn.classList.remove('playing');
+            progressFill.style.width = '0%';
         });
         
         // Seek
@@ -158,24 +148,21 @@
             audio.currentTime = percent * audio.duration;
         });
         
-        // Mute
-        muteBtn.addEventListener('click', () => {
-            audio.muted = !audio.muted;
-            muteBtn.textContent = audio.muted ? '🔇' : '🔊';
-        });
-        
         // Speed
         speedBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             speedMenu.classList.toggle('show');
         });
         
-        document.addEventListener('click', () => {
-            speedMenu.classList.remove('show');
+        document.addEventListener('click', (e) => {
+            if (!speedBtn.contains(e.target) && !speedMenu.contains(e.target)) {
+                speedMenu.classList.remove('show');
+            }
         });
         
         speedOptions.forEach(btn => {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const speed = parseFloat(btn.dataset.speed);
                 audio.playbackRate = speed;
                 speedBtn.textContent = speed.toFixed(2) + 'x';
