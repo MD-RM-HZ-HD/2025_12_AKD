@@ -1,724 +1,196 @@
-/* ==========================================================================
-   ملف CSS للموبايل - نسخة كاملة نهائية
-   Mobile CSS - Complete Final Version
-   ========================================================================== */
+/**
+ * مشغل صوت بسيط - صف واحد أفقي
+ * Simple Audio Player - One Horizontal Row
+ */
 
-/* ==========================================================================
-   1. أحجام الخطوط للموبايل - Font Sizes for Mobile
-   ========================================================================== */
-
-@media (max-width: 767px) {
+(function() {
+    'use strict';
     
-    /* نص المحتوى العام */
-    body, 
-    p, 
-    li,
-    .p-content, 
-    .li-content,
-    .card-content,
-    article.content p, 
-    article.content li,
-    .accordion-button {
-        font-size: var(--content-font-size, 18px) !important; 
-        line-height: 1.6 !important;
-    }
-
-    /* العناوين الرئيسية H1 */
-    h1, 
-    .page-title-card h1,
-    .bio-page h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 12px !important;
-    }
-
-    /* العناوين الفرعية H2 - تصغير للتناسب مع المشغل */
-    h2, 
-    .section, 
-    article.content h2.section,
-    .bio-page h2 {
-        font-size: 1.1rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 10px !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-    }
-
-    /* العناوين H3/H4/H5 */
-    h3, 
-    h4,
-    h5,
-    .h3-content-title, 
-    .h4-content-title,
-    .h5-content-title,
-    article.content h3.sub,
-    .card-title,
-    .bio-page h3, 
-    .bio-page h4,
-    .item-title,
-    .q-title,
-    #front-header,
-    #back-header {
-        font-size: 1.05rem !important;
-        line-height: 1.4 !important;
-    }
-
-    /* عناوين الأسئلة */
-    .q-title span,
-    .h3-content-title span {
-        font-size: 1rem !important;
-        line-height: 1.4 !important;
-        word-wrap: break-word !important;
-    }
-
-    /* النصوص الثانوية */
-    small, 
-    .text-muted, 
-    .text-sm,
-    .badge, 
-    .question-number, 
-    .nav-link-desktop,
-    .btn-custom,
-    .btn-answer,
-    footer {
-        font-size: 0.875rem !important;
-    }
-
-    /* حقول الإدخال */
-    input, 
-    select, 
-    textarea,
-    .question-card.fill-blank input {
-        font-size: 1.125rem !important;
-    }
-}
-
-/* ==========================================================================
-   2. تخطيط الصفحة - Main Layout
-   ========================================================================== */
-
-@media (max-width: 767px) {
+    console.log('🎵 Audio Player Script Loaded');
     
-    body,
-    .main-width-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding-bottom: 80px !important;
-        padding-top: 10px !important;
-    }
-
-    p, li, .p-content, .li-content, .a, .q-title span, .h3-content-title {
-        text-align: justify !important;
-        text-justify: inter-word !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding: 0 4px !important;
-    }
-
-    ul, ol {
-        padding-right: 15px !important;
-        padding-left: 0 !important;
-        margin: 0 !important;
-    }
-
-    .accordion-panel {
-        padding: 8px 4px !important;
-    }
-
-    .qa {
-        margin: 5px 0 !important;
-        padding: 5px !important;
-        border-radius: 4px !important;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        text-align: right !important;
-        padding: 4px 0 !important;
-    }
-
-    .accordion-title-group {
-        margin-bottom: 10px !important;
-        width: 100% !important;
-    }
-
-    .accordion-button {
-        flex-wrap: wrap !important;
-        padding: 12px 8px !important;
-    }
-
-    .content-container {
-        margin: 10px 0 !important;
-    }
-}
-
-/* ==========================================================================
-   3. القائمة السفلية - Mobile Bottom Navigation
-   ========================================================================== */
-
-@media (max-width: 767px) {
-    
-    #mobile-bottom-nav {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 70px;
-        background: linear-gradient(to right, #16a34a, #047857) !important; 
-        border-top: 1px solid rgba(255,255,255,0.1);
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        z-index: 9999;
-        padding-bottom: 8px;
-        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-    }
-
-    .mobile-nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        color: rgba(255, 255, 255, 0.85) !important;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        width: 20%;
-        position: relative;
-        transition: all 0.3s ease;
-    }
-
-    .mobile-nav-item .label-text {
-        font-size: 10px;
-        margin-top: 4px;
-        font-weight: 700;
-        font-family: 'Tajawal', sans-serif;
-    }
-
-    .mobile-nav-item svg {
-        width: 24px;
-        height: 24px;
-        stroke: currentColor;
-        transition: all 0.3s ease;
-    }
-
-    .mobile-nav-item.active-tab .icon-container {
-        background-color: #ffffff;
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 25px;
-        box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
-        border: 4px solid #f3f4f6;
-        transform: translateY(0);
-        z-index: 10;
-    }
-
-    .mobile-nav-item.active-tab {
-        color: #ffffff !important;
-        opacity: 1;
-    }
-
-    .mobile-nav-item.active-tab svg {
-        stroke: #16a34a !important;
-        stroke-width: 2.5px;
-    }
-
-    .mobile-nav-item.active-tab .label-text {
-        color: #ffffff;
-        font-weight: 900;
-    }
-
-    .mobile-popup-sheet {
-        position: fixed !important;
-        bottom: 85px !important;
-        background: linear-gradient(to right, #16a34a, #047857) !important;
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 16px;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-        z-index: 10000;
-        padding: 8px 0;
-        display: flex;
-        flex-direction: column;
-        min-width: 180px;
-    }
-
-    .popup-pos-left { right: 10px !important; left: auto !important; }
-    .popup-pos-right { left: 10px !important; right: auto !important; }
-    .popup-pos-center { left: 50% !important; transform: translateX(-50%); width: 260px; }
-
-    .mobile-popup-link {
-        display: block;
-        padding: 12px 16px;
-        color: #ffffff !important;
-        text-decoration: none;
-        font-size: 14px;
-        font-family: 'Tajawal', sans-serif;
-        font-weight: 700;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        text-align: right;
-        transition: background 0.2s;
-    }
-
-    .mobile-popup-link:last-child { border-bottom: none; }
-    .mobile-popup-link:active { background: rgba(255,255,255,0.1); }
-
-    .tools-row {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: 8px 0;
-        padding: 0 10px;
-    }
-
-    .tool-circle-btn {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(255,255,255,0.6) !important;
-        background: transparent !important;
-        color: #ffffff !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 13px;
-        cursor: pointer;
-    }
-
-    .divider-line {
-        height: 1px;
-        background: rgba(255,255,255,0.15);
-        margin: 6px 0;
-        width: 100%;
-    }
-
-    .tool-full-btn {
-        width: 90%;
-        margin: 0 auto;
-        border-radius: 8px;
-        padding: 8px;
-        border: 1.5px solid rgba(255,255,255,0.6) !important;
-        background: transparent !important;
-        color: #ffffff !important;
-    }
-}
-
-/* ==========================================================================
-   4. مشغل الصوت - Audio Player (صف واحد أفقي)
-   ========================================================================== */
-
-/* Hide default audio */
-audio {
-    display: none !important;
-}
-
-/* Player container - VERY COMPACT */
-.simple-audio-player {
-    width: 100%;
-    background: #000;
-    border-radius: 8px;
-    padding: 4px 6px;
-    margin: 8px 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-
-/* ONE ROW - HORIZONTAL ONLY */
-.player-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3px;
-    width: 100%;
-}
-
-/* All buttons - SMALLER */
-.player-row button {
-    flex-shrink: 0;
-    border: none;
-    border-radius: 4px;
-    background: #333;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: 'Tajawal', sans-serif;
-}
-
-.player-row button:active {
-    transform: scale(0.95);
-}
-
-/* Play button - SMALLER green circle */
-.btn-play {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    border-radius: 50% !important;
-    background: #1ed760 !important;
-    color: #000 !important;
-    font-size: 12px;
-}
-
-.btn-play.playing {
-    background: #1db954 !important;
-}
-
-/* Skip & Loop buttons - SMALLER */
-.btn-skip,
-.btn-loop {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    font-size: 9px;
-}
-
-.btn-loop.active {
-    color: #1ed760;
-}
-
-/* Time display - SMALLER */
-.time-current,
-.time-total {
-    flex-shrink: 0;
-    font-size: 9px;
-    font-weight: 600;
-    font-family: 'Tajawal', sans-serif;
-    min-width: 35px;
-    text-align: center;
-    color: #fff;
-}
-
-.time-total {
-    color: #999;
-}
-
-/* Progress bar - THINNER */
-.progress-bar {
-    flex: 1;
-    height: 3px;
-    background: #444;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: #1ed760;
-    border-radius: 10px;
-    width: 0%;
-    transition: width 0.1s linear;
-}
-
-/* Mute button - SMALLER */
-.btn-mute {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    font-size: 13px;
-    padding: 0;
-}
-
-/* Speed button - SMALLER */
-.btn-speed {
-    padding: 3px 8px;
-    height: auto;
-    background: #333;
-    border: 1px solid #555;
-    border-radius: 12px;
-    font-size: 9px;
-    white-space: nowrap;
-}
-
-.btn-speed:hover {
-    border-color: #1ed760;
-}
-
-/* Speed menu - SMALLER */
-.speed-menu {
-    position: absolute;
-    bottom: calc(100% + 4px);
-    right: 0;
-    background: #222;
-    border-radius: 6px;
-    padding: 3px;
-    display: none;
-    flex-direction: column;
-    gap: 1px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-    z-index: 1000;
-    min-width: 60px;
-}
-
-.speed-menu.show {
-    display: flex;
-}
-
-.speed-menu button {
-    padding: 5px 8px;
-    background: transparent;
-    border: none;
-    color: #999;
-    font-size: 9px;
-    border-radius: 3px;
-    width: 100%;
-    text-align: center;
-}
-
-.speed-menu button:hover {
-    background: #333;
-    color: #fff;
-}
-
-.speed-menu button.active {
-    background: #1ed760;
-    color: #000;
-}
-
-/* Mobile adjustments - VERY COMPACT */
-@media (max-width: 767px) {
-    .simple-audio-player {
-        padding: 5px 7px;
-        border-radius: 8px;
-        margin: 10px 0;
+    function initPlayers() {
+        console.log('🔍 Searching for audio elements...');
+        
+        const audioElements = document.querySelectorAll('audio');
+        console.log(`✅ Found ${audioElements.length} audio elements`);
+        
+        if (audioElements.length === 0) {
+            console.warn('⚠️ No audio elements found!');
+            return;
+        }
+        
+        audioElements.forEach((audio, index) => {
+            console.log(`🎵 Creating player ${index + 1}...`);
+            try {
+                const player = createSimplePlayer(audio, index);
+                audio.parentNode.insertBefore(player, audio);
+                audio.style.display = 'none';
+                console.log(`✅ Player ${index + 1} created successfully`);
+            } catch (error) {
+                console.error(`❌ Error creating player ${index + 1}:`, error);
+            }
+        });
+        
+        // Stop other audios when one plays
+        audioElements.forEach(audio => {
+            audio.addEventListener('play', function() {
+                audioElements.forEach(other => {
+                    if (other !== audio && !other.paused) {
+                        other.pause();
+                    }
+                });
+            });
+        });
+        
+        console.log('✅ All players initialized');
     }
     
-    .player-row {
-        gap: 4px;
+    // Run on DOMContentLoaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPlayers);
+    } else {
+        initPlayers();
     }
     
-    .btn-play {
-        width: 32px;
-        height: 32px;
-        min-width: 32px;
-        font-size: 14px;
+    function createSimplePlayer(audio, index) {
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'simple-audio-player';
+        wrapper.onclick = e => e.stopPropagation();
+        
+        wrapper.innerHTML = `
+            <div class="player-row">
+                <button class="btn-play" data-id="${index}">▶</button>
+                <button class="btn-skip" data-id="${index}">-10</button>
+                <button class="btn-loop" data-id="${index}">↻</button>
+                <span class="time-current">00:00</span>
+                <div class="progress-bar" data-id="${index}">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="time-total">00:00</span>
+                <button class="btn-mute" data-id="${index}">🔊</button>
+                <button class="btn-speed" data-id="${index}">1.00x</button>
+                <div class="speed-menu">
+                    <button data-speed="2.00">2.00x</button>
+                    <button data-speed="1.50">1.50x</button>
+                    <button data-speed="1.25">1.25x</button>
+                    <button data-speed="1.00" class="active">1.00x</button>
+                    <button data-speed="0.75">0.75x</button>
+                </div>
+            </div>
+        `;
+        
+        setupPlayer(wrapper, audio);
+        return wrapper;
     }
     
-    .btn-skip,
-    .btn-loop,
-    .btn-mute {
-        width: 28px;
-        height: 28px;
-        min-width: 28px;
+    function setupPlayer(wrapper, audio) {
+        
+        const playBtn = wrapper.querySelector('.btn-play');
+        const skipBtn = wrapper.querySelector('.btn-skip');
+        const loopBtn = wrapper.querySelector('.btn-loop');
+        const timeCurrent = wrapper.querySelector('.time-current');
+        const timeTotal = wrapper.querySelector('.time-total');
+        const progressBar = wrapper.querySelector('.progress-bar');
+        const progressFill = wrapper.querySelector('.progress-fill');
+        const muteBtn = wrapper.querySelector('.btn-mute');
+        const speedBtn = wrapper.querySelector('.btn-speed');
+        const speedMenu = wrapper.querySelector('.speed-menu');
+        const speedOptions = wrapper.querySelectorAll('.speed-menu button');
+        
+        // Play/Pause
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '⏸';
+                playBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+                playBtn.classList.remove('playing');
+            }
+        });
+        
+        // Skip -10
+        skipBtn.addEventListener('click', () => {
+            audio.currentTime = Math.max(0, audio.currentTime - 10);
+        });
+        
+        // Loop
+        loopBtn.addEventListener('click', () => {
+            audio.loop = !audio.loop;
+            loopBtn.classList.toggle('active');
+        });
+        
+        // Update progress
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration > 0) {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = percent + '%';
+                timeCurrent.textContent = formatTime(audio.currentTime);
+            }
+        });
+        
+        // Load duration
+        audio.addEventListener('loadedmetadata', () => {
+            timeTotal.textContent = formatTime(audio.duration);
+        });
+        
+        // Try to set duration immediately
+        if (audio.duration && isFinite(audio.duration)) {
+            timeTotal.textContent = formatTime(audio.duration);
+        }
+        
+        // Ended
+        audio.addEventListener('ended', () => {
+            if (!audio.loop) {
+                playBtn.textContent = '▶';
+                playBtn.classList.remove('playing');
+                progressFill.style.width = '0%';
+            }
+        });
+        
+        // Seek
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percent = x / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
+        
+        // Mute
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+        });
+        
+        // Speed
+        speedBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            speedMenu.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', () => {
+            speedMenu.classList.remove('show');
+        });
+        
+        speedOptions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const speed = parseFloat(btn.dataset.speed);
+                audio.playbackRate = speed;
+                speedBtn.textContent = speed.toFixed(2) + 'x';
+                speedOptions.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                speedMenu.classList.remove('show');
+            });
+        });
     }
     
-    .time-current,
-    .time-total {
-        font-size: 10px;
-        min-width: 38px;
+    function formatTime(seconds) {
+        if (isNaN(seconds) || !isFinite(seconds)) return '00:00';
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60);
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     }
     
-    .progress-bar {
-        height: 3px;
-    }
-    
-    .btn-speed {
-        padding: 4px 9px;
-        font-size: 9px;
-    }
-}
-
-/* ==========================================================================
-   5. تحسينات الاختبارات - Quiz Optimizations
-   ========================================================================== */
-
-@media (max-width: 767px) {
-    
-    #quiz-container, 
-    .container-main,
-    .question-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 10px 5px !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-    }
-
-    #question-text, 
-    .question-text {
-        font-size: 1.4rem !important;
-        line-height: 1.3 !important;
-        font-weight: 800 !important;
-        margin-bottom: 20px !important;
-        padding: 0 5px !important;
-        text-align: center !important;
-    }
-
-    .btn-answer, 
-    .answer-option {
-        font-size: 1.25rem !important;
-        padding: 15px 10px !important;
-        min-height: 65px !important;
-        margin-bottom: 12px !important;
-        border-radius: 12px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        line-height: 1.2 !important;
-        width: 100% !important;
-    }
-
-    .answers-grid {
-        gap: 12px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .question-number-badge, 
-    .badge {
-        font-size: 1rem !important;
-        padding: 6px 12px !important;
-    }
-
-    #status-bar-placeholder .container-main {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 2px 5px !important;
-        height: 45px !important;
-        min-height: 0 !important;
-    }
-
-    #status-bar-placeholder span.opacity-80,
-    #status-bar-placeholder .text-xs {
-        display: none !important; 
-    }
-
-    #progress-text, #score-display, #question-counter {
-        font-size: 14px !important;
-        line-height: 1 !important;
-    }
-
-    #status-bar-placeholder .progress-bar {
-        height: 6px !important;
-        margin-top: 2px !important;
-    }
-
-    #status-bar-placeholder .container-main > div:first-child {
-        flex: 2 !important;
-        width: 66% !important;
-        max-width: 66% !important;
-        padding-right: 5px !important;
-    }
-
-    #status-bar-placeholder .container-main > div:last-child {
-        flex: 1 !important;
-        width: 34% !important;
-        min-width: 0 !important;
-        padding-left: 2px !important;
-    }
-
-    #status-bar-placeholder .bg-gray-300 {
-        display: none !important;
-    }
-
-    #score-display, #question-counter {
-        font-size: 13px !important;
-        white-space: nowrap !important;
-    }
-
-    .comparison-container, #quiz-container {
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-    }
-
-    .comparison-options-wrapper {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 2px !important;
-        width: 100% !important;
-        padding: 0 2px !important;
-    }
-
-    .comparison-card, .option-card {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 6px 3px !important;
-        min-height: 100px !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        border-radius: 4px !important;
-    }
-
-    .comparison-card h3, .option-card h3 {
-        font-size: 13px !important;
-        margin-bottom: 4px !important;
-        line-height: 1.2 !important;
-        white-space: normal !important;
-    }
-
-    .comparison-card p, .option-card p, .comparison-card .text-sm {
-        font-size: 12px !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        white-space: normal !important;
-    }
-}
-
-/* ==========================================================================
-   6. بطاقات التقليب - Flip Cards
-   ========================================================================== */
-
-@media (max-width: 767px) {
-    
-    .flip-card-container, 
-    .card-flip-wrapper,
-    .perspective-container {
-        width: 90% !important;
-        max-width: 340px !important;
-        margin: 20px auto !important;
-        height: 400px !important;
-    }
-
-    .flip-card-inner, 
-    .card-scene {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .page-title-card h1 {
-        font-size: 1.5rem !important;
-        margin-bottom: 5px !important;
-    }
-}
-
-/* ==========================================================================
-   7. إصلاحات الأزرار - Button Fixes
-   ========================================================================== */
-
-@media (max-width: 767px) {
-    
-    #navigation-buttons {
-        gap: 1.5rem !important;
-    }
-
-    #navigation-buttons > * {
-        margin-inline-start: 0 !important;
-        margin-inline-end: 0 !important;
-    }
-
-    #card-and-buttons-container {
-        padding-top: 2.25rem !important;
-        padding-bottom: 1rem !important;
-    }
-}
-
-/* ==========================================================================
-   نهاية الملف - End of File
-   ========================================================================== */
+})();
