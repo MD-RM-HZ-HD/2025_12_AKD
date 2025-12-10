@@ -107,6 +107,12 @@
             }
         });
         
+        // Jump to time - Click on current time
+        timeCurrent.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showTimeJumpModal(audio, timeCurrent);
+        });
+        
         // Update progress
         audio.addEventListener('timeupdate', () => {
             if (audio.duration > 0) {
@@ -163,6 +169,80 @@
                 speedOptions.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 speedMenu.classList.remove('show');
+            });
+        });
+    }
+    
+    function showTimeJumpModal(audio, timeDisplay) {
+        // Remove existing modal if any
+        const existingModal = document.querySelector('.time-jump-modal');
+        if (existingModal) existingModal.remove();
+        
+        // Create modal
+        const modal = document.createElement('div');
+        modal.className = 'time-jump-modal';
+        
+        const currentTime = audio.currentTime;
+        const mins = Math.floor(currentTime / 60);
+        const secs = Math.floor(currentTime % 60);
+        
+        modal.innerHTML = `
+            <div class="time-jump-content">
+                <h3>القفز إلى وقت محدد</h3>
+                <div class="time-inputs">
+                    <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="دقيقة">
+                    <span>:</span>
+                    <input type="number" class="time-input-secs" min="0" max="59" value="${secs}" placeholder="ثانية">
+                </div>
+                <div class="time-buttons">
+                    <button class="btn-jump-cancel">إلغاء</button>
+                    <button class="btn-jump-go">انتقال</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        
+        const minsInput = modal.querySelector('.time-input-mins');
+        const secsInput = modal.querySelector('.time-input-secs');
+        const cancelBtn = modal.querySelector('.btn-jump-cancel');
+        const goBtn = modal.querySelector('.btn-jump-go');
+        
+        // Focus on minutes input
+        setTimeout(() => minsInput.select(), 100);
+        
+        // Cancel
+        cancelBtn.addEventListener('click', () => {
+            modal.remove();
+        });
+        
+        // Go / Jump
+        goBtn.addEventListener('click', () => {
+            const newMins = parseInt(minsInput.value) || 0;
+            const newSecs = parseInt(secsInput.value) || 0;
+            const newTime = (newMins * 60) + newSecs;
+            
+            if (newTime >= 0 && newTime <= audio.duration) {
+                audio.currentTime = newTime;
+                modal.remove();
+            } else {
+                alert('الوقت غير صحيح');
+            }
+        });
+        
+        // Close on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+        
+        // Enter key to jump
+        [minsInput, secsInput].forEach(input => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    goBtn.click();
+                }
             });
         });
     }
