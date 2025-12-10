@@ -219,21 +219,11 @@
         
         modal.innerHTML = `
             <div class="time-jump-content">
-                <h3>القفز إلى وقت محدد</h3>
-                <div class="time-inputs-wrapper">
-                    <div class="time-input-group">
-                        <button class="btn-time-up" data-type="mins">▲</button>
-                        <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="دقيقة">
-                        <button class="btn-time-down" data-type="mins">▼</button>
-                        <label>دقيقة</label>
-                    </div>
-                    <span class="time-separator">:</span>
-                    <div class="time-input-group">
-                        <button class="btn-time-up" data-type="secs">▲</button>
-                        <input type="number" class="time-input-secs" min="0" max="59" value="${secs}" placeholder="ثانية">
-                        <button class="btn-time-down" data-type="secs">▼</button>
-                        <label>ثانية</label>
-                    </div>
+                <h3>القفز إلى وقت</h3>
+                <div class="time-inputs-simple">
+                    <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="00">
+                    <span>:</span>
+                    <input type="number" class="time-input-secs" min="0" max="59" value="${secs}" placeholder="00">
                 </div>
                 <div class="time-buttons">
                     <button class="btn-jump-cancel">إلغاء</button>
@@ -248,31 +238,9 @@
         const secsInput = modal.querySelector('.time-input-secs');
         const cancelBtn = modal.querySelector('.btn-jump-cancel');
         const goBtn = modal.querySelector('.btn-jump-go');
-        const upButtons = modal.querySelectorAll('.btn-time-up');
-        const downButtons = modal.querySelectorAll('.btn-time-down');
         
-        // Focus on minutes input (left side in LTR)
+        // Focus on minutes input
         setTimeout(() => minsInput.select(), 100);
-        
-        // Up/Down buttons
-        upButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const type = btn.dataset.type;
-                const input = type === 'mins' ? minsInput : secsInput;
-                const max = type === 'mins' ? 999 : 59;
-                let val = parseInt(input.value) || 0;
-                input.value = Math.min(max, val + 1);
-            });
-        });
-        
-        downButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const type = btn.dataset.type;
-                const input = type === 'mins' ? minsInput : secsInput;
-                let val = parseInt(input.value) || 0;
-                input.value = Math.max(0, val - 1);
-            });
-        });
         
         // Cancel
         cancelBtn.addEventListener('click', () => {
@@ -307,6 +275,13 @@
                     goBtn.click();
                 }
             });
+        });
+        
+        // Auto-advance to seconds after 2 digits in minutes
+        minsInput.addEventListener('input', () => {
+            if (minsInput.value.length >= 2) {
+                secsInput.focus();
+            }
         });
     }
     
