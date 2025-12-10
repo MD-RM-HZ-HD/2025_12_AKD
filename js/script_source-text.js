@@ -61,20 +61,19 @@
         wrapper.innerHTML = `
             <div class="player-row">
                 <button class="btn-play" data-id="${index}">▶</button>
-                <button class="btn-skip" data-id="${index}">-10</button>
                 <span class="time-current">00:00</span>
                 <div class="progress-bar" data-id="${index}">
                     <div class="progress-fill"></div>
                 </div>
                 <span class="time-total">00:00</span>
                 <div class="speed-wrapper">
-                    <button class="btn-speed" data-id="${index}">1.00x</button>
-                    <div class="speed-menu">
-                        <button data-speed="2.00">2.00x</button>
-                        <button data-speed="1.50">1.50x</button>
-                        <button data-speed="1.25">1.25x</button>
-                        <button data-speed="1.00" class="active">1.00x</button>
+                    <button class="btn-speed" data-id="${index}">⋮</button>
+                    <div class="speed-menu-horizontal">
                         <button data-speed="0.75">0.75x</button>
+                        <button data-speed="1.00" class="active">1.00x</button>
+                        <button data-speed="1.25">1.25x</button>
+                        <button data-speed="1.50">1.50x</button>
+                        <button data-speed="2.00">2.00x</button>
                     </div>
                 </div>
             </div>
@@ -87,14 +86,13 @@
     function setupPlayer(wrapper, audio) {
         
         const playBtn = wrapper.querySelector('.btn-play');
-        const skipBtn = wrapper.querySelector('.btn-skip');
         const timeCurrent = wrapper.querySelector('.time-current');
         const timeTotal = wrapper.querySelector('.time-total');
         const progressBar = wrapper.querySelector('.progress-bar');
         const progressFill = wrapper.querySelector('.progress-fill');
         const speedBtn = wrapper.querySelector('.btn-speed');
-        const speedMenu = wrapper.querySelector('.speed-menu');
-        const speedOptions = wrapper.querySelectorAll('.speed-menu button');
+        const speedMenu = wrapper.querySelector('.speed-menu-horizontal');
+        const speedOptions = wrapper.querySelectorAll('.speed-menu-horizontal button');
         
         // Play/Pause
         playBtn.addEventListener('click', () => {
@@ -107,11 +105,6 @@
                 playBtn.textContent = '▶';
                 playBtn.classList.remove('playing');
             }
-        });
-        
-        // Skip -10
-        skipBtn.addEventListener('click', () => {
-            audio.currentTime = Math.max(0, audio.currentTime - 10);
         });
         
         // Update progress
@@ -148,24 +141,25 @@
             audio.currentTime = percent * audio.duration;
         });
         
-        // Speed
+        // Speed toggle
         speedBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             speedMenu.classList.toggle('show');
         });
         
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!speedBtn.contains(e.target) && !speedMenu.contains(e.target)) {
                 speedMenu.classList.remove('show');
             }
         });
         
+        // Speed selection
         speedOptions.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const speed = parseFloat(btn.dataset.speed);
                 audio.playbackRate = speed;
-                speedBtn.textContent = speed.toFixed(2) + 'x';
                 speedOptions.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 speedMenu.classList.remove('show');
