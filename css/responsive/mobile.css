@@ -512,4 +512,234 @@
 }
 
 
+/* ==========================================================================
+   مشغل الصوت الاحترافي - Professional Audio Player
+   ========================================================================== */
+
+/* إخفاء المشغل الافتراضي */
+audio {
+    display: none !important;
+}
+
+/* حاوية المشغل */
+.audio-player-wrapper {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    direction: ltr;
+}
+
+/* صف عناصر التحكم الرئيسية */
+.audio-main-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* زر Play/Pause */
+.audio-play-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background: #16a34a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+}
+
+.audio-play-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(22, 163, 74, 0.4);
+}
+
+/* أيقونات Play/Pause */
+.audio-play-btn .play-icon,
+.audio-play-btn .pause-icon {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.audio-play-btn .pause-icon {
+    display: none;
+}
+
+.audio-play-btn.playing .play-icon {
+    display: none;
+}
+
+.audio-play-btn.playing .pause-icon {
+    display: block;
+}
+
+/* معلومات الوقت والتقدم */
+.audio-progress-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* عرض الأوقات */
+.audio-time-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #666;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+}
+
+/* شريط التقدم */
+.audio-progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #16a34a, #15803d);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.1s linear;
+    position: relative;
+}
+
+/* النقطة المتحركة على الشريط */
+.audio-progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background: #16a34a;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* صف أزرار التحكم الإضافية */
+.audio-extra-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* أزرار التحكم (تقديم/تأخير) */
+.audio-control-group {
+    display: flex;
+    gap: 6px;
+}
+
+.audio-control-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 11px;
+    font-weight: 700;
+    color: #374151;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.audio-control-btn:active {
+    transform: scale(0.95);
+    background: #e5e7eb;
+}
+
+/* أزرار السرعة */
+.audio-speed-group {
+    display: flex;
+    gap: 4px;
+}
+
+.audio-speed-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    color: #374151;
+    font-family: 'Tajawal', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.audio-speed-btn.active {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+}
+
+.audio-speed-btn:active {
+    transform: scale(0.95);
+}
+
+/* للموبايل */
+@media (max-width: 767px) {
+    .audio-player-wrapper {
+        padding: 14px;
+        margin: 14px 0;
+    }
+    
+    .audio-play-btn {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+    
+    .audio-play-btn .play-icon,
+    .audio-play-btn .pause-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .audio-time-display {
+        font-size: 14px;
+    }
+    
+    .audio-progress-bar-container {
+        height: 8px;
+    }
+    
+    .audio-control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .audio-speed-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
 
