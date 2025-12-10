@@ -1,86 +1,184 @@
+/* ==========================================================================
+   ملف CSS للموبايل - نسخة نظيفة ومنقحة
+   Mobile CSS - Clean & Revised Version
+   ========================================================================== */
+
+/* ==========================================================================
+   1. أحجام الخطوط للموبايل - Font Sizes for Mobile
+   ========================================================================== */
+
 @media (max-width: 767px) {
     
-    /* ========================================================================
-       SECTION 1: TYPOGRAPHY - Font Sizes for Mobile
-       ======================================================================== */
-    
-    body, p, li,
-    .p-content, .li-content, .card-content,
-    article.content p, article.content li,
+    /* نص المحتوى العام */
+    body, 
+    p, 
+    li,
+    .p-content, 
+    .li-content,
+    .card-content,
+    article.content p, 
+    article.content li,
     .accordion-button {
-        font-size: var(--content-font-size, 18px) !important;
+        font-size: var(--content-font-size, 18px) !important; 
         line-height: 1.6 !important;
     }
 
-    h1, .page-title-card h1, .bio-page h1 {
-        font-size: 2rem !important;
+    /* العناوين الرئيسية H1 */
+    h1, 
+    .page-title-card h1,
+    .bio-page h1 {
+        font-size: 1.75rem !important; /* 28px */
         line-height: 1.3 !important;
+        margin-bottom: 12px !important;
     }
 
-    h2, .section, article.content h2.section, .bio-page h2 {
-        font-size: 1.5rem !important;
-        line-height: 1.4 !important;
+    /* العناوين الفرعية H2 - تصغير للتناسب مع المشغل */
+    h2, 
+    .section, 
+    article.content h2.section,
+    .bio-page h2 {
+        font-size: 1.1rem !important; /* 17.6px */
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
 
-    h3, h4,
-    .h3-content-title, .h4-content-title, .h5-content-title,
+    /* العناوين H3/H4/H5 */
+    h3, 
+    h4,
+    h5,
+    .h3-content-title, 
+    .h4-content-title,
+    .h5-content-title,
     article.content h3.sub,
-    .card-title, .bio-page h3, .bio-page h4,
-    .item-title, .q-title,
-    #front-header, #back-header {
-        font-size: 1.25rem !important;
+    .card-title,
+    .bio-page h3, 
+    .bio-page h4,
+    .item-title,
+    .q-title,
+    #front-header,
+    #back-header {
+        font-size: 1.05rem !important; /* 16.8px */
         line-height: 1.4 !important;
     }
 
-    small, .text-muted, .text-sm,
-    .badge, .question-number, .nav-link-desktop,
-    .btn-custom, .btn-answer, footer {
-        font-size: 0.875rem !important;
+    /* عناوين الأسئلة والأقسام الفرعية */
+    .q-title span,
+    .h3-content-title span {
+        font-size: 1rem !important; /* 16px */
+        line-height: 1.4 !important;
+        word-wrap: break-word !important;
     }
 
-    input, select, textarea,
+    /* النصوص الثانوية */
+    small, 
+    .text-muted, 
+    .text-sm,
+    .badge, 
+    .question-number, 
+    .nav-link-desktop,
+    .btn-custom,
+    .btn-answer,
+    footer {
+        font-size: 0.875rem !important; /* 14px */
+    }
+
+    /* حقول الإدخال - منع التكبير التلقائي في iOS */
+    input, 
+    select, 
+    textarea,
     .question-card.fill-blank input {
-        font-size: 1.125rem !important;
+        font-size: 1.125rem !important; /* 18px */
     }
+}
 
-    /* ========================================================================
-       SECTION 2: LAYOUT - Width, Padding, Margins
-       ======================================================================== */
+/* ==========================================================================
+   2. تخطيط الصفحة الرئيسي - Main Layout
+   ========================================================================== */
+
+@media (max-width: 767px) {
     
-    body, .main-width-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding-bottom: 80px;
-    }
-
-    body, .main-width-container, .container-main,
-    article.content, .content-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        padding-left: 4px !important;
-        padding-right: 4px !important;
-    }
-
+    /* حاوية العرض الكامل */
+    body,
     .main-width-container {
-        padding-top: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-bottom: 80px !important; /* مساحة للقائمة السفلية */
+        padding-top: 10px !important; /* تقليل المسافة العلوية */
     }
 
-    /* ========================================================================
-       SECTION 3: MOBILE BOTTOM NAVIGATION
-       ======================================================================== */
+    /* تنسيق النصوص */
+    p, 
+    li, 
+    .p-content, 
+    .li-content, 
+    .a, 
+    .q-title span, 
+    .h3-content-title {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 4px !important;
+    }
+
+    /* القوائم */
+    ul, ol {
+        padding-right: 15px !important;
+        padding-left: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* لوحة الأكورديون */
+    .accordion-panel {
+        padding: 8px 4px !important;
+    }
+
+    /* صناديق الأسئلة والأجوبة */
+    .qa {
+        margin: 5px 0 !important;
+        padding: 5px !important;
+        border-radius: 4px !important;
+    }
+
+    /* العناوين محاذاة لليمين */
+    h1, h2, h3, h4, h5, h6 {
+        text-align: right !important;
+        padding: 4px 0 !important;
+    }
+
+    /* منع تداخل الأكورديون مع المشغل */
+    .accordion-title-group {
+        margin-bottom: 10px !important;
+        width: 100% !important;
+    }
+
+    .accordion-button {
+        flex-wrap: wrap !important;
+        padding: 12px 8px !important;
+    }
+
+    .content-container {
+        margin: 10px 0 !important;
+    }
+}
+
+/* ==========================================================================
+   3. القائمة السفلية للموبايل - Mobile Bottom Navigation
+   ========================================================================== */
+
+@media (max-width: 767px) {
     
+    /* حاوية القائمة السفلية */
     #mobile-bottom-nav {
         position: fixed !important;
         bottom: 0 !important;
         left: 0 !important;
         width: 100% !important;
         height: 70px;
-        background: linear-gradient(to right, #16a34a, #047857) !important;
+        background: linear-gradient(to right, #16a34a, #047857) !important; 
         border-top: 1px solid rgba(255,255,255,0.1);
         display: flex;
         justify-content: space-around;
@@ -90,6 +188,7 @@
         box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
     }
 
+    /* عناصر القائمة */
     .mobile-nav-item {
         display: flex;
         flex-direction: column;
@@ -118,6 +217,7 @@
         transition: all 0.3s ease;
     }
 
+    /* التبويب النشط - تأثير العائم */
     .mobile-nav-item.active-tab .icon-container {
         background-color: #ffffff;
         width: 54px;
@@ -149,10 +249,7 @@
         font-weight: 900;
     }
 
-    /* ========================================================================
-       SECTION 4: POPUP SHEETS & MENUS
-       ======================================================================== */
-    
+    /* القوائم المنبثقة */
     .mobile-popup-sheet {
         position: fixed !important;
         bottom: 85px !important;
@@ -167,10 +264,23 @@
         min-width: 180px;
     }
 
-    .popup-pos-left { right: 10px !important; left: auto !important; }
-    .popup-pos-right { left: 10px !important; right: auto !important; }
-    .popup-pos-center { left: 50% !important; transform: translateX(-50%); width: 260px; }
+    .popup-pos-left { 
+        right: 10px !important; 
+        left: auto !important; 
+    }
 
+    .popup-pos-right { 
+        left: 10px !important; 
+        right: auto !important; 
+    }
+
+    .popup-pos-center { 
+        left: 50% !important; 
+        transform: translateX(-50%); 
+        width: 260px; 
+    }
+
+    /* روابط القوائم المنبثقة */
     .mobile-popup-link {
         display: block;
         padding: 12px 16px;
@@ -184,13 +294,15 @@
         transition: background 0.2s;
     }
 
-    .mobile-popup-link:last-child { border-bottom: none; }
-    .mobile-popup-link:active { background: rgba(255,255,255,0.1); }
+    .mobile-popup-link:last-child { 
+        border-bottom: none; 
+    }
 
-    /* ========================================================================
-       SECTION 5: TOOLS & BUTTONS
-       ======================================================================== */
-    
+    .mobile-popup-link:active { 
+        background: rgba(255,255,255,0.1); 
+    }
+
+    /* صف الأدوات */
     .tools-row {
         display: flex;
         justify-content: space-evenly;
@@ -230,288 +342,10 @@
         background: transparent !important;
         color: #ffffff !important;
     }
-
-    /* ========================================================================
-       SECTION 6: CARDS & CONTAINERS
-       ======================================================================== */
-    
-    .card-title { font-size: 1rem !important; margin: 0 !important; }
-    .card-body { padding: 8px !important; }
-    .card-content { margin: 0 !important; padding: 0 !important; }
-    
-    .question-card {
-        margin-bottom: 12px !important;
-        border-radius: 12px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        line-height: 1.2 !important;
-        width: 100% !important;
-    }
-
-    .answers-grid {
-        gap: 12px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .question-number-badge, .badge {
-        font-size: 1rem !important;
-        padding: 6px 12px !important;
-    }
-
-    /* ========================================================================
-       SECTION 7: COMPARISON CARDS
-       ======================================================================== */
-    
-    .comparison-container, #quiz-container {
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-    }
-
-    .comparison-options-wrapper {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 2px !important;
-        width: 100% !important;
-        padding: 0 2px !important;
-    }
-
-    .comparison-card, .option-card {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 6px 3px !important;
-        min-height: 100px !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        border-radius: 4px !important;
-    }
-
-    .comparison-card h3, .option-card h3 {
-        font-size: 13px !important;
-        margin-bottom: 4px !important;
-        line-height: 1.2 !important;
-        white-space: normal !important;
-    }
-
-    .comparison-card p, .option-card p, .comparison-card .text-sm {
-        font-size: 12px !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        white-space: normal !important;
-    }
-
-    /* ========================================================================
-       SECTION 8: FLASHCARD STYLING
-       ======================================================================== */
-    
-    .flip-card-container, .card-flip-wrapper, .perspective-container {
-        width: 90% !important;
-        max-width: 340px !important;
-        margin: 20px auto !important;
-        height: 400px !important;
-    }
-
-    .flip-card-inner, .card-scene {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .page-title-card h1 {
-        font-size: 1.5rem !important;
-        margin-bottom: 5px !important;
-    }
-
-    /* ========================================================================
-       SECTION 9: QUESTION LAYOUT
-       ======================================================================== */
-    
-    .question-text {
-        font-size: 18px !important;
-        padding: 5px !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* ========================================================================
-       ⭐ SECTION 10: STATUS BAR FIX - CRITICAL SECTION ⭐
-       FIXES: Progress bar and score display on mobile for all quizzes
-       Applies to: Fill-blank, Comparison, Flashcard quizzes
-       ======================================================================== */
-    
-    #status-bar-placeholder {
-        display: block !important;
-        width: 100% !important;
-        margin: 4px 0 !important;
-        padding: 0 !important;
-    }
-
-    /* CORE FIX: Force flex-row layout (side-by-side, NOT stacked) */
-    #status-bar-placeholder .container-main {
-        display: flex !important;
-        flex-direction: row !important;              /* KEY: Force row (overrides flex-col) */
-        flex-wrap: nowrap !important;                /* Never wrap to new line */
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;                 /* Override inline 85px */
-        padding: 2px 4px !important;                 /* Compact padding */
-        margin: 0 !important;
-        gap: 4px !important;
-        background: transparent !important;
-    }
-
-    /* Progress section: grows to fill available space (2/3 width) */
-    #status-bar-placeholder .flex-grow {
-        flex: 1 1 auto !important;                   /* Grow to fill space */
-        min-width: 0 !important;                     /* Allow flex to control width */
-        max-width: none !important;
-        width: auto !important;
-        padding: 3px 6px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        gap: 1px !important;
-        overflow: hidden !important;
-    }
-
-    /* Score section: stays compact and visible (1/3 width) */
-    #status-bar-placeholder .flex-none {
-        flex: 0 0 auto !important;                   /* Fixed size, don't grow */
-        min-width: 100px !important;                 /* Always at least 100px */
-        max-width: none !important;
-        width: auto !important;
-        padding: 2px 3px !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-around !important;
-        gap: 2px !important;
-        background: transparent !important;
-        overflow: hidden !important;
-    }
-
-    /* Progress bar visual element */
-    #status-bar-placeholder .progress-bar {
-        display: block !important;
-        height: 5px !important;
-        width: 100% !important;
-        background-color: #e5e7eb !important;
-        border-radius: 3px !important;
-        overflow: hidden !important;
-        margin: 1px 0 0 0 !important;
-    }
-
-    /* Progress fill animation */
-    #status-bar-placeholder .progress-fill,
-    #status-bar-placeholder #progress-fill {
-        display: block !important;
-        height: 100% !important;
-        width: 0% !important;
-        background: #16a34a !important;
-        border-radius: 3px !important;
-        transition: width 0.3s ease !important;
-    }
-
-    /* All text in status bar - MUST be visible */
-    #status-bar-placeholder span {
-        display: inline-block !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        font-size: 9px !important;
-        line-height: 1.1 !important;
-        margin: 0 1px !important;
-        padding: 0 !important;
-    }
-
-    /* Labels like "التقدم" and "النتيجة" */
-    #status-bar-placeholder .opacity-80 {
-        display: inline-block !important;
-        font-size: 8px !important;
-        opacity: 1 !important;
-        font-weight: 600 !important;
-        line-height: 1 !important;
-    }
-
-    #status-bar-placeholder .text-xs {
-        display: inline-block !important;
-        font-size: 8px !important;
-        line-height: 1 !important;
-        font-weight: 600 !important;
-    }
-
-    /* Status bar numbers (progress %, score, question counter) */
-    #progress-text, #score-display, #question-counter {
-        display: inline-block !important;
-        font-size: 10px !important;
-        font-weight: 700 !important;
-        margin: 0 1px !important;
-        padding: 0 !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Hide all dividers/separators between sections */
-    #status-bar-placeholder [class*="w-[1px]"],
-    #status-bar-placeholder [class*="h-[1px]"],
-    #status-bar-placeholder .w-\[1px\],
-    #status-bar-placeholder .h-\[1px\],
-    #status-bar-placeholder .hidden {
-        display: none !important;
-    }
-
-    /* Override conflicting Tailwind size classes */
-    #status-bar-placeholder .text-sm,
-    #status-bar-placeholder .text-base,
-    #status-bar-placeholder .text-lg {
-        font-size: inherit !important;
-    }
-
-    /* Override conflicting Tailwind spacing classes */
-    #status-bar-placeholder [class*="p-"],
-    #status-bar-placeholder [class*="m-"],
-    #status-bar-placeholder [class*="px-"],
-    #status-bar-placeholder [class*="py-"],
-    #status-bar-placeholder [class*="mx-"],
-    #status-bar-placeholder [class*="my-"] {
-        padding: inherit !important;
-        margin: inherit !important;
-    }
-
-    /* Override conflicting Tailwind flex/justify classes */
-    #status-bar-placeholder [class*="gap-"],
-    #status-bar-placeholder [class*="justify-"] {
-        gap: inherit !important;
-        justify-content: inherit !important;
-    }
-
-    /* ========================================================================
-       SECTION 11: PAGE-SPECIFIC FIXES
-       ======================================================================== */
-    
-    #navigation-buttons {
-        gap: 1.5rem !important;
-    }
-
-    #navigation-buttons > * {
-        margin-inline-start: 0 !important;
-        margin-inline-end: 0 !important;
-    }
-
-    #card-and-buttons-container {
-        padding-top: 2.25rem !important;
-        padding-bottom: 1rem !important;
-    }
-
 }
+
 /* ==========================================================================
-   مشغل الصوت - نسخة طبق الأصل من shiavoice
+   4. مشغل الصوت المدمج - Compact Audio Player (ShiaVoice Style)
    ========================================================================== */
 
 /* إخفاء المشغل الافتراضي */
@@ -525,12 +359,12 @@ audio {
     background: #000000;
     border-radius: 12px;
     padding: 14px 16px;
-    margin: 12px 0;
+    margin: 14px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     direction: ltr;
 }
 
-/* الصف الأول: Play + Skip Buttons + Time + Progress + Total Time */
+/* الصف العلوي: Play + Buttons + Time + Progress */
 .sv-top-row {
     display: flex;
     align-items: center;
@@ -663,7 +497,7 @@ audio {
     flex-shrink: 0;
 }
 
-/* الصف الثاني: زر السرعة */
+/* الصف السفلي: زر السرعة */
 .sv-bottom-row {
     display: flex;
     justify-content: center;
@@ -752,11 +586,12 @@ audio {
     color: #000000;
 }
 
-/* للموبايل */
+/* تحسينات للموبايل */
 @media (max-width: 767px) {
     .sv-audio-player {
         padding: 16px;
         border-radius: 14px;
+        margin: 16px 0;
     }
     
     .sv-play-btn {
@@ -791,3 +626,215 @@ audio {
         font-size: 14px;
     }
 }
+
+/* ==========================================================================
+   5. تحسينات الاختبارات - Quiz Optimizations
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    
+    /* حاوية الاختبار */
+    #quiz-container, 
+    .container-main,
+    .question-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 10px 5px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* نص السؤال */
+    #question-text, 
+    .question-text {
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
+        font-weight: 800 !important;
+        margin-bottom: 20px !important;
+        padding: 0 5px !important;
+        text-align: center !important;
+    }
+
+    /* أزرار الإجابة */
+    .btn-answer, 
+    .answer-option {
+        font-size: 1.25rem !important;
+        padding: 15px 10px !important;
+        min-height: 65px !important;
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+    }
+
+    /* شبكة الإجابات */
+    .answers-grid {
+        gap: 12px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* شارة رقم السؤال */
+    .question-number-badge, 
+    .badge {
+        font-size: 1rem !important;
+        padding: 6px 12px !important;
+    }
+
+    /* شريط التقدم المدمج */
+    #status-bar-placeholder .container-main {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 2px 5px !important;
+        height: 45px !important;
+        min-height: 0 !important;
+    }
+
+    /* إخفاء النصوص التوضيحية */
+    #status-bar-placeholder span.opacity-80,
+    #status-bar-placeholder .text-xs {
+        display: none !important; 
+    }
+
+    /* أحجام النصوص */
+    #progress-text, #score-display, #question-counter {
+        font-size: 14px !important;
+        line-height: 1 !important;
+    }
+
+    /* شريط التقدم المدمج */
+    #status-bar-placeholder .progress-bar {
+        height: 6px !important;
+        margin-top: 2px !important;
+    }
+
+    /* نسب التقدم والنتيجة */
+    #status-bar-placeholder .container-main > div:first-child {
+        flex: 2 !important;
+        width: 66% !important;
+        max-width: 66% !important;
+        padding-right: 5px !important;
+    }
+
+    #status-bar-placeholder .container-main > div:last-child {
+        flex: 1 !important;
+        width: 34% !important;
+        min-width: 0 !important;
+        padding-left: 2px !important;
+    }
+
+    /* إخفاء الفواصل العمودية */
+    #status-bar-placeholder .bg-gray-300 {
+        display: none !important;
+    }
+
+    #score-display, #question-counter {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+    /* بطاقات المقارنة */
+    .comparison-container, #quiz-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+
+    .comparison-options-wrapper {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2px !important;
+        width: 100% !important;
+        padding: 0 2px !important;
+    }
+
+    .comparison-card, .option-card {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 6px 3px !important;
+        min-height: 100px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        border-radius: 4px !important;
+    }
+
+    .comparison-card h3, .option-card h3 {
+        font-size: 13px !important;
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+
+    .comparison-card p, .option-card p, .comparison-card .text-sm {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: normal !important;
+    }
+}
+
+/* ==========================================================================
+   6. بطاقات التقليب - Flip Cards
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    
+    .flip-card-container, 
+    .card-flip-wrapper,
+    .perspective-container {
+        width: 90% !important;
+        max-width: 340px !important;
+        margin: 20px auto !important;
+        height: 400px !important;
+    }
+
+    .flip-card-inner, 
+    .card-scene {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .page-title-card h1 {
+        font-size: 1.5rem !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+/* ==========================================================================
+   7. إصلاحات الأزرار والتنقل - Button & Navigation Fixes
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    
+    /* أزرار التنقل */
+    #navigation-buttons {
+        gap: 1.5rem !important;
+    }
+
+    #navigation-buttons > * {
+        margin-inline-start: 0 !important;
+        margin-inline-end: 0 !important;
+    }
+
+    /* حاوية البطاقة والأزرار */
+    #card-and-buttons-container {
+        padding-top: 2.25rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   نهاية الملف
+   ========================================================================== */
