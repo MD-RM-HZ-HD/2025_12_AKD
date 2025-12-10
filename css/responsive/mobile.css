@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ملف CSS للموبايل - نسخة نظيفة ومنقحة
-   Mobile CSS - Clean & Revised Version
+   ملف CSS للموبايل - نسخة نهائية محسّنة
+   Mobile CSS - Final Optimized Version
    ========================================================================== */
 
 /* ==========================================================================
@@ -345,7 +345,7 @@
 }
 
 /* ==========================================================================
-   4. مشغل الصوت المدمج - Compact Audio Player (ShiaVoice Style)
+   4. مشغل الصوت المدمج الصغير - Compact Audio Player (75% Size)
    ========================================================================== */
 
 /* إخفاء المشغل الافتراضي */
@@ -353,14 +353,14 @@ audio {
     display: none !important;
 }
 
-/* حاوية المشغل */
+/* حاوية المشغل - مصغرة 75% */
 .sv-audio-player {
     width: 100%;
     background: #000000;
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin: 14px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 10px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     direction: ltr;
 }
 
@@ -368,15 +368,15 @@ audio {
 .sv-top-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 6px;
+    margin-bottom: 8px;
 }
 
-/* زر Play/Pause دائري أخضر */
+/* زر Play/Pause دائري أخضر - صغير */
 .sv-play-btn {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
     border-radius: 50%;
     background: #1ed760;
     border: none;
@@ -393,8 +393,8 @@ audio {
 }
 
 .sv-play-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     fill: #000000;
 }
 
@@ -410,19 +410,19 @@ audio {
     display: block;
 }
 
-/* أزرار التقديم/التأخير */
+/* أزرار التقديم/التأخير - صغيرة */
 .sv-skip-btn {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 6px;
     background: #282828;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 700;
     color: #ffffff;
     font-family: 'Tajawal', sans-serif;
@@ -437,19 +437,19 @@ audio {
 
 /* الوقت الحالي */
 .sv-current-time {
-    font-size: 14px;
+    font-size: 11px;
     color: #ffffff;
     font-family: 'Tajawal', sans-serif;
     font-weight: 600;
-    min-width: 50px;
+    min-width: 38px;
     text-align: center;
     flex-shrink: 0;
 }
 
-/* شريط التقدم */
+/* شريط التقدم - رفيع */
 .sv-progress-container {
     flex: 1;
-    height: 6px;
+    height: 4px;
     background: #4d4d4d;
     border-radius: 10px;
     cursor: pointer;
@@ -466,17 +466,17 @@ audio {
     position: relative;
 }
 
-/* النقطة على شريط التقدم */
+/* النقطة على شريط التقدم - صغيرة */
 .sv-progress-fill::after {
     content: '';
     position: absolute;
-    right: -6px;
+    right: -4px;
     top: 50%;
     transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     background: #1ed760;
-    border: 2px solid #000000;
+    border: 1.5px solid #000000;
     border-radius: 50%;
     opacity: 0;
     transition: opacity 0.2s;
@@ -488,42 +488,42 @@ audio {
 
 /* الوقت الكلي */
 .sv-total-time {
-    font-size: 14px;
+    font-size: 11px;
     color: #b3b3b3;
     font-family: 'Tajawal', sans-serif;
     font-weight: 600;
-    min-width: 50px;
+    min-width: 38px;
     text-align: center;
     flex-shrink: 0;
 }
 
-/* الصف السفلي: زر السرعة */
+/* الصف السفلي: زر السرعة - مصغر */
 .sv-bottom-row {
     display: flex;
     justify-content: center;
-    padding-top: 8px;
+    padding-top: 6px;
     border-top: 1px solid #282828;
 }
 
-/* قائمة السرعة */
+/* قائمة السرعة - صغيرة */
 .sv-speed-wrapper {
     position: relative;
 }
 
 .sv-speed-trigger {
-    padding: 8px 16px;
+    padding: 5px 12px;
     background: transparent;
     border: 1px solid #404040;
-    border-radius: 20px;
+    border-radius: 16px;
     color: #ffffff;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     font-family: 'Tajawal', sans-serif;
     cursor: pointer;
     transition: all 0.2s;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .sv-speed-trigger:hover {
@@ -531,8 +531,8 @@ audio {
 }
 
 .sv-speed-trigger svg {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     fill: #ffffff;
     transition: transform 0.2s;
 }
@@ -541,21 +541,21 @@ audio {
     transform: rotate(180deg);
 }
 
-/* القائمة المنسدلة */
+/* القائمة المنسدلة - مصغرة */
 .sv-speed-menu {
     position: absolute;
-    bottom: calc(100% + 8px);
+    bottom: calc(100% + 6px);
     left: 50%;
     transform: translateX(-50%);
     background: #282828;
-    border-radius: 10px;
-    padding: 6px;
+    border-radius: 8px;
+    padding: 4px;
     display: none;
     flex-direction: column;
-    gap: 2px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    gap: 1px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     z-index: 1000;
-    min-width: 100px;
+    min-width: 80px;
 }
 
 .sv-speed-menu.show {
@@ -563,15 +563,15 @@ audio {
 }
 
 .sv-speed-option {
-    padding: 10px 16px;
+    padding: 7px 12px;
     background: transparent;
     border: none;
     color: #b3b3b3;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     font-family: 'Tajawal', sans-serif;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: all 0.15s;
     text-align: center;
 }
@@ -586,44 +586,50 @@ audio {
     color: #000000;
 }
 
-/* تحسينات للموبايل */
+/* تحسينات للموبايل - ضبط دقيق */
 @media (max-width: 767px) {
     .sv-audio-player {
-        padding: 16px;
-        border-radius: 14px;
-        margin: 16px 0;
+        padding: 9px 12px;
+        border-radius: 10px;
+        margin: 12px 0;
     }
     
     .sv-play-btn {
-        width: 46px;
-        height: 46px;
-        min-width: 46px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
     }
     
     .sv-play-btn svg {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
     }
     
     .sv-skip-btn {
-        width: 42px;
-        height: 42px;
-        min-width: 42px;
-        font-size: 12px;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 10px;
     }
     
     .sv-current-time,
     .sv-total-time {
-        font-size: 15px;
+        font-size: 12px;
+        min-width: 42px;
     }
     
     .sv-progress-container {
-        height: 7px;
+        height: 5px;
     }
     
     .sv-speed-trigger {
-        padding: 10px 18px;
-        font-size: 14px;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    
+    .sv-speed-option {
+        padding: 8px 14px;
+        font-size: 13px;
     }
 }
 
