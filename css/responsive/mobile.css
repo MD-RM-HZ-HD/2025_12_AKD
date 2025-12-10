@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ملف CSS للموبايل - نسخة نهائية محسّنة
-   Mobile CSS - Final Optimized Version
+   ملف CSS للموبايل - نسخة نهائية
+   Mobile CSS - Final Version with MediaElement.js Style Player
    ========================================================================== */
 
 /* ==========================================================================
@@ -27,7 +27,7 @@
     h1, 
     .page-title-card h1,
     .bio-page h1 {
-        font-size: 1.75rem !important; /* 28px */
+        font-size: 1.75rem !important;
         line-height: 1.3 !important;
         margin-bottom: 12px !important;
     }
@@ -37,7 +37,7 @@
     .section, 
     article.content h2.section,
     .bio-page h2 {
-        font-size: 1.1rem !important; /* 17.6px */
+        font-size: 1.1rem !important;
         line-height: 1.3 !important;
         margin-bottom: 10px !important;
         word-wrap: break-word !important;
@@ -59,14 +59,14 @@
     .q-title,
     #front-header,
     #back-header {
-        font-size: 1.05rem !important; /* 16.8px */
+        font-size: 1.05rem !important;
         line-height: 1.4 !important;
     }
 
-    /* عناوين الأسئلة والأقسام الفرعية */
+    /* عناوين الأسئلة */
     .q-title span,
     .h3-content-title span {
-        font-size: 1rem !important; /* 16px */
+        font-size: 1rem !important;
         line-height: 1.4 !important;
         word-wrap: break-word !important;
     }
@@ -81,42 +81,34 @@
     .btn-custom,
     .btn-answer,
     footer {
-        font-size: 0.875rem !important; /* 14px */
+        font-size: 0.875rem !important;
     }
 
-    /* حقول الإدخال - منع التكبير التلقائي في iOS */
+    /* حقول الإدخال */
     input, 
     select, 
     textarea,
     .question-card.fill-blank input {
-        font-size: 1.125rem !important; /* 18px */
+        font-size: 1.125rem !important;
     }
 }
 
 /* ==========================================================================
-   2. تخطيط الصفحة الرئيسي - Main Layout
+   2. تخطيط الصفحة - Main Layout
    ========================================================================== */
 
 @media (max-width: 767px) {
     
-    /* حاوية العرض الكامل */
     body,
     .main-width-container {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding-bottom: 80px !important; /* مساحة للقائمة السفلية */
-        padding-top: 10px !important; /* تقليل المسافة العلوية */
+        padding-bottom: 80px !important;
+        padding-top: 10px !important;
     }
 
-    /* تنسيق النصوص */
-    p, 
-    li, 
-    .p-content, 
-    .li-content, 
-    .a, 
-    .q-title span, 
-    .h3-content-title {
+    p, li, .p-content, .li-content, .a, .q-title span, .h3-content-title {
         text-align: justify !important;
         text-justify: inter-word !important;
         margin-left: 0 !important;
@@ -124,32 +116,27 @@
         padding: 0 4px !important;
     }
 
-    /* القوائم */
     ul, ol {
         padding-right: 15px !important;
         padding-left: 0 !important;
         margin: 0 !important;
     }
 
-    /* لوحة الأكورديون */
     .accordion-panel {
         padding: 8px 4px !important;
     }
 
-    /* صناديق الأسئلة والأجوبة */
     .qa {
         margin: 5px 0 !important;
         padding: 5px !important;
         border-radius: 4px !important;
     }
 
-    /* العناوين محاذاة لليمين */
     h1, h2, h3, h4, h5, h6 {
         text-align: right !important;
         padding: 4px 0 !important;
     }
 
-    /* منع تداخل الأكورديون مع المشغل */
     .accordion-title-group {
         margin-bottom: 10px !important;
         width: 100% !important;
@@ -166,12 +153,11 @@
 }
 
 /* ==========================================================================
-   3. القائمة السفلية للموبايل - Mobile Bottom Navigation
+   3. القائمة السفلية - Mobile Bottom Navigation
    ========================================================================== */
 
 @media (max-width: 767px) {
     
-    /* حاوية القائمة السفلية */
     #mobile-bottom-nav {
         position: fixed !important;
         bottom: 0 !important;
@@ -188,7 +174,6 @@
         box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
     }
 
-    /* عناصر القائمة */
     .mobile-nav-item {
         display: flex;
         flex-direction: column;
@@ -217,7 +202,6 @@
         transition: all 0.3s ease;
     }
 
-    /* التبويب النشط - تأثير العائم */
     .mobile-nav-item.active-tab .icon-container {
         background-color: #ffffff;
         width: 54px;
@@ -249,7 +233,6 @@
         font-weight: 900;
     }
 
-    /* القوائم المنبثقة */
     .mobile-popup-sheet {
         position: fixed !important;
         bottom: 85px !important;
@@ -264,23 +247,10 @@
         min-width: 180px;
     }
 
-    .popup-pos-left { 
-        right: 10px !important; 
-        left: auto !important; 
-    }
+    .popup-pos-left { right: 10px !important; left: auto !important; }
+    .popup-pos-right { left: 10px !important; right: auto !important; }
+    .popup-pos-center { left: 50% !important; transform: translateX(-50%); width: 260px; }
 
-    .popup-pos-right { 
-        left: 10px !important; 
-        right: auto !important; 
-    }
-
-    .popup-pos-center { 
-        left: 50% !important; 
-        transform: translateX(-50%); 
-        width: 260px; 
-    }
-
-    /* روابط القوائم المنبثقة */
     .mobile-popup-link {
         display: block;
         padding: 12px 16px;
@@ -294,15 +264,9 @@
         transition: background 0.2s;
     }
 
-    .mobile-popup-link:last-child { 
-        border-bottom: none; 
-    }
+    .mobile-popup-link:last-child { border-bottom: none; }
+    .mobile-popup-link:active { background: rgba(255,255,255,0.1); }
 
-    .mobile-popup-link:active { 
-        background: rgba(255,255,255,0.1); 
-    }
-
-    /* صف الأدوات */
     .tools-row {
         display: flex;
         justify-content: space-evenly;
@@ -345,7 +309,7 @@
 }
 
 /* ==========================================================================
-   4. مشغل الصوت المدمج الصغير - Compact Audio Player (75% Size)
+   4. مشغل الصوت - MediaElement.js Style (صف واحد)
    ========================================================================== */
 
 /* إخفاء المشغل الافتراضي */
@@ -353,68 +317,33 @@ audio {
     display: none !important;
 }
 
-/* حاوية المشغل - مصغرة 75% */
-.sv-audio-player {
+/* حاوية المشغل */
+.mejs-container {
     width: 100%;
     background: #000000;
-    border-radius: 8px;
-    padding: 8px 10px;
-    margin: 10px 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 6px;
+    margin: 12px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     direction: ltr;
+    height: auto !important;
 }
 
-/* الصف العلوي: Play + Buttons + Time + Progress */
-.sv-top-row {
-    display: flex;
+/* صف الأزرار */
+.mejs-controls {
+    display: flex !important;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 8px;
+    gap: 3px;
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
 }
 
-/* زر Play/Pause دائري أخضر - صغير */
-.sv-play-btn {
+/* الأزرار العامة */
+.mejs-button button {
     width: 32px;
     height: 32px;
     min-width: 32px;
-    border-radius: 50%;
-    background: #1ed760;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.15s;
-    flex-shrink: 0;
-}
-
-.sv-play-btn:active {
-    transform: scale(0.95);
-}
-
-.sv-play-btn svg {
-    width: 12px;
-    height: 12px;
-    fill: #000000;
-}
-
-.sv-play-btn .pause-icon {
-    display: none;
-}
-
-.sv-play-btn.playing .play-icon {
-    display: none;
-}
-
-.sv-play-btn.playing .pause-icon {
-    display: block;
-}
-
-/* أزرار التقديم/التأخير - صغيرة */
-.sv-skip-btn {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
     border-radius: 6px;
     background: #282828;
     border: none;
@@ -422,152 +351,189 @@ audio {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
-    font-weight: 700;
-    color: #ffffff;
-    font-family: 'Tajawal', sans-serif;
     transition: all 0.15s;
-    flex-shrink: 0;
+    padding: 0;
 }
 
-.sv-skip-btn:active {
+.mejs-button button:active {
     transform: scale(0.95);
     background: #3a3a3a;
 }
 
-/* الوقت الحالي */
-.sv-current-time {
-    font-size: 11px;
-    color: #ffffff;
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 600;
-    min-width: 38px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-/* شريط التقدم - رفيع */
-.sv-progress-container {
-    flex: 1;
-    height: 4px;
-    background: #4d4d4d;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.sv-progress-fill {
-    height: 100%;
-    background: #1ed760;
-    border-radius: 10px;
-    width: 0%;
-    transition: width 0.1s linear;
-    position: relative;
-}
-
-/* النقطة على شريط التقدم - صغيرة */
-.sv-progress-fill::after {
-    content: '';
-    position: absolute;
-    right: -4px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background: #1ed760;
-    border: 1.5px solid #000000;
+/* زر Play/Pause */
+.mejs-playpause-button button {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
     border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.2s;
+    background: #1ed760 !important;
 }
 
-.sv-progress-container:hover .sv-progress-fill::after {
-    opacity: 1;
+.mejs-playpause-button button:active {
+    background: #1db954 !important;
 }
 
-/* الوقت الكلي */
-.sv-total-time {
-    font-size: 11px;
-    color: #b3b3b3;
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 600;
-    min-width: 38px;
-    text-align: center;
-    flex-shrink: 0;
+.mejs-playpause-button svg,
+.mejs-playpause-button use {
+    width: 14px;
+    height: 14px;
+    fill: #000000;
 }
 
-/* الصف السفلي: زر السرعة - مصغر */
-.sv-bottom-row {
-    display: flex;
-    justify-content: center;
-    padding-top: 6px;
-    border-top: 1px solid #282828;
+/* زر Skip Back */
+.mejs-skip-back-button button {
+    width: 30px;
+    height: 30px;
 }
 
-/* قائمة السرعة - صغيرة */
-.sv-speed-wrapper {
+.mejs-skip-back-button svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+}
+
+/* زر Loop */
+.mejs-loop-button button {
+    width: 30px;
+    height: 30px;
     position: relative;
 }
 
-.sv-speed-trigger {
-    padding: 5px 12px;
-    background: transparent;
-    border: 1px solid #404040;
-    border-radius: 16px;
-    color: #ffffff;
+.mejs-loop-button button::after {
+    content: '↻';
+    font-size: 18px;
+    color: #999;
+}
+
+.mejs-loop-button.mejs-loop-on button::after {
+    color: #1ed760;
+}
+
+/* الوقت */
+.mejs-time {
     font-size: 11px;
-    font-weight: 700;
+    color: #ffffff;
     font-family: 'Tajawal', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
+    font-weight: 600;
+    padding: 0 4px !important;
+    height: auto !important;
     display: flex;
     align-items: center;
-    gap: 4px;
 }
 
-.sv-speed-trigger:hover {
-    border-color: #1ed760;
+.mejs-currenttime,
+.mejs-duration {
+    min-width: 38px;
+    text-align: center;
 }
 
-.sv-speed-trigger svg {
-    width: 8px;
-    height: 8px;
+.mejs-duration {
+    color: #b3b3b3;
+}
+
+/* شريط التقدم */
+.mejs-time-rail {
+    flex: 1;
+    height: 4px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 4px !important;
+}
+
+.mejs-time-total {
+    background: #4d4d4d !important;
+    border-radius: 10px;
+    height: 4px !important;
+    position: relative;
+}
+
+.mejs-time-current {
+    background: #1ed760 !important;
+    border-radius: 10px;
+    height: 4px !important;
+}
+
+.mejs-time-handle {
+    display: none !important;
+}
+
+/* زر الصوت */
+.mejs-volume-button button {
+    width: 30px;
+    height: 30px;
+}
+
+.mejs-volume-button svg {
+    width: 14px;
+    height: 14px;
     fill: #ffffff;
-    transition: transform 0.2s;
 }
 
-.sv-speed-trigger.open svg {
-    transform: rotate(180deg);
+/* إخفاء slider الصوت */
+.mejs-volume-slider {
+    display: none !important;
 }
 
-/* القائمة المنسدلة - مصغرة */
-.sv-speed-menu {
+/* زر السرعة */
+.mejs-speed-button {
+    position: relative;
+}
+
+.mejs-speed-button button {
+    padding: 5px 10px !important;
+    background: #282828 !important;
+    border: 1px solid #404040 !important;
+    border-radius: 14px !important;
+    color: #ffffff !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    font-family: 'Tajawal', sans-serif !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+}
+
+.mejs-speed-button button:hover {
+    border-color: #1ed760 !important;
+}
+
+/* القائمة المنسدلة للسرعة */
+.mejs-speed-selector {
     position: absolute;
     bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     background: #282828;
     border-radius: 8px;
     padding: 4px;
-    display: none;
-    flex-direction: column;
-    gap: 1px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     z-index: 1000;
-    min-width: 80px;
+    min-width: 70px;
+    display: none;
 }
 
-.sv-speed-menu.show {
-    display: flex;
+.mejs-speed-selector.mejs-offscreen {
+    display: none !important;
 }
 
-.sv-speed-option {
-    padding: 7px 12px;
-    background: transparent;
-    border: none;
+.mejs-speed-button:hover .mejs-speed-selector {
+    display: block;
+}
+
+.mejs-speed-selector-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mejs-speed-selector-list-item {
+    margin: 0;
+}
+
+.mejs-speed-selector-label {
+    display: block;
+    padding: 6px 10px;
     color: #b3b3b3;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     font-family: 'Tajawal', sans-serif;
     cursor: pointer;
@@ -576,60 +542,78 @@ audio {
     text-align: center;
 }
 
-.sv-speed-option:hover {
+.mejs-speed-selector-label:hover {
     background: #3a3a3a;
     color: #ffffff;
 }
 
-.sv-speed-option.active {
+.mejs-speed-selector-label.mejs-speed-selected {
     background: #1ed760;
     color: #000000;
 }
 
-/* تحسينات للموبايل - ضبط دقيق */
+.mejs-speed-selector-input {
+    display: none;
+}
+
+/* إخفاء العناصر غير الضرورية */
+.mejs-captions-button,
+.mejs-chromecast-button,
+.playlistButton {
+    display: none !important;
+}
+
+/* تحسينات للموبايل */
 @media (max-width: 767px) {
-    .sv-audio-player {
-        padding: 9px 12px;
-        border-radius: 10px;
-        margin: 12px 0;
+    .mejs-container {
+        padding: 8px;
+        border-radius: 12px;
+        margin: 14px 0;
     }
     
-    .sv-play-btn {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
+    .mejs-controls {
+        gap: 4px;
     }
     
-    .sv-play-btn svg {
-        width: 14px;
-        height: 14px;
+    .mejs-button button {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
     }
     
-    .sv-skip-btn {
-        width: 32px;
-        height: 32px;
-        min-width: 32px;
-        font-size: 10px;
+    .mejs-playpause-button button {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
     }
     
-    .sv-current-time,
-    .sv-total-time {
+    .mejs-playpause-button svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .mejs-time {
         font-size: 12px;
+    }
+    
+    .mejs-currenttime,
+    .mejs-duration {
         min-width: 42px;
     }
     
-    .sv-progress-container {
-        height: 5px;
+    .mejs-time-rail {
+        height: 5px !important;
+        margin: 0 6px !important;
     }
     
-    .sv-speed-trigger {
-        padding: 6px 14px;
-        font-size: 12px;
+    .mejs-time-total,
+    .mejs-time-current {
+        height: 5px !important;
     }
     
-    .sv-speed-option {
-        padding: 8px 14px;
-        font-size: 13px;
+    .mejs-speed-button button {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
     }
 }
 
@@ -639,7 +623,6 @@ audio {
 
 @media (max-width: 767px) {
     
-    /* حاوية الاختبار */
     #quiz-container, 
     .container-main,
     .question-card {
@@ -652,7 +635,6 @@ audio {
         box-shadow: none !important;
     }
 
-    /* نص السؤال */
     #question-text, 
     .question-text {
         font-size: 1.4rem !important;
@@ -663,7 +645,6 @@ audio {
         text-align: center !important;
     }
 
-    /* أزرار الإجابة */
     .btn-answer, 
     .answer-option {
         font-size: 1.25rem !important;
@@ -679,21 +660,18 @@ audio {
         width: 100% !important;
     }
 
-    /* شبكة الإجابات */
     .answers-grid {
         gap: 12px !important;
         padding: 0 !important;
         margin: 0 !important;
     }
 
-    /* شارة رقم السؤال */
     .question-number-badge, 
     .badge {
         font-size: 1rem !important;
         padding: 6px 12px !important;
     }
 
-    /* شريط التقدم المدمج */
     #status-bar-placeholder .container-main {
         flex-direction: row !important;
         flex-wrap: nowrap !important;
@@ -704,25 +682,21 @@ audio {
         min-height: 0 !important;
     }
 
-    /* إخفاء النصوص التوضيحية */
     #status-bar-placeholder span.opacity-80,
     #status-bar-placeholder .text-xs {
         display: none !important; 
     }
 
-    /* أحجام النصوص */
     #progress-text, #score-display, #question-counter {
         font-size: 14px !important;
         line-height: 1 !important;
     }
 
-    /* شريط التقدم المدمج */
     #status-bar-placeholder .progress-bar {
         height: 6px !important;
         margin-top: 2px !important;
     }
 
-    /* نسب التقدم والنتيجة */
     #status-bar-placeholder .container-main > div:first-child {
         flex: 2 !important;
         width: 66% !important;
@@ -737,7 +711,6 @@ audio {
         padding-left: 2px !important;
     }
 
-    /* إخفاء الفواصل العمودية */
     #status-bar-placeholder .bg-gray-300 {
         display: none !important;
     }
@@ -747,7 +720,6 @@ audio {
         white-space: nowrap !important;
     }
 
-    /* بطاقات المقارنة */
     .comparison-container, #quiz-container {
         padding: 0 !important;
         margin: 0 !important;
@@ -819,12 +791,11 @@ audio {
 }
 
 /* ==========================================================================
-   7. إصلاحات الأزرار والتنقل - Button & Navigation Fixes
+   7. إصلاحات الأزرار - Button Fixes
    ========================================================================== */
 
 @media (max-width: 767px) {
     
-    /* أزرار التنقل */
     #navigation-buttons {
         gap: 1.5rem !important;
     }
@@ -834,7 +805,6 @@ audio {
         margin-inline-end: 0 !important;
     }
 
-    /* حاوية البطاقة والأزرار */
     #card-and-buttons-container {
         padding-top: 2.25rem !important;
         padding-bottom: 1rem !important;
