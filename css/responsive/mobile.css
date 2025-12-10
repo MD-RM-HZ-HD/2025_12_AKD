@@ -369,17 +369,12 @@ audio {
     background: #1db954 !important;
 }
 
-/* Skip & Loop buttons - SMALLER */
-.btn-skip,
-.btn-loop {
+/* Skip button - SMALLER */
+.btn-skip {
     width: 26px;
     height: 26px;
     min-width: 26px;
     font-size: 9px;
-}
-
-.btn-loop.active {
-    color: #1ed760;
 }
 
 /* Time display - SMALLER */
@@ -398,7 +393,7 @@ audio {
     color: #999;
 }
 
-/* Progress bar - THINNER */
+/* Progress bar - THINNER with vertical alignment */
 .progress-bar {
     flex: 1;
     height: 3px;
@@ -407,6 +402,7 @@ audio {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    align-self: center;
 }
 
 .progress-fill {
@@ -417,16 +413,12 @@ audio {
     transition: width 0.1s linear;
 }
 
-/* Mute button - SMALLER */
-.btn-mute {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    font-size: 13px;
-    padding: 0;
+/* Speed wrapper and button - SMALLER */
+.speed-wrapper {
+    position: relative;
+    flex-shrink: 0;
 }
 
-/* Speed button - SMALLER */
 .btn-speed {
     padding: 3px 8px;
     height: auto;
@@ -501,9 +493,7 @@ audio {
         font-size: 14px;
     }
     
-    .btn-skip,
-    .btn-loop,
-    .btn-mute {
+    .btn-skip {
         width: 28px;
         height: 28px;
         min-width: 28px;
