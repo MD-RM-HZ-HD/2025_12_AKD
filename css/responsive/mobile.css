@@ -325,15 +325,17 @@ audio {
     padding: 4px 6px;
     margin: 8px 0;
     box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    direction: ltr;
 }
 
-/* ONE ROW - HORIZONTAL ONLY */
+/* ONE ROW - HORIZONTAL LEFT TO RIGHT */
 .player-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 4px;
     width: 100%;
+    direction: ltr;
 }
 
 /* All buttons - SMALLER */
@@ -445,7 +447,7 @@ audio {
     background: #444;
 }
 
-/* Speed menu - HORIZONTAL BAR above button */
+/* Speed menu - HORIZONTAL BAR above button with +/- */
 .speed-menu-horizontal {
     position: absolute;
     bottom: calc(100% + 8px);
@@ -460,6 +462,7 @@ audio {
     box-shadow: 0 8px 24px rgba(0,0,0,0.6);
     z-index: 1000;
     white-space: nowrap;
+    align-items: center;
 }
 
 .speed-menu-horizontal.show {
@@ -477,6 +480,7 @@ audio {
     min-width: auto;
     white-space: nowrap;
     transition: all 0.15s;
+    cursor: pointer;
 }
 
 .speed-menu-horizontal button:hover {
@@ -485,9 +489,27 @@ audio {
     color: #fff;
 }
 
-.speed-menu-horizontal button.active {
+.btn-speed-value.active {
     background: #1ed760;
     border-color: #1ed760;
+    color: #000;
+}
+
+.btn-speed-decrease,
+.btn-speed-increase {
+    width: 32px;
+    height: 32px;
+    padding: 0 !important;
+    font-size: 18px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.btn-speed-decrease:active,
+.btn-speed-increase:active {
+    background: #1ed760;
     color: #000;
 }
 
@@ -522,15 +544,51 @@ audio {
     font-family: 'Tajawal', sans-serif;
 }
 
-.time-inputs {
+.time-inputs-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
     margin-bottom: 20px;
+    direction: ltr;
 }
 
-.time-inputs input {
+.time-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-time-up,
+.btn-time-down {
+    width: 70px;
+    height: 32px;
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 8px;
+    color: #1ed760;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-time-up:hover,
+.btn-time-down:hover {
+    background: #333;
+    border-color: #1ed760;
+}
+
+.btn-time-up:active,
+.btn-time-down:active {
+    background: #1ed760;
+    color: #000;
+}
+
+.time-input-group input {
     width: 70px;
     padding: 12px;
     background: #2a2a2a;
@@ -545,15 +603,23 @@ audio {
     transition: all 0.2s;
 }
 
-.time-inputs input:focus {
+.time-input-group input:focus {
     border-color: #1ed760;
     background: #333;
 }
 
-.time-inputs span {
+.time-input-group label {
+    color: #999;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.time-separator {
     color: #666;
     font-size: 24px;
     font-weight: 700;
+    margin: 0 4px;
 }
 
 .time-buttons {
