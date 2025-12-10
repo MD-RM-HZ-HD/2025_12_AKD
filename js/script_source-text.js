@@ -69,11 +69,11 @@
                 <div class="speed-wrapper">
                     <button class="btn-speed" data-id="${index}">⋮</button>
                     <div class="speed-menu-horizontal">
-                        <button data-speed="0.75">0.75x</button>
-                        <button data-speed="1.00" class="active">1.00x</button>
-                        <button data-speed="1.25">1.25x</button>
-                        <button data-speed="1.50">1.50x</button>
-                        <button data-speed="2.00">2.00x</button>
+                        <button class="btn-speed-decrease">−</button>
+                        <button class="btn-speed-value" data-speed="1.00" class="active">1.00x</button>
+                        <button class="btn-speed-value" data-speed="1.25">1.25x</button>
+                        <button class="btn-speed-value" data-speed="1.50">1.50x</button>
+                        <button class="btn-speed-increase">+</button>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,11 @@
         const progressFill = wrapper.querySelector('.progress-fill');
         const speedBtn = wrapper.querySelector('.btn-speed');
         const speedMenu = wrapper.querySelector('.speed-menu-horizontal');
-        const speedOptions = wrapper.querySelectorAll('.speed-menu-horizontal button');
+        const speedValues = wrapper.querySelectorAll('.btn-speed-value');
+        const speedDecrease = wrapper.querySelector('.btn-speed-decrease');
+        const speedIncrease = wrapper.querySelector('.btn-speed-increase');
+        
+        let currentSpeed = 1.00;
         
         // Play/Pause
         playBtn.addEventListener('click', () => {
@@ -160,17 +164,44 @@
             }
         });
         
-        // Speed selection
-        speedOptions.forEach(btn => {
+        // Speed preset selection
+        speedValues.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const speed = parseFloat(btn.dataset.speed);
+                currentSpeed = speed;
                 audio.playbackRate = speed;
-                speedOptions.forEach(b => b.classList.remove('active'));
+                speedValues.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                speedMenu.classList.remove('show');
             });
         });
+        
+        // Speed decrease by 0.25
+        speedDecrease.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentSpeed = Math.max(0.25, currentSpeed - 0.25);
+            audio.playbackRate = currentSpeed;
+            updateActiveSpeed();
+        });
+        
+        // Speed increase by 0.25
+        speedIncrease.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentSpeed = Math.min(3.00, currentSpeed + 0.25);
+            audio.playbackRate = currentSpeed;
+            updateActiveSpeed();
+        });
+        
+        function updateActiveSpeed() {
+            speedValues.forEach(btn => {
+                const speed = parseFloat(btn.dataset.speed);
+                if (Math.abs(speed - currentSpeed) < 0.01) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
     }
     
     function showTimeJumpModal(audio, timeDisplay) {
@@ -189,10 +220,20 @@
         modal.innerHTML = `
             <div class="time-jump-content">
                 <h3>القفز إلى وقت محدد</h3>
-                <div class="time-inputs">
-                    <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="دقيقة">
-                    <span>:</span>
-                    <input type="number" class="time-input-secs" min="0" max="59" value="${secs}" placeholder="ثانية">
+                <div class="time-inputs-wrapper">
+                    <div class="time-input-group">
+                        <button class="btn-time-up" data-type="mins">▲</button>
+                        <input type="number" class="time-input-mins" min="0" max="999" value="${mins}" placeholder="دقيقة">
+                        <button class="btn-time-down" data-type="mins">▼</button>
+                        <label>دقيقة</label>
+                    </div>
+                    <span class="time-separator">:</span>
+                    <div class="time-input-group">
+                        <button class="btn-time-up" data-type="secs">▲</button>
+                        <input type="number" class="time-input-secs" min="0" max="59" value="${secs}" placeholder="ثانية">
+                        <button class="btn-time-down" data-type="secs">▼</button>
+                        <label>ثانية</label>
+                    </div>
                 </div>
                 <div class="time-buttons">
                     <button class="btn-jump-cancel">إلغاء</button>
@@ -207,9 +248,31 @@
         const secsInput = modal.querySelector('.time-input-secs');
         const cancelBtn = modal.querySelector('.btn-jump-cancel');
         const goBtn = modal.querySelector('.btn-jump-go');
+        const upButtons = modal.querySelectorAll('.btn-time-up');
+        const downButtons = modal.querySelectorAll('.btn-time-down');
         
-        // Focus on minutes input
+        // Focus on minutes input (left side in LTR)
         setTimeout(() => minsInput.select(), 100);
+        
+        // Up/Down buttons
+        upButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.dataset.type;
+                const input = type === 'mins' ? minsInput : secsInput;
+                const max = type === 'mins' ? 999 : 59;
+                let val = parseInt(input.value) || 0;
+                input.value = Math.min(max, val + 1);
+            });
+        });
+        
+        downButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.dataset.type;
+                const input = type === 'mins' ? minsInput : secsInput;
+                let val = parseInt(input.value) || 0;
+                input.value = Math.max(0, val - 1);
+            });
+        });
         
         // Cancel
         cancelBtn.addEventListener('click', () => {
