@@ -381,6 +381,15 @@ audio {
     color: #fff;
 }
 
+.time-current {
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.time-current:hover {
+    color: #1ed760;
+}
+
 .time-total {
     color: #999;
 }
@@ -480,6 +489,111 @@ audio {
     background: #1ed760;
     border-color: #1ed760;
     color: #000;
+}
+
+/* Time Jump Modal */
+.time-jump-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+}
+
+.time-jump-content {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 300px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+}
+
+.time-jump-content h3 {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.time-inputs input {
+    width: 70px;
+    padding: 12px;
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.time-inputs input:focus {
+    border-color: #1ed760;
+    background: #333;
+}
+
+.time-inputs span {
+    color: #666;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.time-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.time-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-jump-cancel {
+    background: #333;
+    color: #fff;
+}
+
+.btn-jump-cancel:hover {
+    background: #444;
+}
+
+.btn-jump-go {
+    background: #1ed760;
+    color: #000;
+}
+
+.btn-jump-go:hover {
+    background: #1db954;
+}
+
+.btn-jump-go:active,
+.btn-jump-cancel:active {
+    transform: scale(0.95);
 }
 
 /* Mobile adjustments - VERY COMPACT */
