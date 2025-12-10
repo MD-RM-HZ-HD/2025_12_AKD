@@ -317,14 +317,14 @@ audio {
     display: none !important;
 }
 
-/* Player container */
+/* Player container - VERY COMPACT */
 .simple-audio-player {
     width: 100%;
     background: #000;
-    border-radius: 10px;
-    padding: 8px;
-    margin: 12px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 4px 6px;
+    margin: 8px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 /* ONE ROW - HORIZONTAL ONLY */
@@ -332,19 +332,19 @@ audio {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 6px;
+    gap: 3px;
     width: 100%;
 }
 
-/* All buttons */
+/* All buttons - SMALLER */
 .player-row button {
     flex-shrink: 0;
     border: none;
-    border-radius: 6px;
-    background: #282828;
+    border-radius: 4px;
+    background: #333;
     color: #fff;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 10px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.15s;
     font-family: 'Tajawal', sans-serif;
@@ -354,55 +354,55 @@ audio {
     transform: scale(0.95);
 }
 
-/* Play button - green circle */
+/* Play button - SMALLER green circle */
 .btn-play {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
     border-radius: 50% !important;
     background: #1ed760 !important;
     color: #000 !important;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .btn-play.playing {
     background: #1db954 !important;
 }
 
-/* Skip & Loop buttons */
+/* Skip & Loop buttons - SMALLER */
 .btn-skip,
 .btn-loop {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    font-size: 11px;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    font-size: 9px;
 }
 
 .btn-loop.active {
     color: #1ed760;
 }
 
-/* Time display */
+/* Time display - SMALLER */
 .time-current,
 .time-total {
     flex-shrink: 0;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 600;
     font-family: 'Tajawal', sans-serif;
-    min-width: 40px;
+    min-width: 35px;
     text-align: center;
     color: #fff;
 }
 
 .time-total {
-    color: #b3b3b3;
+    color: #999;
 }
 
-/* Progress bar */
+/* Progress bar - THINNER */
 .progress-bar {
     flex: 1;
-    height: 4px;
-    background: #4d4d4d;
+    height: 3px;
+    background: #444;
     border-radius: 10px;
     cursor: pointer;
     position: relative;
@@ -417,23 +417,23 @@ audio {
     transition: width 0.1s linear;
 }
 
-/* Mute button */
+/* Mute button - SMALLER */
 .btn-mute {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    font-size: 16px;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    font-size: 13px;
     padding: 0;
 }
 
-/* Speed button */
+/* Speed button - SMALLER */
 .btn-speed {
-    padding: 5px 10px;
+    padding: 3px 8px;
     height: auto;
-    background: #282828;
-    border: 1px solid #404040;
-    border-radius: 14px;
-    font-size: 10px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 12px;
+    font-size: 9px;
     white-space: nowrap;
 }
 
@@ -441,20 +441,20 @@ audio {
     border-color: #1ed760;
 }
 
-/* Speed menu */
+/* Speed menu - SMALLER */
 .speed-menu {
     position: absolute;
-    bottom: calc(100% + 6px);
+    bottom: calc(100% + 4px);
     right: 0;
-    background: #282828;
-    border-radius: 8px;
-    padding: 4px;
+    background: #222;
+    border-radius: 6px;
+    padding: 3px;
     display: none;
     flex-direction: column;
-    gap: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    gap: 1px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
     z-index: 1000;
-    min-width: 70px;
+    min-width: 60px;
 }
 
 .speed-menu.show {
@@ -462,18 +462,18 @@ audio {
 }
 
 .speed-menu button {
-    padding: 6px 10px;
+    padding: 5px 8px;
     background: transparent;
     border: none;
-    color: #b3b3b3;
-    font-size: 11px;
-    border-radius: 4px;
+    color: #999;
+    font-size: 9px;
+    border-radius: 3px;
     width: 100%;
     text-align: center;
 }
 
 .speed-menu button:hover {
-    background: #3a3a3a;
+    background: #333;
     color: #fff;
 }
 
@@ -482,44 +482,46 @@ audio {
     color: #000;
 }
 
-/* Mobile adjustments */
+/* Mobile adjustments - VERY COMPACT */
 @media (max-width: 767px) {
     .simple-audio-player {
-        padding: 10px;
+        padding: 5px 7px;
+        border-radius: 8px;
+        margin: 10px 0;
     }
     
     .player-row {
-        gap: 8px;
+        gap: 4px;
     }
     
     .btn-play {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        font-size: 18px;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 14px;
     }
     
     .btn-skip,
     .btn-loop,
     .btn-mute {
-        width: 34px;
-        height: 34px;
-        min-width: 34px;
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
     }
     
     .time-current,
     .time-total {
-        font-size: 12px;
-        min-width: 44px;
+        font-size: 10px;
+        min-width: 38px;
     }
     
     .progress-bar {
-        height: 5px;
+        height: 3px;
     }
     
     .btn-speed {
-        padding: 6px 12px;
-        font-size: 11px;
+        padding: 4px 9px;
+        font-size: 9px;
     }
 }
 
