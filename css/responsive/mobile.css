@@ -93,6 +93,21 @@
     }
 }
 
+@media (max-width: 767px) {
+    
+    /* Force accordion h2 titles to stay 1.1rem on mobile */
+    .accordion-button h2 {
+        font-size: 1.1rem !important;
+        display: inline !important;
+        margin: 0 !important;
+    }
+    
+    /* Also constrain h2 inside accordion title group */
+    .accordion-title-group h2 {
+        font-size: 1.1rem !important;
+    }
+}
+
 /* ==========================================================================
    2. تخطيط الصفحة - Main Layout
    ========================================================================== */
@@ -879,3 +894,4 @@ audio {
 /* ==========================================================================
    نهاية الملف - End of File
    ========================================================================== */
+
