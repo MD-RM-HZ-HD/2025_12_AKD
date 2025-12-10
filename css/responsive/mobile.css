@@ -4,6 +4,54 @@
    ========================================================================== */
 
 /* ==========================================================================
+   0. أحجام الخطوط للديسكتوب - Font Sizes for Desktop
+   ========================================================================== */
+
+/* نص المحتوى العام - Desktop */
+body, 
+p, 
+li,
+.p-content, 
+.li-content,
+.card-content,
+article.content p, 
+article.content li,
+.accordion-button {
+    font-size: 16px !important; 
+    line-height: 1.6 !important;
+}
+
+/* العناوين الرئيسية H1 - Desktop */
+h1, 
+.page-title-card h1,
+.bio-page h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+}
+
+/* العناوين الفرعية H2 - Desktop */
+h2, 
+.section, 
+article.content h2.section,
+.bio-page h2 {
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+}
+
+/* العناوين H3/H4/H5 - Desktop */
+h3, 
+h4,
+h5 {
+    font-size: 0.95rem !important;
+    line-height: 1.3 !important;
+}
+
+/* ==========================================================================
    1. أحجام الخطوط للموبايل - Font Sizes for Mobile
    ========================================================================== */
 
@@ -90,21 +138,6 @@
     textarea,
     .question-card.fill-blank input {
         font-size: 1.125rem !important;
-    }
-}
-
-@media (max-width: 767px) {
-    
-    /* Force accordion h2 titles to stay 1.1rem on mobile */
-    .accordion-button h2 {
-        font-size: 1.1rem !important;
-        display: inline !important;
-        margin: 0 !important;
-    }
-    
-    /* Also constrain h2 inside accordion title group */
-    .accordion-title-group h2 {
-        font-size: 1.1rem !important;
     }
 }
 
@@ -894,4 +927,3 @@ audio {
 /* ==========================================================================
    نهاية الملف - End of File
    ========================================================================== */
-
