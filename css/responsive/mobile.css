@@ -52,6 +52,49 @@ h5 {
 }
 
 /* ==========================================================================
+   0.5 أحجام الخطوط للشاشات المتوسطة - Desktop Shrink Mode
+   ========================================================================== */
+
+@media (min-width: 600px) and (max-width: 991px) {
+    /* نص المحتوى */
+    body, 
+    p, 
+    li,
+    .p-content, 
+    .li-content,
+    .card-content,
+    article.content p, 
+    article.content li,
+    .accordion-button {
+        font-size: 15px !important; 
+    }
+
+    /* العناوين H1 */
+    h1, 
+    .page-title-card h1,
+    .bio-page h1 {
+        font-size: 1.3rem !important;
+    }
+
+    /* العناوين H2 - أصغر لتجنب التداخل */
+    h2, 
+    .section, 
+    article.content h2.section,
+    .bio-page h2 {
+        font-size: 0.85rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* العناوين H3/H4/H5 */
+    h3, 
+    h4,
+    h5 {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ==========================================================================
    1. أحجام الخطوط للموبايل - Font Sizes for Mobile
    ========================================================================== */
 
