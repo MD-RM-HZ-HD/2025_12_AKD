@@ -154,6 +154,14 @@
         // Speed toggle
         speedBtn.addEventListener('click', (e) => {
             e.stopPropagation();
+            
+            // Calculate position above the player
+            const btnRect = speedBtn.getBoundingClientRect();
+            const menuHeight = 50; // approximate menu height
+            const topPosition = btnRect.top - menuHeight - 8;
+            
+            // Position menu
+            speedMenu.style.top = topPosition + 'px';
             speedMenu.classList.toggle('show');
         });
         
