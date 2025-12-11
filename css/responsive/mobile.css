@@ -543,10 +543,10 @@ audio {
     background: #444;
 }
 
-/* Speed menu - HORIZONTAL BAR above player */
+/* Speed menu - HORIZONTAL BAR above player, centered on screen */
 .speed-menu-horizontal {
-    position: absolute;
-    bottom: calc(100% + 8px);
+    position: fixed;
+    bottom: calc(50% - 50px);
     left: 50%;
     transform: translateX(-50%);
     background: #222;
@@ -556,7 +556,7 @@ audio {
     flex-direction: row;
     gap: 6px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-    z-index: 1000;
+    z-index: 10000;
     white-space: nowrap;
     align-items: center;
     max-width: 90vw;
