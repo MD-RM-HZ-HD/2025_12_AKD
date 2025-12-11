@@ -519,7 +519,7 @@ audio {
 
 /* Speed wrapper and button - Three dots */
 .speed-wrapper {
-    position: relative;
+    position: static;
     flex-shrink: 0;
 }
 
@@ -543,10 +543,9 @@ audio {
     background: #444;
 }
 
-/* Speed menu - HORIZONTAL BAR above player, centered on screen */
+/* Speed menu - centered horizontally on screen, above player */
 .speed-menu-horizontal {
     position: fixed;
-    bottom: calc(50% - 50px);
     left: 50%;
     transform: translateX(-50%);
     background: #222;
